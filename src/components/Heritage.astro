@@ -2,17 +2,17 @@
 // src/components/Heritage.astro
 ---
 <section id="legado" class="relative py-32 md:py-48 bg-[var(--color-ivory)] overflow-hidden">
-  <div class="max-w-7xl mx-auto px-6 md:px-12 flex flex-col md:flex-row items-center gap-16 lg:gap-32">
+  <div class="max-w-7xl mx-auto px-6 md:px-12 flex flex-col md:flex-row items-start gap-16 lg:gap-32">
     
-    <!-- Left Column: Image -->
-    <div class="w-full md:w-[45%] relative">
-      <div class="aspect-[3/4] overflow-hidden rounded-sm relative heritage-img-wrapper clip-text-reveal">
+    <!-- Left Column: Image (sticky) -->
+    <div class="w-full md:w-[45%] relative md:sticky md:top-36">
+      <div class="aspect-[3/4] overflow-hidden rounded-sm relative heritage-img-wrapper">
         <div class="absolute inset-0 bg-[#e0d8cd] z-0"></div> <!-- Placeholder background -->
         <img 
           src="/images/heritage.png" 
           alt="Bodega de lujo tradicional" 
           class="w-full h-[120%] object-cover absolute top-0 left-0 hover:scale-105 transition-transform duration-[2s] heritage-img"
-          loading="lazy"
+          loading="eager"
           decoding="async"
         />
         <div class="absolute inset-0 border border-[var(--color-graphite)]/10 m-4 z-10 pointer-events-none"></div>
@@ -101,15 +101,18 @@
   });
 
   // Reveal clip path image
-  gsap.to('.heritage-img-wrapper', {
-    clipPath: 'inset(0% 0 0 0)',
-    duration: 1.5,
-    ease: 'power4.inOut',
-    scrollTrigger: {
-      trigger: '#legado',
-      start: 'top 70%',
+  gsap.fromTo('.heritage-img-wrapper', 
+    { clipPath: 'inset(100% 0 0 0)' },
+    {
+      clipPath: 'inset(0% 0 0 0)',
+      duration: 1.5,
+      ease: 'power4.inOut',
+      scrollTrigger: {
+        trigger: '#legado',
+        start: 'top 70%',
+      }
     }
-  });
+  );
 
   // Reveal text elements
   gsap.fromTo('.reveal-element', 
