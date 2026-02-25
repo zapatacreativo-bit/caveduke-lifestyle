@@ -1,0 +1,155 @@
+---
+// src/components/Collections.astro
+const collections = [
+  {
+    title: "Madera Noble",
+    desc: "Roble, nogal o cerezo. El clasicismo atemporal para bodegas tradicionales.",
+    img: "https://images.unsplash.com/photo-1590458897593-3b10ee76b7ca?q=80&w=800&auto=format&fit=crop",
+    link: "#"
+  },
+  {
+    title: "Acero y Cristal",
+    desc: "Líneas puras y transparencia absoluta. Vanguardia arquitectónica.",
+    img: "https://images.unsplash.com/photo-1558000143-a6007ec18e80?q=80&w=800&auto=format&fit=crop",
+    link: "#"
+  },
+  {
+    title: "Bajo Escalera",
+    desc: "Aprovechamiento magistral del espacio con estética impecable.",
+    img: "https://images.unsplash.com/photo-1585552319205-dcc217983df5?q=80&w=800&auto=format&fit=crop",
+    link: "#"
+  },
+  {
+    title: "A Medida",
+    desc: "Integración total en mobiliario existente. Sin límites de diseño.",
+    img: "https://images.unsplash.com/photo-1516594798947-e65505dbb29d?q=80&w=800&auto=format&fit=crop",
+    link: "#"
+  },
+  {
+    title: "Puros & Jamoneras",
+    desc: "Las mismas condiciones de excelencia adaptadas a otros placeres.",
+    img: "https://images.unsplash.com/photo-1623595286295-a13aae3d3dc3?q=80&w=800&auto=format&fit=crop",
+    link: "#"
+  }
+];
+---
+<section id="colecciones" class="bg-[var(--color-noir)] py-32 overflow-hidden">
+  
+  <div class="px-6 md:px-12 max-w-7xl mx-auto mb-16 flex flex-col md:flex-row md:items-end justify-between gap-8 collection-header">
+    <div>
+      <div class="flex items-center gap-4 mb-6">
+        <div class="w-8 h-px bg-[var(--color-gold)]"></div>
+        <p class="font-accent text-[var(--color-gold)] tracking-widest uppercase text-sm">Colecciones</p>
+      </div>
+      <h2 class="font-display text-4xl md:text-6xl text-[var(--color-ivory)] leading-tight">
+        La Excelencia en <br/>
+        <span class="italic text-[var(--color-silver)]/50">Cada Detalle</span>
+      </h2>
+    </div>
+    <div class="hidden md:flex gap-4">
+      <button class="w-12 h-12 rounded-full border border-[var(--color-silver)]/20 flex items-center justify-center text-[var(--color-ivory)] hover:bg-[var(--color-gold)] hover:text-[var(--color-noir)] hover:border-[var(--color-gold)] transition-colors duration-300 collection-prev">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-left"><path d="m12 19-7-7 7-7"/><path d="M19 12H5"/></svg>
+      </button>
+      <button class="w-12 h-12 rounded-full border border-[var(--color-silver)]/20 flex items-center justify-center text-[var(--color-ivory)] hover:bg-[var(--color-gold)] hover:text-[var(--color-noir)] hover:border-[var(--color-gold)] transition-colors duration-300 collection-next">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-right"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+      </button>
+    </div>
+  </div>
+
+  <!-- Horizontal Scroll Container -->
+  <div class="pl-6 md:pl-12 w-full pr-0 collection-track-container">
+    <div class="flex gap-6 md:gap-8 overflow-x-auto snap-x snap-mandatory hide-scroll pb-12 collection-track" style="-webkit-overflow-scrolling: touch;">
+      {collections.map((col, index) => (
+        <a href={col.link} class="group relative flex-none w-[85vw] sm:w-[60vw] md:w-[40vw] lg:w-[28vw] aspect-[3/4] snap-start overflow-hidden rounded-sm bg-[#111] collection-card">
+          <img 
+            src={col.img} 
+            alt={col.title} 
+            loading="lazy"
+            class="w-full h-full object-cover transition-transform duration-[1.5s] ease-[var(--ease-premium)] group-hover:scale-105" 
+          />
+          <div class="absolute inset-0 bg-gradient-to-t from-[var(--color-noir)] via-[var(--color-noir)]/40 to-transparent opacity-80 group-hover:opacity-90 transition-opacity duration-500"></div>
+          
+          <div class="absolute inset-x-8 bottom-8 flex flex-col justify-end">
+            <h3 class="font-display text-3xl text-[var(--color-ivory)] mb-3 transform group-hover:-translate-y-2 transition-transform duration-500 ease-[var(--ease-premium)]">{col.title}</h3>
+            
+            <div class="overflow-hidden">
+              <p class="font-body text-sm text-[var(--color-silver)]/80 leading-relaxed translate-y-[120%] opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500 ease-[var(--ease-premium)] delay-100 mb-6">
+                {col.desc}
+              </p>
+            </div>
+            
+            <div class="flex items-center gap-2 text-[var(--color-gold)] font-accent tracking-widest text-xs uppercase opacity-0 -translate-x-4 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-500 delay-200">
+              <span>Explorar</span>
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-right"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+            </div>
+          </div>
+          <div class="absolute inset-0 border border-[var(--color-silver)]/0 group-hover:border-[var(--color-gold)]/20 transition-colors duration-700 pointer-events-none m-4"></div>
+        </a>
+      ))}
+      <div class="flex-none w-[6vw]"></div> <!-- Add padding at the end -->
+    </div>
+  </div>
+
+</section>
+
+<style>
+  .hide-scroll::-webkit-scrollbar {
+    display: none;
+  }
+  .hide-scroll {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+</style>
+
+<script>
+  import { gsap } from 'gsap';
+  import { ScrollTrigger } from 'gsap/ScrollTrigger';
+
+  gsap.registerPlugin(ScrollTrigger);
+
+  // Animate header
+  gsap.fromTo('.collection-header', 
+    { y: 50, opacity: 0 },
+    {
+      y: 0,
+      opacity: 1,
+      duration: 1,
+      ease: 'power3.out',
+      scrollTrigger: {
+        trigger: '#colecciones',
+        start: 'top 75%'
+      }
+    }
+  );
+
+  // Stagger cards
+  gsap.fromTo('.collection-card', 
+    { y: 80, opacity: 0 },
+    {
+      y: 0,
+      opacity: 1,
+      duration: 1,
+      stagger: 0.15,
+      ease: 'power4.out',
+      scrollTrigger: {
+        trigger: '.collection-track-container',
+        start: 'top 80%'
+      }
+    }
+  );
+
+  // Setup Next/Prev button scroll logic
+  const track = document.querySelector('.collection-track');
+  const btnNext = document.querySelector('.collection-next');
+  const btnPrev = document.querySelector('.collection-prev');
+
+  if (track && btnNext && btnPrev) {
+    btnNext.addEventListener('click', () => {
+      track.scrollBy({ left: window.innerWidth * 0.3, behavior: 'smooth' });
+    });
+    btnPrev.addEventListener('click', () => {
+      track.scrollBy({ left: -window.innerWidth * 0.3, behavior: 'smooth' });
+    });
+  }
+</script>

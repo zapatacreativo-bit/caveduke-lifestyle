@@ -1,0 +1,59 @@
+@import "tailwindcss";
+
+@theme {
+  --color-noir: #0A0A0A;
+  --color-bordeaux: #6B1D2A;
+  --color-gold: #C9A96E;
+  --color-ivory: #F5F0EA;
+  --color-graphite: #2A2A2A;
+  --color-oak: #8B6F47;
+  --color-silver: #B8B8B0;
+  --color-mist: #3D2B3D;
+  --color-crystal: #E8E4DE;
+
+  --font-display: 'Cormorant Garamond', 'Georgia', serif;
+  --font-body: 'Inter', 'Helvetica Neue', sans-serif;
+  --font-accent: 'Cormorant SC', serif;
+}
+
+@layer base {
+  html {
+    background-color: var(--color-noir);
+    color: var(--color-silver);
+    font-family: var(--font-body);
+  }
+
+  html.lenis, html.lenis body {
+    height: auto;
+  }
+
+  .lenis.lenis-smooth {
+    scroll-behavior: auto !important;
+  }
+
+  .lenis.lenis-smooth [data-lenis-prevent] {
+    overscroll-behavior: contain;
+  }
+
+  .lenis.lenis-stopped {
+    overflow: hidden;
+  }
+
+  .lenis.lenis-smooth iframe {
+    pointer-events: none;
+  }
+}
+
+@layer components {
+  .clip-text-reveal {
+    clip-path: inset(100% 0 0 0);
+  }
+
+  .premium-button {
+    @apply border border-(--color-gold) bg-transparent text-(--color-silver) transition-all duration-500 hover:bg-(--color-gold) hover:text-(--color-noir) px-6 py-3 font-(--font-accent) tracking-widest uppercase text-sm inline-flex items-center gap-2;
+  }
+
+  .premium-input {
+    @apply bg-transparent border-b border-(--color-silver)/30 pb-2 text-(--color-ivory) outline-none focus:border-(--color-bordeaux) transition-colors w-full font-(--font-body) placeholder:text-(--color-silver)/50;
+  }
+}

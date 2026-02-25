@@ -1,0 +1,35 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Preloader from '../components/Preloader.astro';
+import Navbar from '../components/Navbar.astro';
+import Hero from '../components/Hero.astro';
+import Heritage from '../components/Heritage.astro';
+import Philosophy from '../components/Philosophy.astro';
+import FeatureShowcase from '../components/FeatureShowcase.astro';
+import Collections from '../components/Collections.astro';
+import Numbers from '../components/Numbers.astro';
+import Testimonials from '../components/Testimonials.astro';
+import Contact from '../components/Contact.astro';
+import Footer from '../components/Footer.astro';
+
+// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
+// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+---
+
+<BaseLayout title="Caveduke - Vinotecas de Lujo Artesanales | Desde 1985">
+	<Preloader />
+	<Navbar />
+	
+	<main>
+		<Hero />
+		<Heritage />
+		<Philosophy />
+		<FeatureShowcase />
+		<Collections />
+		<Numbers />
+		<Testimonials />
+		<Contact />
+	</main>
+
+	<Footer />
+</BaseLayout>

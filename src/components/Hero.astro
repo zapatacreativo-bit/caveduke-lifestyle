@@ -1,0 +1,111 @@
+---
+// src/components/Hero.astro
+---
+<section id="hero" class="relative h-screen w-full overflow-hidden flex flex-col items-center justify-center bg-[var(--color-noir)]">
+  
+  <!-- Background with overlay -->
+  <div class="absolute inset-0 z-0">
+    <!-- Fallback image/video placeholder - replacing with a dark premium gradient for now -->
+    <div class="absolute inset-0 bg-gradient-to-br from-[var(--color-noir)] via-[#1a1214] to-[var(--color-bordeaux)]/20"></div>
+    <div class="absolute inset-0 bg-gradient-to-b from-[var(--color-noir)]/40 to-[var(--color-noir)]/90"></div>
+  </div>
+
+  <div class="relative z-10 flex flex-col items-center text-center px-6 w-full max-w-7xl mx-auto mt-16">
+    
+    <div class="flex items-center gap-4 mb-8 overflow-hidden">
+      <div class="w-12 h-px bg-gradient-to-r from-transparent to-[var(--color-gold)] opacity-50 scale-x-0 origin-right anim-line"></div>
+      <p class="font-accent text-[var(--color-gold)] text-xs md:text-sm tracking-[0.25em] uppercase translate-y-full opacity-0 anim-up">
+        Handcrafted in Spain
+      </p>
+      <div class="w-12 h-px bg-gradient-to-l from-transparent to-[var(--color-gold)] opacity-50 scale-x-0 origin-left anim-line"></div>
+    </div>
+
+    <div class="overflow-hidden pb-4">
+      <h1 class="font-display text-6xl md:text-8xl lg:text-[7rem] leading-none text-[var(--color-ivory)] tracking-[-0.02em] translate-y-full opacity-0 anim-title" data-speed="0.8">
+        CAVEDUKE
+      </h1>
+    </div>
+
+    <div class="overflow-hidden mt-6 mb-12">
+      <p class="font-body text-lg md:text-xl text-[var(--color-silver)] max-w-lg mx-auto leading-relaxed translate-y-full opacity-0 anim-up delay-1">
+        Artesanos del vino desde 1985
+      </p>
+    </div>
+
+    <div class="overflow-hidden">
+      <div class="translate-y-full opacity-0 anim-up delay-2">
+        <a href="#colecciones" class="premium-button">
+          Descubrir la colección
+        </a>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Scroll Indicator -->
+  <div class="absolute bottom-12 left-1/2 -translate-x-1/2 z-10 flex flex-col items-center gap-3 opacity-0 anim-fade delay-3">
+    <span class="font-accent text-[10px] tracking-[0.2em] text-[var(--color-silver)]/50 uppercase">Scroll</span>
+    <div class="w-[1px] h-12 bg-gradient-to-b from-[var(--color-silver)]/50 to-transparent relative overflow-hidden">
+      <div class="w-full h-1/2 bg-[var(--color-gold)] absolute top-0 -translate-y-full animate-[scrollHint_2.5s_ease-in-out_infinite]"></div>
+    </div>
+  </div>
+</section>
+
+<style>
+  @keyframes scrollHint {
+    0% { transform: translateY(-100%); opacity: 0; }
+    50% { opacity: 1; }
+    100% { transform: translateY(200%); opacity: 0; }
+  }
+</style>
+
+<script>
+  import { gsap } from 'gsap';
+  import { ScrollTrigger } from 'gsap/ScrollTrigger';
+
+  gsap.registerPlugin(ScrollTrigger);
+
+  window.addEventListener('load', () => {
+    // Delay slightly to let Preloader finish
+    setTimeout(() => {
+      const tl = gsap.timeline();
+
+      tl.to('.anim-line', {
+        scaleX: 1,
+        duration: 1.2,
+        ease: 'power3.inOut',
+        stagger: 0.2
+      })
+      .to('.anim-up', {
+        y: 0,
+        opacity: 1,
+        duration: 1,
+        ease: 'power3.out',
+        stagger: 0.15
+      }, '-=0.8')
+      .to('.anim-title', {
+        y: 0,
+        opacity: 1,
+        duration: 1.2,
+        ease: 'power4.out',
+      }, '-=1.2')
+      .to('.anim-fade', {
+        opacity: 1,
+        duration: 1,
+        ease: 'power2.out'
+      }, '-=0.5');
+
+      // Parallax effect on Title
+      gsap.to('.anim-title', {
+        yPercent: 30,
+        ease: 'none',
+        scrollTrigger: {
+          trigger: '#hero',
+          start: 'top top',
+          end: 'bottom top',
+          scrub: true
+        }
+      });
+    }, 2800); // Wait 2.8s for preloader timeline
+  });
+</script>

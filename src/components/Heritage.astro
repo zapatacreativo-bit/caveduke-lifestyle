@@ -1,0 +1,134 @@
+---
+// src/components/Heritage.astro
+---
+<section id="legado" class="relative py-32 md:py-48 bg-[var(--color-ivory)] overflow-hidden">
+  <div class="max-w-7xl mx-auto px-6 md:px-12 flex flex-col md:flex-row items-center gap-16 lg:gap-32">
+    
+    <!-- Left Column: Image -->
+    <div class="w-full md:w-[45%] relative">
+      <div class="aspect-[3/4] overflow-hidden rounded-sm relative heritage-img-wrapper clip-text-reveal">
+        <div class="absolute inset-0 bg-[#e0d8cd] z-0"></div> <!-- Placeholder background -->
+        <img 
+          src="https://images.unsplash.com/photo-1551024709-8f23befc6f87?q=80&w=1000&auto=format&fit=crop" 
+          alt="Artesano trabajando madera" 
+          class="w-full h-[120%] object-cover absolute top-0 left-0 hover:scale-105 transition-transform duration-[2s] heritage-img"
+        />
+        <div class="absolute inset-0 border border-[var(--color-graphite)]/10 m-4 z-10 pointer-events-none"></div>
+      </div>
+    </div>
+
+    <!-- Right Column: Text & Counters -->
+    <div class="w-full md:w-[55%] flex flex-col">
+      
+      <div class="flex items-center gap-3 mb-8 reveal-element">
+        <div class="w-8 h-px bg-[var(--color-bordeaux)]"></div>
+        <h3 class="font-accent text-[var(--color-bordeaux)] text-xs md:text-sm tracking-[0.2em] uppercase">
+          Nuestra Historia
+        </h3>
+      </div>
+
+      <h2 class="font-display text-4xl md:text-5xl lg:text-6xl text-[var(--color-noir)] leading-[1.1] mb-8 reveal-element">
+        Cuatro Décadas de<br/>
+        <span class="italic font-light text-[var(--color-oak)]">Excelencia</span>
+      </h2>
+
+      <p class="font-body text-lg text-[var(--color-graphite)]/80 leading-relaxed max-w-md mb-16 reveal-element">
+        Desde 1985, en nuestro taller de Mollet del Vallès, cada vinoteca nace de la pasión por el detalle y el respeto absoluto al vino.
+      </p>
+
+      <!-- Counters -->
+      <div class="grid grid-cols-3 gap-6 md:gap-12 border-t border-[var(--color-graphite)]/10 pt-12 reveal-element">
+        
+        <div class="flex flex-col">
+          <div class="font-display text-5xl md:text-6xl text-[var(--color-noir)] mb-2 flex items-baseline">
+            <span class="counter" data-target="40">0</span>
+          </div>
+          <p class="font-accent text-xs tracking-widest text-[var(--color-graphite)]/60 uppercase">Años</p>
+        </div>
+
+        <div class="flex flex-col">
+          <div class="font-display text-5xl md:text-6xl text-[var(--color-noir)] mb-2 flex items-baseline">
+            <span class="counter" data-target="5">0</span>
+          </div>
+          <p class="font-accent text-xs tracking-widest text-[var(--color-graphite)]/60 uppercase">Continentes</p>
+        </div>
+
+        <div class="flex flex-col">
+          <div class="font-display text-5xl md:text-6xl text-[var(--color-noir)] mb-2 flex items-baseline">
+            +<span class="counter" data-target="67">0</span>k
+          </div>
+          <p class="font-accent text-xs tracking-widest text-[var(--color-graphite)]/60 uppercase">Seguidores</p>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<script>
+  import { gsap } from 'gsap';
+  import { ScrollTrigger } from 'gsap/ScrollTrigger';
+
+  gsap.registerPlugin(ScrollTrigger);
+
+  // Parallax image
+  gsap.to('.heritage-img', {
+    yPercent: -20,
+    ease: 'none',
+    scrollTrigger: {
+      trigger: '#legado',
+      start: 'top bottom',
+      end: 'bottom top',
+      scrub: true
+    }
+  });
+
+  // Reveal clip path image
+  gsap.to('.heritage-img-wrapper', {
+    clipPath: 'inset(0% 0 0 0)',
+    duration: 1.5,
+    ease: 'power4.inOut',
+    scrollTrigger: {
+      trigger: '#legado',
+      start: 'top 70%',
+    }
+  });
+
+  // Reveal text elements
+  gsap.fromTo('.reveal-element', 
+    { y: 40, opacity: 0 },
+    {
+      y: 0,
+      opacity: 1,
+      duration: 1,
+      stagger: 0.15,
+      ease: 'power3.out',
+      scrollTrigger: {
+        trigger: '#legado',
+        start: 'top 60%',
+      }
+    }
+  );
+
+  // Animate counters
+  const counters = document.querySelectorAll('.counter');
+  
+  ScrollTrigger.create({
+    trigger: '.counter',
+    start: 'top 80%',
+    once: true,
+    onEnter: () => {
+      counters.forEach(counter => {
+        // @ts-ignore
+        const target = parseInt(counter.dataset.target);
+        gsap.to(counter, {
+          innerText: target,
+          duration: 2,
+          snap: { innerText: 1 },
+          ease: 'power2.out',
+        });
+      });
+    }
+  });
+</script>
