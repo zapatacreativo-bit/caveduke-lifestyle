@@ -40,16 +40,31 @@
   </div>
 </header>
 
+<style>
+  /* Scrolled state — defined here so Tailwind purge doesn't remove it */
+  #navbar.scrolled {
+    background-color: rgba(10, 10, 10, 0.92);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    padding-top: 0.75rem;
+    padding-bottom: 0.75rem;
+    border-bottom-color: rgba(184, 184, 176, 0.12); /* silver/12 */
+    box-shadow: 0 4px 32px rgba(0, 0, 0, 0.4);
+  }
+</style>
+
 <script>
-  import { gsap } from 'gsap';
-  import { ScrollTrigger } from 'gsap/ScrollTrigger';
+  const navbar = document.getElementById('navbar');
 
-  gsap.registerPlugin(ScrollTrigger);
+  function onScroll() {
+    if (window.scrollY > 80) {
+      navbar?.classList.add('scrolled');
+    } else {
+      navbar?.classList.remove('scrolled');
+    }
+  }
 
-  // Navbar blur on scroll
-  ScrollTrigger.create({
-    start: 'top -100',
-    end: 99999,
-    toggleClass: {className: 'bg-[var(--color-noir)]/80 backdrop-blur-md py-4 border-[var(--color-silver)]/10', targets: '#navbar'},
-  });
+  window.addEventListener('scroll', onScroll, { passive: true });
+  // Run once on load in case the page is already scrolled
+  onScroll();
 </script>
