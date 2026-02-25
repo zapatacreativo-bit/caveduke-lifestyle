@@ -8,8 +8,8 @@ export default function CustomCursor() {
     const cursorX = useMotionValue(-100);
     const cursorY = useMotionValue(-100);
 
-    // Spring configuration for smooth follow
-    const springConfig = { damping: 25, stiffness: 200, mass: 0.5 };
+    // Lighter spring configuration for a faster, snappier follow
+    const springConfig = { damping: 25, stiffness: 400, mass: 0.1 };
     const cursorXSpring = useSpring(cursorX, springConfig);
     const cursorYSpring = useSpring(cursorY, springConfig);
 
@@ -65,27 +65,27 @@ export default function CustomCursor() {
             width: 12,
             height: 12,
             backgroundColor: 'rgba(201, 169, 110, 1)', // var(--color-gold)
-            mixBlendMode: 'normal' as const,
             x: '-50%',
             y: '-50%',
+            transition: { type: 'tween', duration: 0.15 }
         },
         hover: {
             width: 48,
             height: 48,
-            backgroundColor: 'rgba(201, 169, 110, 0.2)',
+            backgroundColor: 'rgba(201, 169, 110, 0.1)',
             border: '1px solid rgba(201, 169, 110, 0.8)',
-            mixBlendMode: 'difference' as const,
             x: '-50%',
             y: '-50%',
+            transition: { type: 'tween', duration: 0.15 }
         },
         text: {
             width: 100,
             height: 100,
-            backgroundColor: 'rgba(10, 10, 10, 0.8)', // var(--color-noir)
+            backgroundColor: 'rgba(10, 10, 10, 0.95)', // var(--color-noir) with high opacity
             border: '1px solid rgba(201, 169, 110, 0.8)',
-            mixBlendMode: 'normal' as const,
             x: '-50%',
             y: '-50%',
+            transition: { type: 'tween', duration: 0.2 }
         }
     };
 
@@ -102,7 +102,6 @@ export default function CustomCursor() {
                 variants={variants}
                 initial="default"
                 animate={currentVariant}
-                transition={{ type: 'spring', ...springConfig }}
             >
                 {hoverText && (
                     <motion.span

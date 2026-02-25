@@ -66,9 +66,9 @@ const collections = [
           
           <DistortedImage url={col.img} client:visible />
           
-          <div class="absolute inset-0 bg-gradient-to-t from-[var(--color-noir)] via-[var(--color-noir)]/40 to-transparent opacity-80 group-hover:opacity-90 transition-opacity duration-500 pointer-events-none"></div>
+          <div class="absolute inset-0 z-10 bg-gradient-to-t from-[var(--color-noir)] via-[var(--color-noir)]/40 to-transparent opacity-80 group-hover:opacity-90 transition-opacity duration-500 pointer-events-none"></div>
           
-          <div class="absolute inset-x-8 bottom-8 flex flex-col justify-end">
+          <div class="absolute inset-x-8 bottom-8 z-20 flex flex-col justify-end">
             <h3 class="font-display text-3xl text-[var(--color-ivory)] mb-3 transform group-hover:-translate-y-2 transition-transform duration-500 ease-[var(--ease-premium)]">{col.title}</h3>
             
             <div class="overflow-hidden">
@@ -82,7 +82,7 @@ const collections = [
               <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-right"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
             </div>
           </div>
-          <div class="absolute inset-0 border border-[var(--color-silver)]/0 group-hover:border-[var(--color-gold)]/20 transition-colors duration-700 pointer-events-none m-4"></div>
+          <div class="absolute inset-0 z-20 border border-[var(--color-silver)]/0 group-hover:border-[var(--color-gold)]/20 transition-colors duration-700 pointer-events-none m-4"></div>
         </a>
       ))}
       <div class="flex-none w-[6vw]"></div> <!-- Add padding at the end -->
