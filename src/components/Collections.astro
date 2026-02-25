@@ -1,5 +1,7 @@
 ---
 // src/components/Collections.astro
+import DistortedImage from './DistortedImage';
+
 const collections = [
   {
     title: "Madera Noble",
@@ -60,14 +62,11 @@ const collections = [
   <div class="pl-6 md:pl-12 w-full pr-0 collection-track-container">
     <div class="flex gap-6 md:gap-8 overflow-x-auto snap-x snap-mandatory hide-scroll pb-12 collection-track" style="-webkit-overflow-scrolling: touch;">
       {collections.map((col, index) => (
-        <a href={col.link} class="group relative flex-none w-[85vw] sm:w-[60vw] md:w-[40vw] lg:w-[28vw] aspect-[3/4] snap-start overflow-hidden rounded-sm bg-[#111] collection-card">
-          <img 
-            src={col.img} 
-            alt={col.title} 
-            loading="lazy"
-            class="w-full h-full object-cover transition-transform duration-[1.5s] ease-[var(--ease-premium)] group-hover:scale-105" 
-          />
-          <div class="absolute inset-0 bg-gradient-to-t from-[var(--color-noir)] via-[var(--color-noir)]/40 to-transparent opacity-80 group-hover:opacity-90 transition-opacity duration-500"></div>
+        <a href={col.link} class="group relative flex-none w-[85vw] sm:w-[60vw] md:w-[40vw] lg:w-[28vw] aspect-[3/4] snap-start overflow-hidden rounded-sm bg-[#111] collection-card cursor-none">
+          
+          <DistortedImage url={col.img} client:visible />
+          
+          <div class="absolute inset-0 bg-gradient-to-t from-[var(--color-noir)] via-[var(--color-noir)]/40 to-transparent opacity-80 group-hover:opacity-90 transition-opacity duration-500 pointer-events-none"></div>
           
           <div class="absolute inset-x-8 bottom-8 flex flex-col justify-end">
             <h3 class="font-display text-3xl text-[var(--color-ivory)] mb-3 transform group-hover:-translate-y-2 transition-transform duration-500 ease-[var(--ease-premium)]">{col.title}</h3>

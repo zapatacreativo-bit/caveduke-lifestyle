@@ -1,5 +1,6 @@
 ---
 import '../styles/global.css';
+import CustomCursor from '../components/CustomCursor';
 
 interface Props {
 	title: string;
@@ -30,7 +31,8 @@ const { title, description = "Caveduke fabrica vinotecas premium a medida en Esp
 		
 		<title>{title}</title>
 	</head>
-	<body class="bg-[var(--color-noir)] text-[var(--color-silver)] antialiased overflow-x-hidden selection:bg-[var(--color-bordeaux)] selection:text-[var(--color-ivory)]">
+	<body class="bg-[var(--color-noir)] text-[var(--color-silver)] antialiased overflow-x-hidden selection:bg-[var(--color-bordeaux)] selection:text-[var(--color-ivory)] cursor-none">
+    <CustomCursor client:load />
 		<slot />
 
 		<script>
