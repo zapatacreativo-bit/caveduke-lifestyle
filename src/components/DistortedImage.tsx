@@ -1,4 +1,4 @@
-import React, { useRef, useMemo, useState } from 'react';
+import React, { useRef, useMemo, useState, Suspense } from 'react';
 import { Canvas, useFrame } from '@react-three/fiber';
 import * as THREE from 'three';
 import { useTexture } from '@react-three/drei';
@@ -103,13 +103,15 @@ const ImageMesh = ({ url }: DistortedImageProps) => {
 
 export default function DistortedImage({ url }: DistortedImageProps) {
     return (
-        <div className="absolute inset-0 z-0">
-            <Canvas
-                camera={{ position: [0, 0, 0.8], fov: 75 }}
-                dpr={[1, 2]}
-            >
-                <ImageMesh url={url} />
-            </Canvas>
+        <div className="absolute inset-0 z-0 bg-[var(--color-noir)]">
+            <Suspense fallback={null}>
+                <Canvas
+                    camera={{ position: [0, 0, 0.8], fov: 75 }}
+                    dpr={[1, 2]}
+                >
+                    <ImageMesh url={url} />
+                </Canvas>
+            </Suspense>
         </div>
     );
 }

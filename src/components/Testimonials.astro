@@ -45,7 +45,7 @@ const testimonials = [
           </p>
 
           <div class="flex flex-col items-center">
-            <img src={test.image} alt={test.author} class="w-12 h-12 rounded-full object-cover border border-[var(--color-gold)]/50 mb-3 grayscale mix-blend-luminosity opacity-80" />
+            <img src={test.image} alt={test.author} class="w-12 h-12 rounded-full object-cover border border-[var(--color-gold)]/50 mb-3 grayscale mix-blend-luminosity opacity-80" loading="lazy" decoding="async" />
             <h4 class="font-accent tracking-widest text-[var(--color-silver)] text-sm uppercase">{test.author}</h4>
             <span class="font-body text-xs text-[var(--color-gold)]/70 mt-1">{test.role}</span>
           </div>
