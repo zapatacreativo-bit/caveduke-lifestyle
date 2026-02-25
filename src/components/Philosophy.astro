@@ -1,11 +1,12 @@
 ---
 // src/components/Philosophy.astro
+import MeshGradient from './MeshGradient';
 ---
 <section id="filosofia" class="bg-[var(--color-noir)] relative overflow-hidden flex flex-col items-center justify-center min-h-[140vh] w-full py-24">
   
   <div class="sticky top-0 h-screen w-full flex items-center justify-center overflow-hidden">
     
-    <div class="absolute inset-0 z-0 opacity-40 mix-blend-overlay pointer-events-none bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] hidden md:block"></div>
+    <MeshGradient client:load />
 
     <div class="w-full max-w-7xl mx-auto px-6 md:px-12 flex flex-col justify-center h-full relative z-10">
       
