@@ -1,12 +1,14 @@
 ---
 // src/components/Hero.astro
 import HeroBackground from './HeroBackground';
+import GoldenParticles from './GoldenParticles';
 ---
 <section id="hero" class="relative h-screen w-full overflow-hidden flex flex-col items-center justify-center bg-[var(--color-noir)]">
   
-  <!-- Background with overlay -->
+  <!-- Background with overlay and spectacular particles -->
   <HeroBackground client:load />
   <div class="absolute inset-0 z-0 bg-gradient-to-b from-transparent to-[var(--color-noir)]/80 pointer-events-none"></div>
+  <GoldenParticles client:load className="mix-blend-screen opacity-70" />
 
   <div class="relative z-10 flex flex-col items-center justify-center text-center px-6 w-full max-w-7xl mx-auto h-full pt-20">
     
