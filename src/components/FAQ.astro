@@ -1,0 +1,205 @@
+---
+// src/components/FAQ.astro
+---
+
+<section id="faq" class="relative bg-[var(--color-ivory)] py-32 md:py-48 overflow-hidden">
+
+  <!-- Decorative background element -->
+  <div class="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-[var(--color-bordeaux)]/20 to-transparent"></div>
+
+  <div class="max-w-5xl mx-auto px-6 md:px-12">
+
+    <!-- Header -->
+    <div class="flex flex-col items-center text-center mb-20 reveal-faq">
+      <div class="flex items-center gap-4 mb-6">
+        <div class="w-8 h-px bg-[var(--color-bordeaux)]"></div>
+        <p class="font-accent text-[var(--color-bordeaux)] tracking-widest uppercase text-xs md:text-sm">Preguntas Frecuentes</p>
+        <div class="w-8 h-px bg-[var(--color-bordeaux)]"></div>
+      </div>
+      <h2 class="font-display text-4xl md:text-5xl lg:text-6xl text-[var(--color-noir)] leading-[1.1]">
+        Todo lo que necesita<br/>
+        <span class="italic font-light text-[var(--color-oak)]">saber</span>
+      </h2>
+    </div>
+
+    <!-- FAQ Items -->
+    <div class="flex flex-col divide-y divide-[var(--color-graphite)]/10 reveal-faq">
+
+      <!-- Item 1 -->
+      <div class="faq-item group py-8 cursor-pointer" data-faq="1">
+        <button class="w-full flex items-start justify-between gap-6 text-left" aria-expanded="false" aria-controls="faq-body-1">
+          <span class="font-display text-lg md:text-xl text-[var(--color-noir)] leading-snug group-hover:text-[var(--color-bordeaux)] transition-colors duration-300 pr-4">
+            ¿Cuánto tiempo tarda la fabricación de una vinoteca a medida?
+          </span>
+          <span class="faq-icon mt-1 flex-shrink-0 w-8 h-8 rounded-full border border-[var(--color-graphite)]/20 flex items-center justify-center text-[var(--color-bordeaux)] group-hover:border-[var(--color-bordeaux)] transition-all duration-300">
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="faq-chevron transition-transform duration-300">
+              <path d="m6 9 6 6 6-6"/>
+            </svg>
+          </span>
+        </button>
+        <div id="faq-body-1" class="faq-body overflow-hidden max-h-0 transition-all duration-500 ease-in-out">
+          <p class="font-body text-[var(--color-graphite)]/75 leading-relaxed text-[15px] md:text-base pt-4 pb-2 max-w-3xl">
+            Cada vinoteca Caveduke se fabrica íntegramente a medida, por lo que los plazos varían según la complejidad del proyecto. Para unidades estándar de la colección Madera Noble, el tiempo de producción oscila entre <strong class="text-[var(--color-noir)] font-medium">8 y 14 semanas</strong>. Los proyectos completamente singulares o de gran formato pueden requerir hasta 20 semanas. Nuestro equipo le informará del plazo exacto en la consulta inicial.
+          </p>
+        </div>
+      </div>
+
+      <!-- Item 2 -->
+      <div class="faq-item group py-8 cursor-pointer" data-faq="2">
+        <button class="w-full flex items-start justify-between gap-6 text-left" aria-expanded="false" aria-controls="faq-body-2">
+          <span class="font-display text-lg md:text-xl text-[var(--color-noir)] leading-snug group-hover:text-[var(--color-bordeaux)] transition-colors duration-300 pr-4">
+            ¿Realizáis instalación e integración en el espacio del cliente?
+          </span>
+          <span class="faq-icon mt-1 flex-shrink-0 w-8 h-8 rounded-full border border-[var(--color-graphite)]/20 flex items-center justify-center text-[var(--color-bordeaux)] group-hover:border-[var(--color-bordeaux)] transition-all duration-300">
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="faq-chevron transition-transform duration-300">
+              <path d="m6 9 6 6 6-6"/>
+            </svg>
+          </span>
+        </button>
+        <div id="faq-body-2" class="faq-body overflow-hidden max-h-0 transition-all duration-500 ease-in-out">
+          <p class="font-body text-[var(--color-graphite)]/75 leading-relaxed text-[15px] md:text-base pt-4 pb-2 max-w-3xl">
+            Sí. Contamos con un equipo de instalación propio que opera en toda España y los principales mercados internacionales. El servicio incluye transporte en vehículo climatizado, instalación, conexión eléctrica, verificación de parámetros termodinámicos y formación al cliente sobre el uso del sistema. Para instalaciones internacionales, coordinamos con partners certificados en cada país.
+          </p>
+        </div>
+      </div>
+
+      <!-- Item 3 -->
+      <div class="faq-item group py-8 cursor-pointer" data-faq="3">
+        <button class="w-full flex items-start justify-between gap-6 text-left" aria-expanded="false" aria-controls="faq-body-3">
+          <span class="font-display text-lg md:text-xl text-[var(--color-noir)] leading-snug group-hover:text-[var(--color-bordeaux)] transition-colors duration-300 pr-4">
+            ¿Qué maderas utilizáis y cómo garantizáis que no afecten al vino?
+          </span>
+          <span class="faq-icon mt-1 flex-shrink-0 w-8 h-8 rounded-full border border-[var(--color-graphite)]/20 flex items-center justify-center text-[var(--color-bordeaux)] group-hover:border-[var(--color-bordeaux)] transition-all duration-300">
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="faq-chevron transition-transform duration-300">
+              <path d="m6 9 6 6 6-6"/>
+            </svg>
+          </span>
+        </button>
+        <div id="faq-body-3" class="faq-body overflow-hidden max-h-0 transition-all duration-500 ease-in-out">
+          <p class="font-body text-[var(--color-graphite)]/75 leading-relaxed text-[15px] md:text-base pt-4 pb-2 max-w-3xl">
+            Trabajamos exclusivamente con <strong class="text-[var(--color-noir)] font-medium">nogal americano, cerezo europeo y roble macizo</strong>, sometidos a un proceso de curación natural de entre 12 y 24 meses. Los tratamientos de acabado son al agua, libres de COV, y se aplican de forma que evitan cualquier transferencia de compuestos aromáticos al interior de la cámara. Todos nuestros materiales cuentan con certificación de inocuidad alimentaria.
+          </p>
+        </div>
+      </div>
+
+      <!-- Item 4 -->
+      <div class="faq-item group py-8 cursor-pointer" data-faq="4">
+        <button class="w-full flex items-start justify-between gap-6 text-left" aria-expanded="false" aria-controls="faq-body-4">
+          <span class="font-display text-lg md:text-xl text-[var(--color-noir)] leading-snug group-hover:text-[var(--color-bordeaux)] transition-colors duration-300 pr-4">
+            ¿Cuál es el consumo energético de una vinoteca Caveduke?
+          </span>
+          <span class="faq-icon mt-1 flex-shrink-0 w-8 h-8 rounded-full border border-[var(--color-graphite)]/20 flex items-center justify-center text-[var(--color-bordeaux)] group-hover:border-[var(--color-bordeaux)] transition-all duration-300">
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="faq-chevron transition-transform duration-300">
+              <path d="m6 9 6 6 6-6"/>
+            </svg>
+          </span>
+        </button>
+        <div id="faq-body-4" class="faq-body overflow-hidden max-h-0 transition-all duration-500 ease-in-out">
+          <p class="font-body text-[var(--color-graphite)]/75 leading-relaxed text-[15px] md:text-base pt-4 pb-2 max-w-3xl">
+            Nuestros sistemas de compresión de última generación están clasificados con <strong class="text-[var(--color-noir)] font-medium">eficiencia energética A+</strong> o superior. Una vinoteca de 200 botellas consume en torno a 1,2–1,8 kWh/día en condiciones normales de uso, comparable a una nevera doméstica de gama alta. El aislamiento de doble cámara Climalit reduce considerablemente la carga del compresor, prolongando su vida útil.
+          </p>
+        </div>
+      </div>
+
+      <!-- Item 5 -->
+      <div class="faq-item group py-8 cursor-pointer" data-faq="5">
+        <button class="w-full flex items-start justify-between gap-6 text-left" aria-expanded="false" aria-controls="faq-body-5">
+          <span class="font-display text-lg md:text-xl text-[var(--color-noir)] leading-snug group-hover:text-[var(--color-bordeaux)] transition-colors duration-300 pr-4">
+            ¿Ofrecéis garantía y servicio postventa?
+          </span>
+          <span class="faq-icon mt-1 flex-shrink-0 w-8 h-8 rounded-full border border-[var(--color-graphite)]/20 flex items-center justify-center text-[var(--color-bordeaux)] group-hover:border-[var(--color-bordeaux)] transition-all duration-300">
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="faq-chevron transition-transform duration-300">
+              <path d="m6 9 6 6 6-6"/>
+            </svg>
+          </span>
+        </button>
+        <div id="faq-body-5" class="faq-body overflow-hidden max-h-0 transition-all duration-500 ease-in-out">
+          <p class="font-body text-[var(--color-graphite)]/75 leading-relaxed text-[15px] md:text-base pt-4 pb-2 max-w-3xl">
+            Todas las vinotecas Caveduke incluyen <strong class="text-[var(--color-noir)] font-medium">5 años de garantía integral</strong> sobre estructura y sistema de refrigeración. El servicio técnico está disponible los 365 días del año para clientes con contrato de mantenimiento. Además, ofrecemos revisiones anuales programadas que incluyen calibración de sensores, verificación de sellados y limpieza del sistema de circulación de aire.
+          </p>
+        </div>
+      </div>
+
+      <!-- Item 6 -->
+      <div class="faq-item group py-8 cursor-pointer" data-faq="6">
+        <button class="w-full flex items-start justify-between gap-6 text-left" aria-expanded="false" aria-controls="faq-body-6">
+          <span class="font-display text-lg md:text-xl text-[var(--color-noir)] leading-snug group-hover:text-[var(--color-bordeaux)] transition-colors duration-300 pr-4">
+            ¿Puedo personalizar el interior: baldas, iluminación y acabados?
+          </span>
+          <span class="faq-icon mt-1 flex-shrink-0 w-8 h-8 rounded-full border border-[var(--color-graphite)]/20 flex items-center justify-center text-[var(--color-bordeaux)] group-hover:border-[var(--color-bordeaux)] transition-all duration-300">
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="faq-chevron transition-transform duration-300">
+              <path d="m6 9 6 6 6-6"/>
+            </svg>
+          </span>
+        </button>
+        <div id="faq-body-6" class="faq-body overflow-hidden max-h-0 transition-all duration-500 ease-in-out">
+          <p class="font-body text-[var(--color-graphite)]/75 leading-relaxed text-[15px] md:text-base pt-4 pb-2 max-w-3xl">
+            Absolutamente. La personalización interior es parte esencial del proceso Caveduke. Puede elegir entre baldas de madera natural, acero inoxidable cepillado o fibra de carbono; sistemas de iluminación LED de temperatura regulable (2700K–4000K); tiradores en latón, oro rosa, cromo mate o níquel; y zonas diferenciadas de temperatura para tintos, blancos y espumosos. Nuestro estudio de diseño le acompañará en cada decisión.
+          </p>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- CTA inferior -->
+    <div class="mt-20 text-center reveal-faq">
+      <p class="font-body text-[var(--color-graphite)]/60 text-sm mb-6 tracking-wide">
+        ¿Tiene alguna pregunta que no está aquí?
+      </p>
+      <a href="#contacto" class="inline-flex items-center gap-3 font-accent text-xs tracking-[0.2em] uppercase text-[var(--color-bordeaux)] border border-[var(--color-bordeaux)]/30 hover:border-[var(--color-bordeaux)] px-8 py-4 transition-all duration-300 hover:bg-[var(--color-bordeaux)]/5">
+        Hablar con un asesor
+        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+      </a>
+    </div>
+
+  </div>
+
+  <div class="absolute bottom-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-[var(--color-bordeaux)]/20 to-transparent"></div>
+</section>
+
+<script>
+  import { gsap } from 'gsap';
+  import { ScrollTrigger } from 'gsap/ScrollTrigger';
+  gsap.registerPlugin(ScrollTrigger);
+
+  // Scroll reveal
+  gsap.utils.toArray('.reveal-faq').forEach((el: any) => {
+    gsap.fromTo(el,
+      { y: 40, opacity: 0 },
+      {
+        y: 0, opacity: 1, duration: 0.9, ease: 'power3.out',
+        scrollTrigger: { trigger: el, start: 'top 80%' }
+      }
+    );
+  });
+
+  // Accordion logic
+  const items = document.querySelectorAll('.faq-item');
+
+  items.forEach(item => {
+    const btn = item.querySelector('button')!;
+    const body = item.querySelector('.faq-body') as HTMLElement;
+    const chevron = item.querySelector('.faq-chevron') as HTMLElement;
+
+    btn.addEventListener('click', () => {
+      const isOpen = btn.getAttribute('aria-expanded') === 'true';
+
+      // Close all
+      items.forEach(other => {
+        const otherBtn = other.querySelector('button')!;
+        const otherBody = other.querySelector('.faq-body') as HTMLElement;
+        const otherChevron = other.querySelector('.faq-chevron') as HTMLElement;
+        otherBtn.setAttribute('aria-expanded', 'false');
+        otherBody.style.maxHeight = '0';
+        otherChevron.style.transform = 'rotate(0deg)';
+      });
+
+      // Open clicked if it was closed
+      if (!isOpen) {
+        btn.setAttribute('aria-expanded', 'true');
+        body.style.maxHeight = body.scrollHeight + 'px';
+        chevron.style.transform = 'rotate(180deg)';
+      }
+    });
+  });
+</script>
