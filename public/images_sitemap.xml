@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+  <url>
+    <loc>https://avinotecas.com/</loc>
+    <image:image>
+      <image:loc>https://avinotecas.com/images/craftsman.png</image:loc>
+      <image:title>Artesano Caveduke trabajando en vinoteca de lujo</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://avinotecas.com/images/hero-bg.png</image:loc>
+      <image:title>Vinoteca Caveduke Premium</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://avinotecas.com/images/collections/madera-noble.png</image:loc>
+      <image:title>Vinoteca de Madera Noble Caveduke</image:title>
+    </image:image>
+  </url>
+</urlset>

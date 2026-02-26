@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+
+# Sitemaps
+Sitemap: https://avinotecas.com/sitemap.xml
+Sitemap: https://avinotecas.com/images_sitemap.xml
