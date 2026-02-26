@@ -28,12 +28,21 @@
     ))}
     
     <!-- Language Switcher -->
-    <div class="flex items-center gap-3 ml-4 border-l border-[var(--color-graphite)] pl-6">
-      <span class="font-accent text-sm text-[var(--color-ivory)] tracking-widest font-semibold cursor-default">EN</span>
+    <div class="flex items-center gap-4 ml-4 border-l border-[var(--color-graphite)] pl-6">
+      <div class="flex items-center gap-2 group/lang">
+        <svg class="w-4 h-4 rounded-full overflow-hidden shadow-sm" viewBox="0 0 512 512"><path fill="#00247d" d="M0 0h512v512H0z"/><path fill="#eee" d="M512 0v64L320 256l192 192v64h-64L256 320 64 512H0v-64l192-192L0 64V0h64l192 192L448 0z"/><path fill="#d80027" d="M512 0v16L336 192h-32v32L512 400v112h-16L320 336h-32v32L400 512H112l176-176h32v-32l192-192V0h-16L320 176h-32v-32L112 0H0v16l176 176h-32v32l-144 144V512h16l176-176h32v32L112 512h320L256 336h-32v-32L32 0zM0 208v96h512v-96zM208 0v512h96V0z"/></svg>
+        <span class="font-accent text-sm text-[var(--color-ivory)] tracking-widest font-semibold cursor-default">EN</span>
+      </div>
       <span class="text-[var(--color-graphite)] text-xs">/</span>
-      <a href="/" class="font-accent text-sm text-[var(--color-silver)] hover:text-[var(--color-gold)] transition-colors tracking-widest">ES</a>
+      <a href="/" class="flex items-center gap-2 font-accent text-sm text-[var(--color-silver)] hover:text-[var(--color-gold)] transition-all tracking-widest group/lang">
+        <svg class="w-4 h-4 rounded-full overflow-hidden opacity-40 group-hover/lang:opacity-100 transition-opacity" viewBox="0 0 512 512"><path fill="#ffda44" d="M0 128h512v256H0z"/><path fill="#d80027" d="M0 0h512v128H0zm0 384h512v128H0z"/></svg>
+        ES
+      </a>
       <span class="text-[var(--color-graphite)] text-xs">/</span>
-      <a href="/fr" class="font-accent text-sm text-[var(--color-silver)] hover:text-[var(--color-gold)] transition-colors tracking-widest">FR</a>
+      <a href="/fr" class="flex items-center gap-2 font-accent text-sm text-[var(--color-silver)] hover:text-[var(--color-gold)] transition-all tracking-widest group/lang">
+        <svg class="w-4 h-4 rounded-full overflow-hidden opacity-40 group-hover/lang:opacity-100 transition-opacity" viewBox="0 0 512 512"><path fill="#ed2939" d="M341.3 0H512v512H341.3z"/><path fill="#fff" d="M170.7 0h170.6v512H170.7z"/><path fill="#002395" d="M0 0h170.7v512H0z"/></svg>
+        FR
+      </a>
     </div>
   </nav>
 
