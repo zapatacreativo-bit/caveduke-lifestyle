@@ -11,7 +11,7 @@ import ContactForm from './ContactForm';
   <div class="max-w-7xl mx-auto px-6 md:px-12 relative z-10 flex flex-col md:flex-row gap-16 lg:gap-32">
     
     <!-- Left Column: Copy -->
-    <div class="w-full md:w-5/12 reveal-contact">
+    <div class="w-full md:w-5/12 reveal-contact flex flex-col">
       <div class="flex items-center gap-4 mb-6">
         <div class="w-8 h-px bg-[var(--color-gold)]"></div>
         <p class="font-accent text-[var(--color-gold)] tracking-widest uppercase text-sm">Proyecto Privado</p>
@@ -25,11 +25,11 @@ import ContactForm from './ContactForm';
         </span>
       </h2>
       
-      <p class="font-body text-[var(--color-silver)]/70 text-lg leading-relaxed mb-12 max-w-md">
+      <p class="font-body text-[var(--color-silver)]/70 text-lg leading-relaxed mb-10 max-w-md">
         Nuestros asesores técnicos le guiaran en la selección de materiales, dimensiones y sistemas termodinámicos ideales para su colección.
       </p>
 
-      <div class="flex flex-col gap-6">
+      <div class="flex flex-col gap-5 mb-10">
         <div class="flex flex-col gap-1">
           <p class="font-accent tracking-widest text-[var(--color-silver)]/50 uppercase text-xs">Atención Directa</p>
           <a href="tel:+34914282828" class="font-display text-2xl text-[var(--color-ivory)] hover:text-[var(--color-gold)] transition-colors">+34 91 428 28 28</a>
@@ -38,8 +38,28 @@ import ContactForm from './ContactForm';
           <p class="font-accent tracking-widest text-[var(--color-silver)]/50 uppercase text-xs">Consultas Generales</p>
           <a href="mailto:info@caveduke.com" class="font-display text-xl text-[var(--color-ivory)] hover:text-[var(--color-gold)] transition-colors">info@caveduke.com</a>
         </div>
+        <div class="flex flex-col gap-1">
+          <p class="font-accent tracking-widest text-[var(--color-silver)]/50 uppercase text-xs">Showroom Barcelona</p>
+          <p class="font-body text-[var(--color-silver)]/80 text-base">Carrer de la Indústria, 23<br/><span class="text-[var(--color-silver)]/50 text-sm">08025 Barcelona · Por cita previa</span></p>
+        </div>
+      </div>
+
+      <!-- Showroom image -->
+      <div class="relative overflow-hidden rounded-sm flex-1 min-h-[220px] group">
+        <img 
+          src="/images/showroom.png" 
+          alt="Showroom Caveduke Barcelona — sala de exposición privada con vinotecas iluminadas"
+          class="w-full h-full object-cover object-center absolute inset-0 group-hover:scale-105 transition-transform duration-[2s]"
+          loading="lazy"
+          decoding="async"
+        />
+        <div class="absolute inset-0 bg-gradient-to-t from-[var(--color-noir)]/70 to-transparent pointer-events-none"></div>
+        <div class="absolute bottom-4 left-4 right-4">
+          <p class="font-accent text-xs tracking-widest text-[var(--color-gold)]/70 uppercase">Showroom privado · Barcelona</p>
+        </div>
       </div>
     </div>
+
 
     <!-- Right Column: Form React Island -->
     <div class="w-full md:w-7/12 reveal-contact">
