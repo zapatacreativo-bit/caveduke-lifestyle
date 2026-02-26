@@ -1,0 +1,205 @@
+---
+// src/components/FAQ.astro
+---
+
+<section id="faq" class="relative bg-[var(--color-ivory)] py-32 md:py-48 overflow-hidden">
+
+  <!-- Decorative background element -->
+  <div class="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-[var(--color-bordeaux)]/20 to-transparent"></div>
+
+  <div class="max-w-5xl mx-auto px-6 md:px-12">
+
+    <!-- Header -->
+    <div class="flex flex-col items-center text-center mb-20 reveal-faq">
+      <div class="flex items-center gap-4 mb-6">
+        <div class="w-8 h-px bg-[var(--color-bordeaux)]"></div>
+        <p class="font-accent text-[var(--color-bordeaux)] tracking-widest uppercase text-xs md:text-sm">Frequently Asked Questions</p>
+        <div class="w-8 h-px bg-[var(--color-bordeaux)]"></div>
+      </div>
+      <h2 class="font-display text-4xl md:text-5xl lg:text-6xl text-[var(--color-noir)] leading-[1.1]">
+        Everything you need<br/>
+        <span class="italic font-light text-[var(--color-oak)]">to know</span>
+      </h2>
+    </div>
+
+    <!-- FAQ Items -->
+    <div class="flex flex-col divide-y divide-[var(--color-graphite)]/10 reveal-faq">
+
+      <!-- Item 1 -->
+      <div class="faq-item group py-8 cursor-pointer" data-faq="1">
+        <button class="w-full flex items-start justify-between gap-6 text-left" aria-expanded="false" aria-controls="faq-body-1">
+          <span class="font-display text-lg md:text-xl text-[var(--color-noir)] leading-snug group-hover:text-[var(--color-bordeaux)] transition-colors duration-300 pr-4">
+            How long does it take to manufacture a bespoke wine cabinet?
+          </span>
+          <span class="faq-icon mt-1 flex-shrink-0 w-8 h-8 rounded-full border border-[var(--color-graphite)]/20 flex items-center justify-center text-[var(--color-bordeaux)] group-hover:border-[var(--color-bordeaux)] transition-all duration-300">
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="faq-chevron transition-transform duration-300">
+              <path d="m6 9 6 6 6-6"/>
+            </svg>
+          </span>
+        </button>
+        <div id="faq-body-1" class="faq-body overflow-hidden max-h-0 transition-all duration-500 ease-in-out">
+          <p class="font-body text-[var(--color-graphite)]/75 leading-relaxed text-[15px] md:text-base pt-4 pb-2 max-w-3xl">
+            Every Caveduke wine cabinet is entirely bespoke, so lead times vary depending on project complexity. For standard units in the Noble Wood collection, production time ranges between <strong class="text-[var(--color-noir)] font-medium">8 and 14 weeks</strong>. Fully unique or large-format projects may require up to 20 weeks. Our team will inform you of the exact timeline during the initial consultation.
+          </p>
+        </div>
+      </div>
+
+      <!-- Item 2 -->
+      <div class="faq-item group py-8 cursor-pointer" data-faq="2">
+        <button class="w-full flex items-start justify-between gap-6 text-left" aria-expanded="false" aria-controls="faq-body-2">
+          <span class="font-display text-lg md:text-xl text-[var(--color-noir)] leading-snug group-hover:text-[var(--color-bordeaux)] transition-colors duration-300 pr-4">
+            Do you provide installation and integration in the client's space?
+          </span>
+          <span class="faq-icon mt-1 flex-shrink-0 w-8 h-8 rounded-full border border-[var(--color-graphite)]/20 flex items-center justify-center text-[var(--color-bordeaux)] group-hover:border-[var(--color-bordeaux)] transition-all duration-300">
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="faq-chevron transition-transform duration-300">
+              <path d="m6 9 6 6 6-6"/>
+            </svg>
+          </span>
+        </button>
+        <div id="faq-body-2" class="faq-body overflow-hidden max-h-0 transition-all duration-500 ease-in-out">
+          <p class="font-body text-[var(--color-graphite)]/75 leading-relaxed text-[15px] md:text-base pt-4 pb-2 max-w-3xl">
+            Yes. We have our own installation team operating throughout Spain and major international markets. The service includes climate-controlled vehicle transport, installation, electrical connection, thermodynamic parameter verification, and client training on system usage. For international installations, we coordinate with certified partners in each country.
+          </p>
+        </div>
+      </div>
+
+      <!-- Item 3 -->
+      <div class="faq-item group py-8 cursor-pointer" data-faq="3">
+        <button class="w-full flex items-start justify-between gap-6 text-left" aria-expanded="false" aria-controls="faq-body-3">
+          <span class="font-display text-lg md:text-xl text-[var(--color-noir)] leading-snug group-hover:text-[var(--color-bordeaux)] transition-colors duration-300 pr-4">
+            What woods do you use and how do you ensure they don't affect the wine?
+          </span>
+          <span class="faq-icon mt-1 flex-shrink-0 w-8 h-8 rounded-full border border-[var(--color-graphite)]/20 flex items-center justify-center text-[var(--color-bordeaux)] group-hover:border-[var(--color-bordeaux)] transition-all duration-300">
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="faq-chevron transition-transform duration-300">
+              <path d="m6 9 6 6 6-6"/>
+            </svg>
+          </span>
+        </button>
+        <div id="faq-body-3" class="faq-body overflow-hidden max-h-0 transition-all duration-500 ease-in-out">
+          <p class="font-body text-[var(--color-graphite)]/75 leading-relaxed text-[15px] md:text-base pt-4 pb-2 max-w-3xl">
+            We work exclusively with <strong class="text-[var(--color-noir)] font-medium">American walnut, European cherry, and solid oak</strong>, subjected to a natural curing process of 12 to 24 months. Finishing treatments are water-based, VOC-free, and applied in a way that prevents any transfer of aromatic compounds to the chamber interior. All our materials hold food safety certification.
+          </p>
+        </div>
+      </div>
+
+      <!-- Item 4 -->
+      <div class="faq-item group py-8 cursor-pointer" data-faq="4">
+        <button class="w-full flex items-start justify-between gap-6 text-left" aria-expanded="false" aria-controls="faq-body-4">
+          <span class="font-display text-lg md:text-xl text-[var(--color-noir)] leading-snug group-hover:text-[var(--color-bordeaux)] transition-colors duration-300 pr-4">
+            What is the energy consumption of a Caveduke wine cabinet?
+          </span>
+          <span class="faq-icon mt-1 flex-shrink-0 w-8 h-8 rounded-full border border-[var(--color-graphite)]/20 flex items-center justify-center text-[var(--color-bordeaux)] group-hover:border-[var(--color-bordeaux)] transition-all duration-300">
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="faq-chevron transition-transform duration-300">
+              <path d="m6 9 6 6 6-6"/>
+            </svg>
+          </span>
+        </button>
+        <div id="faq-body-4" class="faq-body overflow-hidden max-h-0 transition-all duration-500 ease-in-out">
+          <p class="font-body text-[var(--color-graphite)]/75 leading-relaxed text-[15px] md:text-base pt-4 pb-2 max-w-3xl">
+            Our state-of-the-art compression systems are rated <strong class="text-[var(--color-noir)] font-medium">A+ energy efficiency</strong> or higher. A 200-bottle wine cabinet consumes approximately 1.2–1.8 kWh/day under normal usage conditions, comparable to a high-end domestic refrigerator. The Climalit double-chamber insulation significantly reduces compressor load, extending its lifespan.
+          </p>
+        </div>
+      </div>
+
+      <!-- Item 5 -->
+      <div class="faq-item group py-8 cursor-pointer" data-faq="5">
+        <button class="w-full flex items-start justify-between gap-6 text-left" aria-expanded="false" aria-controls="faq-body-5">
+          <span class="font-display text-lg md:text-xl text-[var(--color-noir)] leading-snug group-hover:text-[var(--color-bordeaux)] transition-colors duration-300 pr-4">
+            Do you offer warranty and after-sales service?
+          </span>
+          <span class="faq-icon mt-1 flex-shrink-0 w-8 h-8 rounded-full border border-[var(--color-graphite)]/20 flex items-center justify-center text-[var(--color-bordeaux)] group-hover:border-[var(--color-bordeaux)] transition-all duration-300">
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="faq-chevron transition-transform duration-300">
+              <path d="m6 9 6 6 6-6"/>
+            </svg>
+          </span>
+        </button>
+        <div id="faq-body-5" class="faq-body overflow-hidden max-h-0 transition-all duration-500 ease-in-out">
+          <p class="font-body text-[var(--color-graphite)]/75 leading-relaxed text-[15px] md:text-base pt-4 pb-2 max-w-3xl">
+            All Caveduke wine cabinets include a <strong class="text-[var(--color-noir)] font-medium">5-year comprehensive warranty</strong> on structure and refrigeration system. Technical service is available 365 days a year for clients with a maintenance contract. Additionally, we offer scheduled annual inspections that include sensor calibration, seal verification, and air circulation system cleaning.
+          </p>
+        </div>
+      </div>
+
+      <!-- Item 6 -->
+      <div class="faq-item group py-8 cursor-pointer" data-faq="6">
+        <button class="w-full flex items-start justify-between gap-6 text-left" aria-expanded="false" aria-controls="faq-body-6">
+          <span class="font-display text-lg md:text-xl text-[var(--color-noir)] leading-snug group-hover:text-[var(--color-bordeaux)] transition-colors duration-300 pr-4">
+            Can I customize the interior: shelves, lighting, and finishes?
+          </span>
+          <span class="faq-icon mt-1 flex-shrink-0 w-8 h-8 rounded-full border border-[var(--color-graphite)]/20 flex items-center justify-center text-[var(--color-bordeaux)] group-hover:border-[var(--color-bordeaux)] transition-all duration-300">
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="faq-chevron transition-transform duration-300">
+              <path d="m6 9 6 6 6-6"/>
+            </svg>
+          </span>
+        </button>
+        <div id="faq-body-6" class="faq-body overflow-hidden max-h-0 transition-all duration-500 ease-in-out">
+          <p class="font-body text-[var(--color-graphite)]/75 leading-relaxed text-[15px] md:text-base pt-4 pb-2 max-w-3xl">
+            Absolutely. Interior customization is an essential part of the Caveduke process. You can choose from natural wood shelves, brushed stainless steel, or carbon fiber; adjustable temperature LED lighting systems (2700K–4000K); handles in brass, rose gold, matte chrome, or nickel; and differentiated temperature zones for reds, whites, and sparkling wines. Our design studio will guide you through every decision.
+          </p>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- CTA inferior -->
+    <div class="mt-20 text-center reveal-faq">
+      <p class="font-body text-[var(--color-graphite)]/60 text-sm mb-6 tracking-wide">
+        Have a question that isn't listed here?
+      </p>
+      <a href="#contact" class="inline-flex items-center gap-3 font-accent text-xs tracking-[0.2em] uppercase text-[var(--color-bordeaux)] border border-[var(--color-bordeaux)]/30 hover:border-[var(--color-bordeaux)] px-8 py-4 transition-all duration-300 hover:bg-[var(--color-bordeaux)]/5">
+        Speak with an advisor
+        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+      </a>
+    </div>
+
+  </div>
+
+  <div class="absolute bottom-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-[var(--color-bordeaux)]/20 to-transparent"></div>
+</section>
+
+<script>
+  import { gsap } from 'gsap';
+  import { ScrollTrigger } from 'gsap/ScrollTrigger';
+  gsap.registerPlugin(ScrollTrigger);
+
+  // Scroll reveal
+  gsap.utils.toArray('.reveal-faq').forEach((el: any) => {
+    gsap.fromTo(el,
+      { y: 40, opacity: 0 },
+      {
+        y: 0, opacity: 1, duration: 0.9, ease: 'power3.out',
+        scrollTrigger: { trigger: el, start: 'top 80%' }
+      }
+    );
+  });
+
+  // Accordion logic
+  const items = document.querySelectorAll('.faq-item');
+
+  items.forEach(item => {
+    const btn = item.querySelector('button')!;
+    const body = item.querySelector('.faq-body') as HTMLElement;
+    const chevron = item.querySelector('.faq-chevron') as HTMLElement;
+
+    btn.addEventListener('click', () => {
+      const isOpen = btn.getAttribute('aria-expanded') === 'true';
+
+      // Close all
+      items.forEach(other => {
+        const otherBtn = other.querySelector('button')!;
+        const otherBody = other.querySelector('.faq-body') as HTMLElement;
+        const otherChevron = other.querySelector('.faq-chevron') as HTMLElement;
+        otherBtn.setAttribute('aria-expanded', 'false');
+        otherBody.style.maxHeight = '0';
+        otherChevron.style.transform = 'rotate(0deg)';
+      });
+
+      // Open clicked if it was closed
+      if (!isOpen) {
+        btn.setAttribute('aria-expanded', 'true');
+        body.style.maxHeight = body.scrollHeight + 'px';
+        chevron.style.transform = 'rotate(180deg)';
+      }
+    });
+  });
+</script>

@@ -1,0 +1,96 @@
+---
+// src/components/Testimonials.astro
+const testimonials = [
+  {
+    quote: "The Caveduke wine cabinet has become the centerpiece of my living room. The quality of the wood is exceptional and the absolute silence is astonishing.",
+    author: "Carlos E.",
+    role: "Private Collector, Madrid",
+    image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&q=80&w=200&h=200"
+  },
+  {
+    quote: "As a sommelier, I need absolute precision. Caveduke not only gives me the technical assurance I demand, but does so with unmatched elegance.",
+    author: "María V.",
+    role: "Executive Sommelier, Barcelona",
+    image: "https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&q=80&w=200&h=200"
+  },
+  {
+    quote: "They designed an under-stair cellar for us that looks like it's been there since the house was built a hundred years ago. Impeccable artisanal work.",
+    author: "James T.",
+    role: "Architect, London",
+    image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=200&h=200"
+  }
+];
+---
+<section id="testimonials" class="bg-[var(--color-noir)] py-32 overflow-hidden border-t border-[var(--color-silver)]/10 scroll-mt-20">
+  <div class="max-w-7xl mx-auto px-6 md:px-12">
+    
+    <div class="flex items-center justify-center gap-4 mb-16 opacity-0 test-reveal">
+      <div class="w-8 h-px bg-[var(--color-gold)]"></div>
+      <p class="font-accent text-[var(--color-gold)] tracking-widest uppercase text-sm">The Verdict</p>
+      <div class="w-8 h-px bg-[var(--color-gold)]"></div>
+    </div>
+
+    <!-- Masonry-like or staggered layout for testimonials -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12 w-full mt-16">
+      
+      {testimonials.map((test, index) => (
+        <div class="flex flex-col items-center text-center p-8 border border-[var(--color-silver)]/10 bg-[var(--color-graphite)]/30 rounded-sm hover:border-[var(--color-gold)]/40 hover:bg-[var(--color-graphite)]/50 transition-colors duration-500 test-card" style={`transform: translateY(${index % 2 !== 0 ? '40px' : '0'});`}>
+          <div class="text-[var(--color-gold)] mb-6">
+            <!-- Quote Icon -->
+            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="currentColor" stroke="none" class="opacity-50"><path d="M3 21c3 0 7-1 7-8V5c0-1.25-.756-2.017-2-2H4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2 1 0 1 0 1 1v1c0 1-1 2-2 2s-1 .008-1 1.031V20c0 1 0 1 1 1z"/><path d="M15 21c3 0 7-1 7-8V5c0-1.25-.757-2.017-2-2h-4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2h.99c1 0 1 0 1 1v1c0 1-1 2-2 2s-1 .008-1 1.031V20c0 1 0 1 1 1z"/></svg>
+          </div>
+          
+          <p class="font-display text-xl text-[var(--color-ivory)] leading-relaxed mb-8 flex-grow">
+            "{test.quote}"
+          </p>
+
+          <div class="flex flex-col items-center">
+            <img src={test.image} alt={test.author} class="w-12 h-12 rounded-full object-cover border border-[var(--color-gold)]/50 mb-3 grayscale mix-blend-luminosity opacity-80" loading="lazy" decoding="async" />
+            <h4 class="font-accent tracking-widest text-[var(--color-silver)] text-sm uppercase">{test.author}</h4>
+            <span class="font-body text-xs text-[var(--color-gold)]/70 mt-1">{test.role}</span>
+          </div>
+        </div>
+      ))}
+
+    </div>
+  </div>
+</section>
+
+<script>
+  import { gsap } from 'gsap';
+  import { ScrollTrigger } from 'gsap/ScrollTrigger';
+
+  gsap.registerPlugin(ScrollTrigger);
+
+  gsap.fromTo('.test-reveal', 
+    { y: 30, opacity: 0 },
+    {
+      y: 0,
+      opacity: 1,
+      duration: 1,
+      ease: 'power3.out',
+      scrollTrigger: {
+        trigger: '#testimonials',
+        start: 'top 80%'
+      }
+    }
+  );
+
+  gsap.fromTo('.test-card', 
+    { y: 80, opacity: 0 },
+    {
+      y: (index, target) => {
+        // preserve the staggered layout visually
+        return target.style.transform.includes('40px') ? 40 : 0;
+      },
+      opacity: 1,
+      duration: 1.2,
+      stagger: 0.2,
+      ease: 'power4.out',
+      scrollTrigger: {
+        trigger: '#testimonials',
+        start: 'top 70%'
+      }
+    }
+  );
+</script>

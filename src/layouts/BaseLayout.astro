@@ -4,13 +4,20 @@ import '../styles/global.css';
 interface Props {
 	title: string;
 	description?: string;
+	lang?: string;
 }
 
-const { title, description = "Caveduke fabrica vinotecas premium a medida en España desde 1985. Madera noble, acero y cristal. La marca de vinotecas más exclusiva del mundo." } = Astro.props;
+const { 
+	title, 
+	description = "Caveduke fabrica vinotecas premium a medida en España desde 1985. Madera noble, acero y cristal. La marca de vinotecas más exclusiva del mundo.",
+	lang = "es" 
+} = Astro.props;
+
+const ogLocale = lang === 'en' ? 'en_US' : 'es_ES';
 ---
 
 <!doctype html>
-<html lang="es">
+<html lang={lang}>
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="description" content={description} />
@@ -21,7 +28,7 @@ const { title, description = "Caveduke fabrica vinotecas premium a medida en Esp
 		<!-- Open Graph -->
 		<meta property="og:title" content="Caveduke - The Brand of the Tower" />
 		<meta property="og:type" content="website" />
-		<meta property="og:locale" content="es_ES" />
+		<meta property="og:locale" content={ogLocale} />
 
 		<!-- Google Fonts -->
 		<link rel="preconnect" href="https://fonts.googleapis.com">

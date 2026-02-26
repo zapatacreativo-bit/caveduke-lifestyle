@@ -4,7 +4,7 @@
 <header id="navbar" class="fixed top-0 w-full z-50 transition-all duration-500 py-6 px-6 md:px-12 flex items-center justify-between border-b border-transparent">
   
   <!-- Logo -->
-  <a href="/" class="z-50 text-[var(--color-ivory)] group">
+  <a href="/en" class="z-50 text-[var(--color-ivory)] group">
     <div class="flex items-center gap-3">
       <svg viewBox="0 0 100 160" fill="none" class="w-5 h-8">
         <path d="M30 140 L30 40 L50 20 L70 40 L70 140 Z M20 140 L80 140" 
@@ -18,25 +18,30 @@
 
   <!-- Desktop Nav -->
   <nav class="hidden lg:flex items-center gap-10">
-    {['Legado', 'Colecciones', 'Instagram', 'Contacto'].map((item) => (
-      <a href={`#${item.toLowerCase()}`} class="font-accent text-sm tracking-[0.15em] text-[var(--color-silver)] hover:text-[var(--color-ivory)] transition-colors uppercase relative after:content-[''] after:absolute after:-bottom-1 after:left-0 after:w-0 after:h-px after:bg-[var(--color-gold)] hover:after:w-full after:transition-all after:duration-300">
-        {item}
+    {[
+      { label: 'Heritage', href: '#heritage' },
+      { label: 'Collections', href: '#collections' },
+      { label: 'Instagram', href: '#instagram' },
+      { label: 'Contact', href: '#contact' }
+    ].map((item) => (
+      <a href={item.href} class="font-accent text-sm tracking-[0.15em] text-[var(--color-silver)] hover:text-[var(--color-ivory)] transition-colors uppercase relative after:content-[''] after:absolute after:-bottom-1 after:left-0 after:w-0 after:h-px after:bg-[var(--color-gold)] hover:after:w-full after:transition-all after:duration-300">
+        {item.label}
       </a>
     ))}
-
+    
     <!-- Language Switcher -->
     <div class="flex items-center gap-3 ml-4 border-l border-[var(--color-graphite)] pl-6">
-      <span class="font-accent text-sm text-[var(--color-ivory)] tracking-widest font-semibold cursor-default">ES</span>
+      <span class="font-accent text-sm text-[var(--color-ivory)] tracking-widest font-semibold cursor-default">EN</span>
       <span class="text-[var(--color-graphite)] text-xs">/</span>
-      <a href="/en" class="font-accent text-sm text-[var(--color-silver)] hover:text-[var(--color-gold)] transition-colors tracking-widest">EN</a>
+      <a href="/" class="font-accent text-sm text-[var(--color-silver)] hover:text-[var(--color-gold)] transition-colors tracking-widest">ES</a>
     </div>
   </nav>
 
   <!-- CTA & Mobile Toggle -->
   <div class="flex items-center gap-6 z-50">
-    <a href="#contacto" class="hidden md:flex premium-button">
+    <a href="#contact" class="hidden md:flex premium-button">
       <span class="w-1.5 h-1.5 rounded-full bg-current"></span>
-      Pedir Cita
+      Request Quote
       <span class="w-1.5 h-1.5 rounded-full bg-current"></span>
     </a>
     
