@@ -7,7 +7,8 @@ import GoldenParticles from './GoldenParticles';
   
   <!-- Background with overlay and spectacular particles -->
   <HeroBackground client:load />
-  <div class="absolute inset-0 z-0 bg-gradient-to-b from-transparent to-[var(--color-noir)]/80 pointer-events-none"></div>
+  <div class="mesh absolute inset-0 z-0 pointer-events-none"></div>
+  <div class="absolute inset-0 z-0 bg-gradient-to-b from-transparent to-[var(--color-noir)]/90 pointer-events-none"></div>
   <GoldenParticles client:load className="mix-blend-screen opacity-70" />
 
   <div class="relative z-10 flex flex-col items-center justify-center text-center px-6 w-full max-w-7xl mx-auto h-full pt-20">
@@ -110,3 +111,20 @@ import GoldenParticles from './GoldenParticles';
     }, 2800); // Wait 2.8s for preloader timeline
   });
 </script>
+
+<style>
+  .mesh {
+    background:
+      radial-gradient(at 0% 0%, 
+        hsla(200,90%,15%,0.6) 0, transparent 50%),
+      radial-gradient(at 100% 0%, 
+        hsla(270,80%,12%,0.5) 0, transparent 50%),
+      radial-gradient(at 50% 100%, 
+        hsla(180,70%,10%,0.4) 0, transparent 55%);
+    animation: drift 30s ease infinite alternate;
+  }
+
+  @keyframes drift {
+    100% { transform: scale(1.06) rotate(1deg); }
+  }
+</style>

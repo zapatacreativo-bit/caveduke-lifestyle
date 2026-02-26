@@ -25,25 +25,23 @@
         {item.label}
       </a>
     ))}
-    <a href="https://www.instagram.com/cavedukevinotecas" target="_blank" rel="noopener noreferrer" class="flex items-center transition-transform duration-300 hover:scale-110" aria-label="Instagram">
-      <img src="/images/instagram-icon.png" alt="Instagram" class="w-[40px] h-[40px] object-contain" />
+
+    <a href="https://www.instagram.com/cavedukevinotecas" target="_blank" rel="noopener noreferrer" class="flex items-center text-[var(--color-silver)] hover:text-[var(--color-gold)] transition-all duration-300 hover:scale-110 ml-2" aria-label="Instagram">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="w-[30px] h-[30px]">
+        <rect width="20" height="20" x="2" y="2" rx="5" ry="5"></rect>
+        <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+        <line x1="17.5" x2="17.51" y1="6.5" y2="6.5"></line>
+      </svg>
     </a>
-    
+
     <!-- Language Switcher -->
-    <div class="flex items-center gap-4 ml-4 border-l border-[var(--color-graphite)] pl-6">
-      <div class="flex items-center gap-2 group/lang">
-        <svg class="w-4 h-4 rounded-full overflow-hidden shadow-sm" viewBox="0 0 512 512"><path fill="#ed2939" d="M341.3 0H512v512H341.3z"/><path fill="#fff" d="M170.7 0h170.6v512H170.7z"/><path fill="#002395" d="M0 0h170.7v512H0z"/></svg>
-        <span class="font-accent text-sm text-[var(--color-ivory)] tracking-widest font-semibold cursor-default">FR</span>
-      </div>
-      <span class="text-[var(--color-graphite)] text-xs">/</span>
-      <a href="/" class="flex items-center gap-2 font-accent text-sm text-[var(--color-silver)] hover:text-[var(--color-gold)] transition-all tracking-widest group/lang">
-        <svg class="w-4 h-4 rounded-full overflow-hidden opacity-40 group-hover/lang:opacity-100 transition-opacity" viewBox="0 0 512 512"><path fill="#ffda44" d="M0 128h512v256H0z"/><path fill="#d80027" d="M0 0h512v128H0zm0 384h512v128H0z"/></svg>
-        ES
+    <div class="flex items-center gap-3 ml-4 border-l border-[var(--color-graphite)] pl-6">
+      <a href="/" class="flex items-center transition-all group/lang" aria-label="Español">
+        <svg class="w-6 h-6 rounded-full overflow-hidden opacity-50 group-hover/lang:opacity-100 transition-opacity" viewBox="0 0 512 512"><path fill="#ffda44" d="M0 128h512v256H0z"/><path fill="#d80027" d="M0 0h512v128H0zm0 384h512v128H0z"/></svg>
       </a>
-      <span class="text-[var(--color-graphite)] text-xs">/</span>
-      <a href="/en" class="flex items-center gap-2 font-accent text-sm text-[var(--color-silver)] hover:text-[var(--color-gold)] transition-all tracking-widest group/lang">
-        <svg class="w-4 h-4 rounded-full overflow-hidden opacity-40 group-hover/lang:opacity-100 transition-opacity" viewBox="0 0 512 512"><path fill="#00247d" d="M0 0h512v512H0z"/><path fill="#eee" d="M512 0v64L320 256l192 192v64h-64L256 320 64 512H0v-64l192-192L0 64V0h64l192 192L448 0z"/><path fill="#d80027" d="M512 0v16L336 192h-32v32L512 400v112h-16L320 336h-32v32L400 512H112l176-176h32v-32l192-192V0h-16L320 176h-32v-32L112 0H0v16l176 176h-32v32l-144 144V512h16l176-176h32v32L112 512h320L256 336h-32v-32L32 0zM0 208v96h512v-96zM208 0v512h96V0z"/></svg>
-        EN
+      <svg class="w-6 h-6 rounded-full overflow-hidden shadow-sm ring-1 ring-[var(--color-gold)]/30" viewBox="0 0 512 512"><path fill="#ed2939" d="M341.3 0H512v512H341.3z"/><path fill="#fff" d="M170.7 0h170.6v512H170.7z"/><path fill="#002395" d="M0 0h170.7v512H0z"/></svg>
+      <a href="/en" class="flex items-center transition-all group/lang" aria-label="English">
+        <svg class="w-6 h-6 rounded-full overflow-hidden opacity-50 group-hover/lang:opacity-100 transition-opacity" viewBox="0 0 512 512"><path fill="#00247d" d="M0 0h512v512H0z"/><path fill="#eee" d="M512 0v64L320 256l192 192v64h-64L256 320 64 512H0v-64l192-192L0 64V0h64l192 192L448 0z"/><path fill="#d80027" d="M512 0v16L336 192h-32v32L512 400v112h-16L320 336h-32v32L400 512H112l176-176h32v-32l192-192V0h-16L320 176h-32v-32L112 0H0v16l176 176h-32v32l-144 144V512h16l176-176h32v32L112 512h320L256 336h-32v-32L32 0zM0 208v96h512v-96zM208 0v512h96V0z"/></svg>
       </a>
     </div>
   </nav>
@@ -51,20 +49,59 @@
   <!-- CTA & Mobile Toggle -->
   <div class="flex items-center gap-6 z-50">
     <a href="#contact" class="hidden md:flex premium-button">
-      <span class="w-1.5 h-1.5 rounded-full bg-current"></span>
+      <span class="w-1 h-1 rounded-full bg-current"></span>
       Demander un Devis
-      <span class="w-1.5 h-1.5 rounded-full bg-current"></span>
+      <span class="w-1 h-1 rounded-full bg-current"></span>
     </a>
     
-    <button id="menu-toggle" class="lg:hidden text-[var(--color-ivory)] flex flex-col gap-1.5 p-2" aria-label="Toggle menu">
-      <span class="w-6 h-px bg-current transition-transform origin-center"></span>
-      <span class="w-6 h-px bg-current transition-transform origin-center"></span>
+    <button id="menu-toggle" class="lg:hidden text-[var(--color-ivory)] flex flex-col gap-2 p-3" aria-label="Toggle menu">
+      <span id="line1" class="w-6 h-0.5 bg-current transition-all duration-300 origin-center"></span>
+      <span id="line2" class="w-6 h-0.5 bg-current transition-all duration-300 origin-center"></span>
     </button>
   </div>
 </header>
 
+<!-- Mobile Menu Overlay -->
+<div id="mobile-menu" class="mobile-menu">
+  <nav class="flex flex-col items-center justify-center h-full gap-8">
+    {[
+      { label: 'Patrimoine', href: '#heritage' },
+      { label: 'Collections', href: '#collections' },
+      { label: 'Contact', href: '#contact' }
+    ].map((item) => (
+      <a href={item.href} class="mobile-nav-link font-accent text-2xl tracking-[0.2em] text-[var(--color-silver)] hover:text-[var(--color-ivory)] transition-colors uppercase">
+        {item.label}
+      </a>
+    ))}
+
+    <a href="https://www.instagram.com/cavedukevinotecas" target="_blank" rel="noopener noreferrer" class="flex items-center text-[var(--color-silver)] hover:text-[var(--color-gold)] transition-all duration-300 hover:scale-110 mt-6" aria-label="Instagram">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="w-[45px] h-[45px]">
+        <rect width="20" height="20" x="2" y="2" rx="5" ry="5"></rect>
+        <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+        <line x1="17.5" x2="17.51" y1="6.5" y2="6.5"></line>
+      </svg>
+    </a>
+
+    <!-- Mobile Language Switcher -->
+    <div class="flex items-center gap-4 mt-4">
+      <a href="/" class="flex items-center transition-all" aria-label="Español">
+        <svg class="w-6 h-6 rounded-full overflow-hidden opacity-60 hover:opacity-100 transition-opacity" viewBox="0 0 512 512"><path fill="#ffda44" d="M0 128h512v256H0z"/><path fill="#d80027" d="M0 0h512v128H0zm0 384h512v128H0z"/></svg>
+      </a>
+      <svg class="w-6 h-6 rounded-full overflow-hidden shadow-sm ring-1 ring-[var(--color-gold)]/30" viewBox="0 0 512 512"><path fill="#ed2939" d="M341.3 0H512v512H341.3z"/><path fill="#fff" d="M170.7 0h170.6v512H170.7z"/><path fill="#002395" d="M0 0h170.7v512H0z"/></svg>
+      <a href="/en" class="flex items-center transition-all" aria-label="English">
+        <svg class="w-6 h-6 rounded-full overflow-hidden opacity-60 hover:opacity-100 transition-opacity" viewBox="0 0 512 512"><path fill="#00247d" d="M0 0h512v512H0z"/><path fill="#eee" d="M512 0v64L320 256l192 192v64h-64L256 320 64 512H0v-64l192-192L0 64V0h64l192 192L448 0z"/><path fill="#d80027" d="M512 0v16L336 192h-32v32L512 400v112h-16L320 336h-32v32L400 512H112l176-176h32v-32l192-192V0h-16L320 176h-32v-32L112 0H0v16l176 176h-32v32l-144 144V512h16l176-176h32v32L112 512h320L256 336h-32v-32L32 0zM0 208v96h512v-96zM208 0v512h96V0z"/></svg>
+      </a>
+    </div>
+
+    <a href="#contact" class="premium-button mt-6">
+      <span class="w-1 h-1 rounded-full bg-current"></span>
+      Demander un Devis
+      <span class="w-1 h-1 rounded-full bg-current"></span>
+    </a>
+  </nav>
+</div>
+
 <style>
-  /* Scrolled state */
   #navbar.scrolled {
     background-color: rgba(10, 10, 10, 0.92);
     backdrop-filter: blur(20px);
@@ -74,10 +111,51 @@
     border-bottom-color: rgba(184, 184, 176, 0.12);
     box-shadow: 0 4px 32px rgba(0, 0, 0, 0.4);
   }
+
+  .mobile-menu {
+    position: fixed;
+    inset: 0;
+    z-index: 40;
+    background-color: rgba(10, 10, 10, 0.97);
+    backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(24px);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.4s ease, visibility 0.4s ease;
+  }
+
+  .mobile-menu.open {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .mobile-nav-link {
+    transform: translateY(20px);
+    opacity: 0;
+    transition: transform 0.4s ease, opacity 0.4s ease;
+  }
+
+  .mobile-menu.open .mobile-nav-link {
+    transform: translateY(0);
+    opacity: 1;
+  }
+
+  .mobile-menu.open .mobile-nav-link:nth-child(1) { transition-delay: 0.1s; }
+  .mobile-menu.open .mobile-nav-link:nth-child(2) { transition-delay: 0.2s; }
+  .mobile-menu.open .mobile-nav-link:nth-child(3) { transition-delay: 0.3s; }
+
+  #menu-toggle.active #line1 {
+    transform: translateY(5px) rotate(45deg);
+  }
+  #menu-toggle.active #line2 {
+    transform: translateY(-5px) rotate(-45deg);
+  }
 </style>
 
 <script>
   const navbar = document.getElementById('navbar');
+  const menuToggle = document.getElementById('menu-toggle');
+  const mobileMenu = document.getElementById('mobile-menu');
 
   function onScroll() {
     if (window.scrollY > 80) {
@@ -89,4 +167,20 @@
 
   window.addEventListener('scroll', onScroll, { passive: true });
   onScroll();
+
+  function toggleMenu() {
+    const isOpen = mobileMenu?.classList.toggle('open');
+    menuToggle?.classList.toggle('active');
+    document.body.style.overflow = isOpen ? 'hidden' : '';
+  }
+
+  menuToggle?.addEventListener('click', toggleMenu);
+
+  mobileMenu?.querySelectorAll('a').forEach((link) => {
+    link.addEventListener('click', () => {
+      if (mobileMenu.classList.contains('open')) {
+        toggleMenu();
+      }
+    });
+  });
 </script>

@@ -1,5 +1,6 @@
 ---
 import '../styles/global.css';
+import CustomCursor from '../components/CustomCursor.astro';
 
 interface Props {
 	title: string;
@@ -59,6 +60,7 @@ const ogLocale = locales[lang as keyof typeof locales] || 'es_ES';
 		<title>{title}</title>
 	</head>
 	<body class="bg-[var(--color-noir)] text-[var(--color-silver)] antialiased overflow-x-hidden selection:bg-[var(--color-bordeaux)] selection:text-[var(--color-ivory)]">
+		<CustomCursor />
 		<slot />
 
 		<script>

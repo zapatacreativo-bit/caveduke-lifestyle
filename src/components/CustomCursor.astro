@@ -1,0 +1,205 @@
+---
+// src/components/CustomCursor.astro
+---
+<div id="cursor-outer" class="hidden md:block"></div>
+<div id="cursor-inner" class="hidden md:block"></div>
+
+<style>
+  /* === PREMIUM CUSTOM CURSOR === */
+  #cursor-outer {
+    position: fixed;
+    width: 40px; 
+    height: 40px;
+    border: 1px solid var(--color-gold, #c9a84c);
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 99999;
+    /* transition covers size, shape, color but NOT transform/left/top for smooth JS tracking */
+    transition: width 0.4s cubic-bezier(0.19,1,0.22,1),
+                height 0.4s cubic-bezier(0.19,1,0.22,1),
+                border-radius 0.4s cubic-bezier(0.19,1,0.22,1),
+                border-color 0.3s, background 0.4s, opacity 0.3s;
+    transform: translate(-50%, -50%);
+    mix-blend-mode: difference;
+    opacity: 0;
+    will-change: width, height, transform;
+  }
+  
+  #cursor-inner {
+    position: fixed;
+    width: 6px; 
+    height: 6px;
+    background: var(--color-gold, #c9a84c);
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 99999;
+    transform: translate(-50%, -50%);
+    transition: opacity 0.3s, background 0.3s, width 0.3s, height 0.3s;
+    opacity: 0;
+    will-change: transform;
+  }
+
+  /* Active click state for un-hovered areas */
+  #cursor-outer.active {
+    transform: translate(-50%, -50%) scale(0.8);
+  }
+
+  /* Hide native cursor globally on fine pointers */
+  @media (pointer: fine) {
+    html, body, a, button, input, textarea, select, [role="button"], label {
+      cursor: none !important;
+    }
+  }
+</style>
+
+<script>
+  if (window.matchMedia("(pointer: fine)").matches) {
+    const cursorOuter = document.getElementById('cursor-outer');
+    const cursorInner = document.getElementById('cursor-inner');
+    
+    let cmx = window.innerWidth / 2, cmy = window.innerHeight / 2;
+    let ccx = cmx, ccy = cmy;
+    let isHovering = false;
+
+    // Track mouse movement
+    window.addEventListener('mousemove', (e) => {
+      cmx = e.clientX; 
+      cmy = e.clientY;
+
+      // Initial opacity reveal
+      if (cursorOuter.style.opacity === '0' || cursorOuter.style.opacity === '') {
+        cursorOuter.style.opacity = '1';
+        if (!isHovering) cursorInner.style.opacity = '1';
+      }
+
+      // Hide off screen
+      if (e.clientX <= 5 || e.clientY <= 5 || e.clientX >= window.innerWidth - 5 || e.clientY >= window.innerHeight - 5) {
+        cursorOuter.style.opacity = '0';
+        cursorInner.style.opacity = '0';
+      } else {
+        cursorOuter.style.opacity = '1';
+        if (!isHovering) cursorInner.style.opacity = '1';
+      }
+
+      // Inner dot follows instantly (unless hovering over an interactive element)
+      if (!isHovering) {
+        cursorInner.style.left = cmx + 'px';
+        cursorInner.style.top = cmy + 'px';
+      }
+    });
+
+    // Click effect
+    window.addEventListener('mousedown', () => !isHovering && cursorOuter.classList.add('active'));
+    window.addEventListener('mouseup', () => cursorOuter.classList.remove('active'));
+
+    // Smooth Lerp loop for the outer ring
+    function animateCursor() {
+      // Lerp logic
+      ccx += (cmx - ccx) * 0.15;
+      ccy += (cmy - ccy) * 0.15;
+      
+      // Only apply JS position if not locked by hover morphing
+      if (!isHovering) {
+        cursorOuter.style.left = ccx + 'px';
+        cursorOuter.style.top = ccy + 'px';
+      }
+      
+      requestAnimationFrame(animateCursor);
+    }
+    requestAnimationFrame(animateCursor);
+
+    // Liquid Morph & Magnetic logic
+    const setupHovers = () => {
+      const interactives = document.querySelectorAll('a, button, [role="button"], input, textarea, select, .interactive, .swiper-button-next, .swiper-button-prev');
+      
+      interactives.forEach(el => {
+        if (!el.hasAttribute('data-cursor-bound')) {
+          el.setAttribute('data-cursor-bound', 'true');
+          
+          el.addEventListener('mouseenter', () => {
+            isHovering = true;
+            
+            const rect = el.getBoundingClientRect();
+            // Morph to encompass the element with padding
+            cursorOuter.style.width = (rect.width + 12) + 'px';
+            cursorOuter.style.height = (rect.height + 12) + 'px';
+            
+            // Respect element's border radius
+            const style = window.getComputedStyle(el);
+            const br = style.borderRadius;
+            cursorOuter.style.borderRadius = (br === '0px' || !br) ? '8px' : br;
+            
+            // Fill background with light gold glow
+            cursorOuter.style.background = 'rgba(201, 168, 76, 0.15)'; 
+            cursorOuter.style.borderColor = 'transparent';
+            
+            // Hide inner dot
+            cursorInner.style.opacity = '0';
+            
+            // Snap center
+            const cx = rect.left + rect.width / 2;
+            const cy = rect.top + rect.height / 2;
+            cursorOuter.style.left = cx + 'px';
+            cursorOuter.style.top = cy + 'px';
+            
+            // Allow smooth UI translation
+            el.style.transition = 'transform 0.4s cubic-bezier(0.19,1,0.22,1)';
+          });
+          
+          el.addEventListener('mousemove', (e) => {
+            if (el.tagName === 'A' || el.tagName === 'BUTTON' || el.closest('a') || el.closest('button')) {
+                const rect = el.getBoundingClientRect();
+                const cx = rect.left + rect.width / 2;
+                const cy = rect.top + rect.height / 2;
+                
+                const dx = e.clientX - cx;
+                const dy = e.clientY - cy;
+                
+                // Magnetic Pull on the element itself (Max pull distance managed by dampener)
+                const magnetStrength = 0.25;
+                el.style.transform = `translate(${dx * magnetStrength}px, ${dy * magnetStrength}px)`;
+                
+                // Outer cursor pulls slightly towards mouse too, creating a 3D magnetic feel
+                cursorOuter.style.left = (cx + dx * 0.12) + 'px';
+                cursorOuter.style.top = (cy + dy * 0.12) + 'px';
+            }
+          });
+          
+          el.addEventListener('mouseleave', () => {
+            isHovering = false;
+            
+            // Restore outer shape
+            cursorOuter.style.width = '40px';
+            cursorOuter.style.height = '40px';
+            cursorOuter.style.borderRadius = '50%';
+            cursorOuter.style.background = 'transparent';
+            cursorOuter.style.borderColor = 'var(--color-gold, #c9a84c)';
+            
+            // Restore inner dot
+            cursorInner.style.opacity = '1';
+            
+            // Drop magnetic position smoothly
+            el.style.transform = 'translate(0px, 0px)';
+            
+            // Sync internal lerp physics variable so it doesn't snap abruptly
+            ccx = cmx; 
+            ccy = cmy;
+          });
+        }
+      });
+    };
+    
+    // Initialize
+    setupHovers();
+    
+    // Observer for lazy-loaded/dynamic elements
+    const observer = new MutationObserver((mutations) => {
+      let shouldSetup = false;
+      mutations.forEach(m => {
+        if(m.addedNodes.length) shouldSetup = true;
+      });
+      if(shouldSetup) setupHovers();
+    });
+    observer.observe(document.body, { childList: true, subtree: true });
+  }
+</script>
