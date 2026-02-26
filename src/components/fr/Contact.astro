@@ -1,0 +1,95 @@
+---
+// src/components/Contact.astro
+import ContactForm from '../ContactForm';
+---
+<section id="contact" class="relative bg-[var(--color-noir)] py-32 md:py-48 overflow-hidden">
+  
+  <div class="absolute inset-0 z-0">
+    <div class="absolute top-0 right-0 w-[800px] h-[800px] bg-[var(--color-bordeaux)]/5 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2 pointer-events-none"></div>
+  </div>
+
+  <div class="max-w-7xl mx-auto px-6 md:px-12 relative z-10 flex flex-col md:flex-row gap-16 lg:gap-32">
+    
+    <!-- Left Column: Copy -->
+    <div class="w-full md:w-5/12 reveal-contact flex flex-col">
+      <div class="flex items-center gap-4 mb-6">
+        <div class="w-8 h-px bg-[var(--color-gold)]"></div>
+        <p class="font-accent text-[var(--color-gold)] tracking-widest uppercase text-sm">Projet Privé</p>
+      </div>
+      
+      <h2 class="font-display text-5xl md:text-6xl text-[var(--color-ivory)] leading-[1.1] mb-8">
+        Parlons de votre<br/>
+        <span class="italic text-[var(--color-gold)] flex items-center gap-4 mt-2">
+          Vision
+          <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" class="animate-pulse"><path d="m3 21 8.02-14.26"/><path d="m21 21-8.02-14.26"/><path d="m10.11 10.82 3.78 3.78"/><path d="m16.5 13.5-3.8-3.8" stroke="var(--color-gold)" stroke-width="2" stroke-linecap="round"/></svg>
+        </span>
+      </h2>
+      
+      <p class="font-body text-[var(--color-silver)]/70 text-lg leading-relaxed mb-10 max-w-md">
+        Nos conseillers techniques vous guideront dans la sélection des matériaux, dimensions et systèmes thermodynamiques idéaux pour votre collection.
+      </p>
+
+      <div class="flex flex-col gap-5 mb-10">
+        <div class="flex flex-col gap-1">
+          <p class="font-accent tracking-widest text-[var(--color-silver)]/50 uppercase text-xs">Ligne Directe</p>
+          <a href="tel:+34914282828" class="font-display text-2xl text-[var(--color-ivory)] hover:text-[var(--color-gold)] transition-colors">+34 91 428 28 28</a>
+        </div>
+        <div class="flex flex-col gap-1">
+          <p class="font-accent tracking-widest text-[var(--color-silver)]/50 uppercase text-xs">Demandes Générales</p>
+          <a href="mailto:info@caveduke.com" class="font-display text-xl text-[var(--color-ivory)] hover:text-[var(--color-gold)] transition-colors">info@caveduke.com</a>
+        </div>
+        <div class="flex flex-col gap-1">
+          <p class="font-accent tracking-widest text-[var(--color-silver)]/50 uppercase text-xs">Showroom Barcelona</p>
+          <p class="font-body text-[var(--color-silver)]/80 text-base">Carrer de la Indústria, 23<br/><span class="text-[var(--color-silver)]/50 text-sm">08025 Barcelone · Sur rendez-vous</span></p>
+        </div>
+      </div>
+
+      <!-- Showroom image -->
+      <div class="relative overflow-hidden rounded-sm flex-1 min-h-[220px] group">
+        <img 
+          src="/images/showroom.png" 
+          alt="Showroom Caveduke Barcelone — salle d'exposition privée avec caves à vin illuminées"
+          class="w-full h-full object-cover object-center absolute inset-0 group-hover:scale-105 transition-transform duration-[2s]"
+          loading="lazy"
+          decoding="async"
+        />
+        <div class="absolute inset-0 bg-gradient-to-t from-[var(--color-noir)]/70 to-transparent pointer-events-none"></div>
+        <div class="absolute bottom-4 left-4 right-4">
+          <p class="font-accent text-xs tracking-widest text-[var(--color-gold)]/70 uppercase">Showroom Privé · Barcelone</p>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- Right Column: Form React Island -->
+    <div class="w-full md:w-7/12 reveal-contact">
+      <ContactForm client:visible lang="fr" />
+    </div>
+
+  </div>
+</section>
+
+<script>
+  import { gsap } from 'gsap';
+  import { ScrollTrigger } from 'gsap/ScrollTrigger';
+
+  gsap.registerPlugin(ScrollTrigger);
+
+  const reveals = document.querySelectorAll('.reveal-contact');
+  
+  reveals.forEach(reveal => {
+    gsap.fromTo(reveal, 
+      { y: 50, opacity: 0 },
+      {
+        y: 0,
+        opacity: 1,
+        duration: 1,
+        ease: 'power3.out',
+        scrollTrigger: {
+          trigger: '#contact',
+          start: 'top 75%'
+        }
+      }
+    );
+  });
+</script>

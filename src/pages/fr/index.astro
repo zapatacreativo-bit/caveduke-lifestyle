@@ -1,0 +1,34 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Preloader from '../../components/fr/Preloader.astro';
+import Navbar from '../../components/fr/Navbar.astro';
+import Hero from '../../components/fr/Hero.astro';
+import Heritage from '../../components/fr/Heritage.astro';
+import Philosophy from '../../components/fr/Philosophy.astro';
+import FeatureShowcase from '../../components/fr/FeatureShowcase.astro';
+import Collections from '../../components/fr/Collections.astro';
+import Numbers from '../../components/fr/Numbers.astro';
+import Testimonials from '../../components/fr/Testimonials.astro';
+import FAQ from '../../components/fr/FAQ.astro';
+import Contact from '../../components/fr/Contact.astro';
+import Footer from '../../components/fr/Footer.astro';
+---
+
+<BaseLayout title="Caveduke - Caves à Vin Artisanales de Luxe | Depuis 1985" lang="fr">
+	<Preloader />
+	<Navbar />
+	
+	<main>
+		<Hero />
+		<Heritage />
+		<Philosophy />
+		<FeatureShowcase />
+		<Collections />
+		<Numbers />
+		<Testimonials />
+		<FAQ />
+		<Contact />
+	</main>
+
+	<Footer />
+</BaseLayout>

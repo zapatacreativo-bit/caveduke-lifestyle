@@ -1,0 +1,120 @@
+---
+// src/components/Hero.astro
+import HeroBackground from '../HeroBackground';
+import GoldenParticles from '../GoldenParticles';
+---
+<section id="hero" class="relative h-screen w-full overflow-hidden flex flex-col items-center justify-center bg-[var(--color-noir)]">
+  
+  <!-- Background with overlay and spectacular particles -->
+  <HeroBackground client:load />
+  <div class="absolute inset-0 z-0 bg-gradient-to-b from-transparent to-[var(--color-noir)]/80 pointer-events-none"></div>
+  <GoldenParticles client:load className="mix-blend-screen opacity-70" />
+
+  <div class="relative z-10 flex flex-col items-center justify-center text-center px-6 w-full max-w-7xl mx-auto h-full pt-20">
+    
+    <div class="flex items-center gap-6 mb-8 overflow-hidden">
+      <div class="w-16 h-px bg-gradient-to-r from-transparent to-[var(--color-gold)] opacity-70 scale-x-0 origin-right anim-line"></div>
+      <p class="font-accent tracking-[0.3em] text-[var(--color-gold)] uppercase text-xs md:text-sm hero-tagline opacity-0">
+        <!-- Tagline -->
+        <span class="inline-block w-8 h-px bg-[var(--color-gold)] align-middle mr-4"></span>
+        Fabriqué Artisanalement en Espagne
+        <span class="inline-block w-8 h-px bg-[var(--color-gold)] align-middle ml-4"></span>
+      </p>
+      <div class="w-16 h-px bg-gradient-to-l from-transparent to-[var(--color-gold)] opacity-70 scale-x-0 origin-left anim-line"></div>
+    </div>
+
+    <div class="overflow-hidden pb-4">
+      <h1 class="font-display flex flex-col items-center justify-center leading-none tracking-[0.01em] translate-y-full opacity-0 anim-title" data-speed="0.8">
+        <h1 class="font-display text-6xl md:text-8xl lg:text-[10rem] leading-[0.85] tracking-tight hero-title">
+        <span class="block overflow-hidden"><span class="block translate-y-full hero-line-1">Caves à Vin</span></span>
+        <span class="block overflow-hidden mt-2 md:mt-4">
+          <span class="block translate-y-full hero-line-2 italic font-light text-[var(--color-gold)]">Caveduke</span>
+        </span>
+      </h1>
+    </div>
+
+    <div class="overflow-hidden mt-6 mb-14">
+      <p class="font-body text-base md:text-lg text-[var(--color-silver)]/80 max-w-sm mx-auto leading-relaxed translate-y-full opacity-0 anim-up delay-1 tracking-wide">
+        Artisans de la cave à vin depuis 1985
+      </p>
+    </div>
+
+    <div class="overflow-hidden">
+      <div class="translate-y-full opacity-0 anim-up delay-2">
+        <a href="#collections" class="premium-button hero-cta opacity-0 mt-8">
+          <span class="w-1.5 h-1.5 rounded-full bg-current"></span>
+          Découvrir la collection
+          <span class="w-1.5 h-1.5 rounded-full bg-current"></span>
+        </a>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Scroll Indicator -->
+  <div class="absolute bottom-10 left-1/2 -translate-x-1/2 z-10 flex flex-col items-center gap-2 opacity-0 anim-fade delay-3">
+    <span class="font-accent text-[9px] tracking-[0.3em] text-[var(--color-gold)]/40 uppercase">Scroll</span>
+    <div class="w-[1px] h-14 bg-gradient-to-b from-[var(--color-gold)]/40 to-transparent relative overflow-hidden">
+      <div class="w-full h-1/2 bg-[var(--color-gold)] absolute top-0 -translate-y-full animate-[scrollHint_2.5s_ease-in-out_infinite]"></div>
+    </div>
+  </div>
+</section>
+
+<style>
+  @keyframes scrollHint {
+    0% { transform: translateY(-100%); opacity: 0; }
+    50% { opacity: 1; }
+    100% { transform: translateY(200%); opacity: 0; }
+  }
+</style>
+
+<script>
+  import { gsap } from 'gsap';
+  import { ScrollTrigger } from 'gsap/ScrollTrigger';
+
+  gsap.registerPlugin(ScrollTrigger);
+
+  window.addEventListener('load', () => {
+    // Delay slightly to let Preloader finish
+    setTimeout(() => {
+      const tl = gsap.timeline();
+
+      tl.to('.anim-line', {
+        scaleX: 1,
+        duration: 1.2,
+        ease: 'power3.inOut',
+        stagger: 0.2
+      })
+      .to('.anim-up', {
+        y: 0,
+        opacity: 1,
+        duration: 1,
+        ease: 'power3.out',
+        stagger: 0.15
+      }, '-=0.8')
+      .to('.anim-title', {
+        y: 0,
+        opacity: 1,
+        duration: 1.2,
+        ease: 'power4.out',
+      }, '-=1.2')
+      .to('.anim-fade', {
+        opacity: 1,
+        duration: 1,
+        ease: 'power2.out'
+      }, '-=0.5');
+
+      // Parallax effect on Title
+      gsap.to('.anim-title', {
+        yPercent: 30,
+        ease: 'none',
+        scrollTrigger: {
+          trigger: '#hero',
+          start: 'top top',
+          end: 'bottom top',
+          scrub: true
+        }
+      });
+    }, 2800); // Wait 2.8s for preloader timeline
+  });
+</script>

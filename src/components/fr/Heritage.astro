@@ -1,0 +1,209 @@
+---
+// src/components/Heritage.astro
+---
+<section id="heritage" class="relative py-32 md:py-48 bg-[var(--color-ivory)] overflow-hidden">
+  <div class="max-w-7xl mx-auto px-6 md:px-12">
+    
+    <!-- Header de Sección -->
+    <div class="w-full flex flex-col items-center text-center mb-24 reveal-element">
+      <div class="flex items-center gap-4 mb-6">
+        <div class="w-8 h-px bg-[var(--color-bordeaux)]"></div>
+        <p class="font-accent text-[var(--color-bordeaux)] tracking-widest uppercase text-sm">Notre Patrimoine</p>
+      </div>
+      <h2 class="font-display text-5xl md:text-6xl lg:text-7xl text-[var(--color-noir)] leading-[1.05]">
+        Quatre Décennies<br/><span class="italic font-light text-[var(--color-oak)]">d'Excellence</span>
+      </h2>
+    </div>
+
+    <!-- Bloques Narrativos en Z-Pattern -->
+    <div class="space-y-32">
+      
+      <!-- Fila 1: Orígenes -->
+      <div class="flex flex-col md:flex-row items-center gap-12 lg:gap-24">
+        <div class="w-full md:w-1/2 order-2 md:order-1 reveal-element">
+          <div class="font-body text-[15px] md:text-base text-[var(--color-graphite)]/80 leading-[1.85] space-y-6 text-justify">
+            <p class="font-body text-[var(--color-graphite)] text-base md:text-lg leading-relaxed text-justify hyphens-auto">
+              L'histoire de Caveduke ne s'écrit pas sur des chaînes de montage, mais avec le <em>parfum du chêne vieilli</em> et le <em>son du ciseau</em>. Tout a commencé en <strong class="text-[var(--color-bordeaux)]">1985</strong> dans un petit atelier artisanal à <em>Mollet del Vallès, Barcelone</em>. À une époque où le concept de « cave à vin » était à peine compris, nos fondateurs avaient une vision claire : le vin, cette poésie embouteillée, méritait un sanctuaire à la hauteur de sa stature. Non pas un simple appareil froid et sans âme, mais un meuble exquis, conçu à partir des matières premières les plus nobles au monde.
+            </p>
+            <p class="font-body text-[var(--color-graphite)] text-base md::text-lg leading-relaxed text-justify hyphens-auto">
+              De cet atelier lointain, les premières créations Caveduke sont nées comme des <strong class="text-[var(--color-noir)]">commandes exclusives</strong> pour des collectionneurs privés et de petits châteaux. Nous sélectionnons rigoureusement des bois tels que le <em>noyer, le cerisier et le chêne massif</em>, traités par des procédés de séchage naturel pour éviter tout transfert d'odeurs. Nos portes ne sont pas de simples fermetures ; ce sont des arcs vitrés qui protègent votre collection des rayons UV tout en permettant de l'exposer fièrement.
+            </p>
+          </div>
+        </div>
+        
+        <div class="w-full md:w-1/2 order-1 md:order-2">
+          <div class="aspect-[4/5] overflow-hidden rounded-sm relative img-reveal">
+            <div class="absolute inset-0 bg-[#e0d8cd] z-0"></div>
+            <img 
+              src="/images/heritage.png" 
+              alt="Cave à vin de luxe traditionnelle" 
+              class="w-full h-full object-cover relative z-10 hover:scale-105 transition-transform duration-[2s]"
+              loading="eager"
+            />
+            <div class="absolute inset-0 border border-[var(--color-graphite)]/10 m-4 z-20 pointer-events-none"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Fila 2: Innovación & Cita -->
+      <div class="flex flex-col md:flex-row items-stretch gap-12 lg:gap-24">
+        <div class="w-full md:w-[45%] flex flex-col justify-center">
+          <figure class="w-full img-reveal aspect-[16/9] overflow-hidden rounded-sm relative mb-8">
+            <div class="absolute inset-0 bg-[#e0d8cd] z-0"></div>
+            <img 
+              src="/images/heritage-artisan.png" 
+              alt="Maître artisan Caveduke travaillant sur une cave à vin dans l'atelier de Barcelone" 
+              class="w-full h-full object-cover relative z-10 hover:scale-105 transition-transform duration-[2s]"
+              loading="lazy"
+            />
+            <div class="absolute inset-0 border border-[var(--color-graphite)]/10 m-3 z-20 pointer-events-none"></div>
+          </figure>
+          
+          <div class="reveal-element">
+            <div class="border-l-2 border-[var(--color-bordeaux)]/40 pl-6 py-2 italic font-display text-xl md:text-2xl text-[var(--color-graphite)] leading-relaxed opacity-0 heritage-quote">
+              <p>« Chaque cave à vin est une promesse de silence : le silence dans lequel le vin parfait son caractère, loin du bruit du monde. »</p>
+              <p class="font-accent text-xs tracking-widest uppercase text-[var(--color-bordeaux)]/60 mt-4 not-italic">— Fondateurs Caveduke, 1985</p>
+            </div>
+            
+            <div class="flex items-center gap-4 mt-8">
+              <div class="w-8 h-px bg-[var(--color-bordeaux)]/30"></div>
+              <p class="font-accent tracking-widest text-[var(--color-graphite)]/40 uppercase text-xs">Design Artisanal · Barcelone, Espagne</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="w-full md:w-[55%] flex flex-col justify-center reveal-element">
+          <div class="font-body text-[15px] md:text-base text-[var(--color-graphite)]/80 leading-[1.85] text-justify space-y-6">
+            <p class="font-body text-[var(--color-graphite)] text-base md:text-lg leading-relaxed text-justify hyphens-auto">
+              Nous avons été pionniers dans l'incorporation de la technologie thermodynamique de précision, en introduisant la <em class="text-[var(--color-bordeaux)]">chambre en verre Climalit</em>. Plus tard, nous avons été les premiers à intégrer des systèmes de compression amortis : une technologie importée de l'ingénierie aérospatiale qui garantit le <strong class="text-[var(--color-bordeaux)]">« Silence Caveduke »</strong> — une absence totale de vibrations qui permet aux sédiments du vin de reposer en paix infinie.
+            </p>
+            <p class="font-body text-[var(--color-graphite)] text-base md:text-lg leading-relaxed text-justify hyphens-auto">
+              Nous rejetons les systèmes thermoélectriques courants en raison de leur instabilité face aux pics environnementaux. Nous créons un sanctuaire où l'humidité relative flirte en permanence avec le chiffre parfait (65-75%), empêchant les bouchons de vieillir avant leurs vins et garantissant de glorieuses décantations.
+            </p>
+            <img 
+              src="/images/heritage-detail.png" 
+              alt="Détail intérieur d'une cave à vin Caveduke montrant des bouteilles éclairées individuellement"
+              class="w-full rounded-sm mt-6"
+              loading="lazy"
+            />
+          </div>
+        </div>
+      </div>
+
+      <!-- Fila 3: El Legado Actual -->
+      <div class="flex flex-col md:flex-row items-center gap-12 lg:gap-24">
+        
+        <div class="w-full md:w-1/2 order-2 md:order-1 reveal-element">
+          <div class="font-body text-[15px] md:text-base text-[var(--color-graphite)]/80 leading-[1.85] text-justify space-y-6">
+            <p class="font-body text-[var(--color-graphite)] text-base md:text-lg leading-relaxed text-justify hyphens-auto">
+              Aujourd'hui, près de quarante ans plus tard, <strong class="text-[var(--color-noir)]">nous rejetons catégoriquement la production de masse</strong>. Chaque cave à vin Caveduke porte l'âme des ébénistes, ingénieurs et sommeliers qui ont participé à sa conception. Il n'y a pas de stock préfabriqué ; chaque client entre dans un dialogue intime avec nos designers, décidant des dimensions, des tons, des capacités et des finitions.
+            </p>
+            <p class="font-body text-[var(--color-graphite)] text-base md:text-lg leading-relaxed text-justify hyphens-auto">
+              Notre expansion sur <strong class="text-[var(--color-bordeaux)] font-semibold">cinq continents</strong> n'a pas diminué notre esprit d'atelier ; elle l'a magnifié. Lorsqu'un client à <em>New York, Dubaï ou Tokyo</em> reçoit son Caveduke, il n'achète pas un refroidisseur de bouteilles ; il hérite d'un legs de design espagnol, d'un coffre d'élégance imperturbable où le temps, la température et l'humidité se rendent à la beauté de sa collection privée. Caveduke est, dans son essence la plus pure, le silence esthétique où le vin attend son moment de gloire.
+            </p>
+          </div>
+        </div>
+
+        <div class="w-full md:w-1/2 order-1 md:order-2">
+          <figure class="w-full img-reveal aspect-[4/3] md:aspect-[5/4] overflow-hidden rounded-sm relative">
+            <div class="absolute inset-0 bg-[#e0d8cd] z-0"></div>
+            <img 
+              src="/images/vinoteca-inline.png" 
+              alt="Cave à vin Caveduke sur mesure en noyer massif avec éclairage intérieur et porte en verre anti-UV" 
+              class="w-full h-full object-cover relative z-10 hover:scale-105 transition-transform duration-[2s]"
+              loading="lazy"
+            />
+            <div class="absolute inset-0 border border-[var(--color-graphite)]/10 m-3 z-20 pointer-events-none"></div>
+            
+            <figcaption class="absolute bottom-5 right-5 z-30 bg-[var(--color-ivory)]/90 backdrop-blur px-4 py-2 text-center rounded-sm border border-[var(--color-bordeaux)]/20 text-[var(--color-bordeaux)] shadow-[var(--shadow-gold)] font-accent text-[9px] tracking-[0.2em] uppercase">
+              Collection Bois Nobles
+            </figcaption>
+          </figure>
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- Contadores Finales -->
+    <div class="grid grid-cols-3 gap-8 md:gap-16 py-16 border-t border-[var(--color-graphite)]/10 opacity-0 heritage-counters">
+      <div class="text-center">
+        <span class="font-display text-4xl md:text-5xl text-[var(--color-bordeaux)]" data-count="40">0</span>
+        <p class="font-accent tracking-widest text-[var(--color-graphite)]/50 uppercase text-[10px] md:text-xs mt-2">Années de Savoir-faire</p>
+      </div>
+      <div class="text-center">
+        <span class="font-display text-4xl md:text-5xl text-[var(--color-bordeaux)]" data-count="5">0</span>
+        <p class="font-accent tracking-widest text-[var(--color-graphite)]/50 uppercase text-[10px] md:text-xs mt-2">Continents Atteints</p>
+      </div>
+      <div class="text-center">
+        <span class="font-display text-4xl md:text-5xl text-[var(--color-bordeaux)]" data-count="2000">0</span>
+        <p class="font-accent tracking-widest text-[var(--color-graphite)]/50 uppercase text-[10px] md:text-xs mt-2">Collectionneurs Satisfaits</p>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+<script>
+  import { gsap } from 'gsap';
+  import { ScrollTrigger } from 'gsap/ScrollTrigger';
+
+  gsap.registerPlugin(ScrollTrigger);
+
+  // Reveal clip path para todas las imágenes principales
+  gsap.utils.toArray('.img-reveal').forEach((wrapper: any) => {
+    gsap.fromTo(wrapper, 
+      { clipPath: 'inset(100% 0 0 0)' },
+      {
+        clipPath: 'inset(0% 0 0 0)',
+        duration: 1.5,
+        ease: 'power4.inOut',
+        scrollTrigger: {
+          trigger: wrapper,
+          start: 'top 80%',
+        }
+      }
+    );
+  });
+
+  // Reveal standar para textos y contenedores
+  gsap.utils.toArray('.reveal-element').forEach((element: any) => {
+    gsap.fromTo(element, 
+      { y: 40, opacity: 0 },
+      {
+        y: 0,
+        opacity: 1,
+        duration: 1,
+        ease: 'power3.out',
+        scrollTrigger: {
+          trigger: element,
+          start: 'top 85%',
+        }
+      }
+    );
+  });
+
+  // Animate counters solo cuando llegan a la vista
+  const counters = document.querySelectorAll('.counter');
+  
+  if (counters.length > 0) {
+    ScrollTrigger.create({
+      trigger: counters[0]?.parentElement?.parentElement?.parentElement, // El grid entero
+      start: 'top 85%',
+      once: true,
+      onEnter: () => {
+        counters.forEach(counter => {
+          // @ts-ignore
+          const target = parseInt(counter.dataset.target);
+          gsap.to(counter, {
+            innerText: target,
+            duration: 2.5,
+            snap: { innerText: 1 },
+            ease: 'power2.out',
+          });
+        });
+      }
+    });
+  }
+</script>

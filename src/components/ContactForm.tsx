@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 
 interface ContactFormProps {
-  lang?: 'es' | 'en';
+  lang?: 'es' | 'en' | 'fr';
 }
 
 const i18n = {
@@ -32,6 +32,20 @@ const i18n = {
     submitting: 'Sending...',
     successTitle: 'Request Received',
     successMsg: 'A personal Caveduke advisor will contact you within the next 24 business hours.',
+  },
+  fr: {
+    name: 'Nom Complet *',
+    phone: 'Téléphone',
+    email: 'Adresse E-mail *',
+    projectType: 'Type de Projet',
+    types: ['Bois', 'Acier', 'Sous Escalier', 'Sur Mesure'],
+    message: 'Détails de votre vision',
+    privacy: 'J\'ai lu et j\'accepte la',
+    privacyLink: 'Politique de Confidentialité',
+    submit: 'Demander un Conseil',
+    submitting: 'Envoi en cours...',
+    successTitle: 'Demande Reçue',
+    successMsg: 'Un conseiller personnel Caveduke vous contactera dans les prochaines 24 heures ouvrées.',
   },
 };
 

@@ -1,0 +1,72 @@
+---
+// src/components/fr/Navbar.astro
+---
+<header class="fixed top-0 left-0 w-full z-40 mix-blend-difference" id="navbar">
+  
+  <!-- Logo -->
+  <a href="/fr" class="z-50 text-[var(--color-ivory)] group">
+    <div class="flex items-center gap-3 pl-6 md:pl-12 pt-8">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" class="w-6 h-6 opacity-70">
+        <path d="M8 2v4M16 2v4M12 6v16M8 6h8a4 4 0 014 4v0a4 4 0 01-4 4H8a4 4 0 01-4-4v0a4 4 0 014-4z"/>
+      </svg>
+      <span class="font-accent tracking-[0.3em] text-lg uppercase">Caveduke</span>
+    </div>
+  </a>
+
+  <!-- Desktop Nav -->
+  <nav class="hidden lg:flex items-center gap-10">
+    {
+      [
+        { label: 'Patrimoine', href: '#heritage' },
+        { label: 'Collections', href: '#collections' },
+        { label: 'Instagram', href: '#instagram' },
+        { label: 'Contact', href: '#contact' }
+      ].map((item) => (
+      <a href={item.href} class="font-accent tracking-widest text-sm uppercase text-[var(--color-ivory)] hover:text-[var(--color-gold)] transition-colors duration-300 relative group">
+        {item.label}
+        <span class="absolute -bottom-1 left-0 w-0 h-px bg-[var(--color-gold)] transition-all duration-300 group-hover:w-full"></span>
+      </a>
+    ))}
+    
+    <!-- Language Switcher -->
+    <div class="flex items-center gap-3 ml-4 border-l border-[var(--color-graphite)] pl-6">
+      <span class="font-accent text-sm text-[var(--color-ivory)] tracking-widest font-semibold cursor-default">FR</span>
+      <span class="text-[var(--color-graphite)] text-xs">/</span>
+      <a href="/" class="font-accent text-sm text-[var(--color-silver)] hover:text-[var(--color-gold)] transition-colors tracking-widest">ES</a>
+      <span class="text-[var(--color-graphite)] text-xs">/</span>
+      <a href="/en" class="font-accent text-sm text-[var(--color-silver)] hover:text-[var(--color-gold)] transition-colors tracking-widest">EN</a>
+    </div>
+  </nav>
+
+  <!-- CTA & Mobile Toggle -->
+  <div class="flex items-center gap-6 z-50">
+    <a href="#contact" class="hidden md:flex premium-button">
+      <span class="w-1.5 h-1.5 rounded-full bg-current"></span>
+      Demander un Devis
+      <span class="w-1.5 h-1.5 rounded-full bg-current"></span>
+    </a>
+    
+    <!-- Mobile Menu Toggle -->
+    <button class="lg:hidden pr-6 md:pr-12 pt-8 flex flex-col gap-1.5 group" aria-label="Ouvrir le menu">
+      <span class="w-6 h-px bg-current transition-all duration-300 group-hover:w-4"></span>
+      <span class="w-4 h-px bg-current transition-all duration-300 group-hover:w-6"></span>
+    </button>
+  </div>
+
+</header>
+
+<script>
+  import { gsap } from 'gsap';
+
+  gsap.fromTo('#navbar > *', 
+    { y: -20, opacity: 0 },
+    { 
+      y: 0, 
+      opacity: 1, 
+      duration: 1,
+      stagger: 0.15,
+      ease: 'power3.out',
+      delay: 2.8
+    }
+  );
+</script>
