@@ -21,8 +21,8 @@ import GoldenParticles from './GoldenParticles';
       <div class="w-16 h-px bg-gradient-to-l from-transparent to-[var(--color-gold)] opacity-70 scale-x-0 origin-left anim-line"></div>
     </div>
 
-    <div class="overflow-hidden pb-4">
-      <h1 class="font-display flex flex-col items-center justify-center leading-none tracking-[0.01em] translate-y-full opacity-0 anim-title" data-speed="0.8">
+    <div class="pb-4">
+      <h1 class="font-display flex flex-col items-center justify-center leading-none tracking-[0.01em] opacity-0 anim-title" data-speed="0.8">
         <span class="text-3xl md:text-5xl lg:text-6xl text-[var(--color-gold)] italic font-light mb-4">Vinotecas</span>
         <img src="/images/logo-caveduke.png" alt="Caveduke" class="h-16 md:h-24 lg:h-28 w-auto brightness-0 invert" />
       </h1>
@@ -86,7 +86,6 @@ import GoldenParticles from './GoldenParticles';
         stagger: 0.15
       }, '-=0.8')
       .to('.anim-title', {
-        y: 0,
         opacity: 1,
         duration: 1.2,
         ease: 'power4.out',
