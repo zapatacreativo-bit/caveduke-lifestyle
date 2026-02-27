@@ -58,29 +58,3 @@
     @apply bg-transparent border-b border-(--color-gold)/40 pb-2 text-(--color-gold) outline-none focus:border-(--color-gold) transition-colors w-full font-(--font-body) placeholder:text-(--color-gold)/30;
   }
 }
-
-/* Mobile: disable GSAP reveal animations - content always visible */
-@media (max-width: 767px) {
-
-  .reveal-element,
-  .micro-cta-reveal,
-  .micro-cta-reveal-en,
-  .micro-cta-reveal-fr,
-  .micro-cta-form,
-  .micro-cta-form-en,
-  .micro-cta-form-fr,
-  .img-reveal,
-  .clip-text-reveal,
-  [class*="reveal"],
-  [class*="feature-"],
-  [class*="collection-"],
-  [class*="testimonial-"],
-  [class*="number-"],
-  [class*="faq-"],
-  [class*="contact-"] {
-    opacity: 1 !important;
-    transform: none !important;
-    clip-path: none !important;
-    visibility: visible !important;
-  }
-}
