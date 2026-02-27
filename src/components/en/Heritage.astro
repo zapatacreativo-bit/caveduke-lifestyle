@@ -59,7 +59,7 @@
               src="/images/craftsman.png" 
               alt="Master cabinetmaker working on a Caveduke wine cabinet in his Barcelona workshop" 
               class="w-full h-full object-cover relative z-10 hover:scale-105 transition-transform duration-[2s]"
-              loading="lazy"
+              loading="eager"
             />
             <div class="absolute inset-0 border border-[var(--color-graphite)]/10 m-3 z-20 pointer-events-none"></div>
           </figure>
@@ -116,7 +116,7 @@
               src="/images/vinoteca-inline.png" 
               alt="Custom solid walnut Caveduke wine cabinet with interior lighting and UV glass door" 
               class="w-full h-full object-cover relative z-10 hover:scale-105 transition-transform duration-[2s]"
-              loading="lazy"
+              loading="eager"
             />
             <div class="absolute inset-0 border border-[var(--color-graphite)]/10 m-3 z-20 pointer-events-none"></div>
             
@@ -175,7 +175,7 @@
         ease: 'power4.inOut',
         scrollTrigger: {
           trigger: wrapper,
-          start: 'top 80%',
+          start: 'top 95%',
         }
       }
     );
@@ -192,7 +192,7 @@
         ease: 'power3.out',
         scrollTrigger: {
           trigger: element,
-          start: 'top 85%',
+          start: 'top 95%',
         }
       }
     );
@@ -204,7 +204,7 @@
   if (counters.length > 0) {
     ScrollTrigger.create({
       trigger: counters[0]?.parentElement?.parentElement?.parentElement, // El grid entero
-      start: 'top 85%',
+      start: 'top 95%',
       once: true,
       onEnter: () => {
         counters.forEach(counter => {

@@ -54,7 +54,7 @@
               src="/images/craftsman.png" 
               alt="Maître artisan Caveduke travaillant sur une cave à vin dans l'atelier de Barcelone" 
               class="w-full h-full object-cover relative z-10 hover:scale-105 transition-transform duration-[2s]"
-              loading="lazy"
+              loading="eager"
             />
             <div class="absolute inset-0 border border-[var(--color-graphite)]/10 m-3 z-20 pointer-events-none"></div>
           </figure>
@@ -106,7 +106,7 @@
               src="/images/vinoteca-inline.png" 
               alt="Cave à vin Caveduke sur mesure en noyer massif avec éclairage intérieur et porte en verre anti-UV" 
               class="w-full h-full object-cover relative z-10 hover:scale-105 transition-transform duration-[2s]"
-              loading="lazy"
+              loading="eager"
             />
             <div class="absolute inset-0 border border-[var(--color-graphite)]/10 m-3 z-20 pointer-events-none"></div>
             
@@ -156,7 +156,7 @@
         ease: 'power4.inOut',
         scrollTrigger: {
           trigger: wrapper,
-          start: 'top 80%',
+          start: 'top 95%',
         }
       }
     );
@@ -173,7 +173,7 @@
         ease: 'power3.out',
         scrollTrigger: {
           trigger: element,
-          start: 'top 85%',
+          start: 'top 95%',
         }
       }
     );
@@ -185,7 +185,7 @@
   if (counters.length > 0) {
     ScrollTrigger.create({
       trigger: counters[0]?.parentElement?.parentElement?.parentElement, // El grid entero
-      start: 'top 85%',
+      start: 'top 95%',
       once: true,
       onEnter: () => {
         counters.forEach(counter => {
