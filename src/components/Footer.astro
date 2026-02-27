@@ -1,6 +1,6 @@
 ---
 // src/components/Footer.astro
-
+import { Instagram, Linkedin, Facebook } from 'lucide-react';
 ---
 <footer class="bg-[#050505] pt-24 pb-8 px-6 md:px-12 border-t border-[var(--color-gold)]/20">
   <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-start gap-16 mb-16">
@@ -89,5 +89,16 @@
       &copy; {new Date().getFullYear()} Caveduke. Todos los derechos reservados. · <a href="/politica-de-privacidad" class="hover:text-[var(--color-gold)] transition-colors">Política de Privacidad</a> · <a href="/aviso-legal" class="hover:text-[var(--color-gold)] transition-colors">Aviso Legal</a>
     </p>
 
+    <div class="flex items-center gap-8">
+      <a href="https://instagram.com/cavedukevinotecas" target="_blank" rel="noopener noreferrer" class="text-[var(--color-silver)]/60 hover:text-[var(--color-gold)] transition-colors duration-300">
+        <Instagram size={22} />
+      </a>
+      <a href="#" target="_blank" rel="noopener noreferrer" class="text-[var(--color-silver)]/60 hover:text-[var(--color-gold)] transition-colors duration-300">
+        <Linkedin size={22} />
+      </a>
+      <a href="#" target="_blank" rel="noopener noreferrer" class="text-[var(--color-silver)]/60 hover:text-[var(--color-gold)] transition-colors duration-300">
+        <Facebook size={22} />
+      </a>
+    </div>
   </div>
 </footer>
