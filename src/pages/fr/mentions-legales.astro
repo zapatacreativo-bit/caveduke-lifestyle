@@ -1,0 +1,108 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Navbar from '../../components/fr/Navbar.astro';
+import Footer from '../../components/fr/Footer.astro';
+---
+
+<BaseLayout title="Mentions Légales | Caveduke" description="Mentions légales de Caveduke. Conditions d'utilisation du site web, propriété intellectuelle et législation applicable." lang="fr">
+	<Navbar />
+	
+	<main class="bg-[var(--color-noir)] pt-40 pb-24 px-6 md:px-12">
+		<article class="max-w-4xl mx-auto prose-legal">
+			
+			<div class="flex items-center gap-4 mb-8">
+				<div class="w-8 h-px bg-[var(--color-gold)]"></div>
+				<p class="font-accent text-[var(--color-gold)] tracking-widest uppercase text-sm">Mentions Légales</p>
+			</div>
+
+			<h1 class="font-display text-4xl md:text-5xl text-[var(--color-ivory)] leading-tight mb-6">
+				Mentions <span class="italic text-[var(--color-gold)]">Légales</span>
+			</h1>
+
+			<p class="font-body text-sm text-[var(--color-silver)]/50 mb-4">L'utilisation de ce site web implique l'acceptation pleine et entière de toutes les dispositions incluses dans les présentes Mentions Légales.</p>
+			<p class="font-body text-sm text-[var(--color-silver)]/50 mb-12">Dernière mise à jour : 27 février 2026</p>
+
+			<div class="space-y-10 font-body text-[var(--color-silver)]/80 text-base leading-relaxed">
+
+				<section>
+					<h2 class="font-display text-2xl text-[var(--color-ivory)] mb-4">1. Titulaire du Site Web</h2>
+					<ul class="space-y-1 list-none pl-0">
+						<li><strong class="text-[var(--color-ivory)]">Marque commerciale :</strong> CAVEDUKE</li>
+						<li><strong class="text-[var(--color-ivory)]">Siège social :</strong> C/ Juan Ramón Jiménez, 34, 08100 Mollet del Vallés (Barcelone) – Espagne</li>
+						<li><strong class="text-[var(--color-ivory)]">Courriel :</strong> <a href="mailto:caveduke@caveduke.com" class="text-[var(--color-gold)] hover:underline">caveduke@caveduke.com</a></li>
+						<li><strong class="text-[var(--color-ivory)]">Téléphone :</strong> <a href="tel:+34697182482" class="text-[var(--color-gold)] hover:underline">(+34) 697 182 482</a></li>
+					</ul>
+				</section>
+
+				<section>
+					<h2 class="font-display text-2xl text-[var(--color-ivory)] mb-4">2. Objet</h2>
+					<p>Le site web fournit aux utilisateurs un accès à l'information et aux services proposés par CAVEDUKE aux personnes ou organisations qui s'y intéressent.</p>
+				</section>
+
+				<section>
+					<h2 class="font-display text-2xl text-[var(--color-ivory)] mb-4">3. Accès et Utilisation du Site</h2>
+					<p><strong class="text-[var(--color-ivory)]">3.1. Accès gratuit.</strong> L'accès au site web est gratuit pour tous les utilisateurs.</p>
+					<p class="mt-3"><strong class="text-[var(--color-ivory)]">3.2. Inscription.</strong> En règle générale, l'accès et l'utilisation du site web n'exigent pas d'inscription ou d'enregistrement préalable.</p>
+				</section>
+
+				<section>
+					<h2 class="font-display text-2xl text-[var(--color-ivory)] mb-4">4. Contenu du Site Web</h2>
+					<p>CAVEDUKE peut modifier, supprimer et changer le contenu du site à tout moment et sans préavis, sans aucune obligation et sans être tenu responsable des conséquences que ces modifications pourraient entraîner pour les utilisateurs.</p>
+					<p class="mt-3">L'utilisation du contenu du site pour promouvoir, contracter ou diffuser de la publicité ou des informations propres ou de tiers est interdite sans l'autorisation expresse de CAVEDUKE.</p>
+				</section>
+
+				<section>
+					<h2 class="font-display text-2xl text-[var(--color-ivory)] mb-4">5. Limitation de Responsabilité</h2>
+					<p>L'accès au site web, ainsi que toute utilisation non autorisée des informations qu'il contient, relèvent de la responsabilité exclusive de la personne qui les effectue. CAVEDUKE ne sera pas tenu responsable des conséquences, dommages ou préjudices pouvant résulter de cet accès ou de cette utilisation.</p>
+					<p class="mt-3">CAVEDUKE ne sera pas responsable des erreurs de sécurité ou des dommages causés au système informatique de l'utilisateur (matériel et logiciel), résultant de :</p>
+					<ul class="list-disc pl-6 mt-3 space-y-2">
+						<li>La présence d'un virus sur l'ordinateur de l'utilisateur utilisé pour se connecter aux services et contenus du site web.</li>
+						<li>Un dysfonctionnement du navigateur.</li>
+						<li>L'utilisation de versions non mises à jour de celui-ci.</li>
+					</ul>
+				</section>
+
+				<section>
+					<h2 class="font-display text-2xl text-[var(--color-ivory)] mb-4">6. Utilisation de la Technologie « Cookie »</h2>
+					<p>Ce site web peut utiliser des cookies techniques et analytiques. Pour plus d'informations, veuillez consulter notre <a href="/fr/politique-de-confidentialite" class="text-[var(--color-gold)] hover:underline">Politique de Confidentialité</a>.</p>
+				</section>
+
+				<section>
+					<h2 class="font-display text-2xl text-[var(--color-ivory)] mb-4">7. Mesures de Sécurité</h2>
+					<p>Les données personnelles communiquées par l'utilisateur à CAVEDUKE peuvent être stockées dans des bases de données automatisées ou non, dont la propriété appartient exclusivement à CAVEDUKE, qui assume toutes les mesures de nature technique, organisationnelle et de sécurité garantissant la confidentialité, l'intégrité et la qualité des informations conformément à la réglementation en vigueur en matière de protection des données.</p>
+				</section>
+
+				<section>
+					<h2 class="font-display text-2xl text-[var(--color-ivory)] mb-4">8. Liens vers d'Autres Sites Web</h2>
+					<p>CAVEDUKE fournit à l'utilisateur l'accès à d'autres sites web de tiers par le biais de liens dans le seul but de l'informer de l'existence d'autres sources d'information sur Internet.</p>
+					<p class="mt-3">Ces liens ne constituent en aucun cas une recommandation de visiter les sites de destination, qui sont hors du contrôle de CAVEDUKE. Par conséquent, CAVEDUKE n'est pas responsable du contenu des sites liés ni des résultats obtenus par l'utilisateur via ces liens hypertextes.</p>
+				</section>
+
+				<section>
+					<h2 class="font-display text-2xl text-[var(--color-ivory)] mb-4">9. Réseaux Sociaux</h2>
+					<p>CAVEDUKE peut être présent sur les réseaux sociaux. Le traitement des données des personnes qui suivent les pages officielles sur les réseaux sociaux sera régi par la présente section, ainsi que par les conditions d'utilisation, les politiques de confidentialité et les normes d'accès propres à chaque réseau social, préalablement acceptées par l'utilisateur.</p>
+				</section>
+
+				<section>
+					<h2 class="font-display text-2xl text-[var(--color-ivory)] mb-4">10. Propriété Intellectuelle et Industrielle</h2>
+					<p>Tous les droits de propriété industrielle et intellectuelle sur le site web et son contenu appartiennent à CAVEDUKE. Toute utilisation du site web ou de son contenu doit être strictement privée.</p>
+					<p class="mt-3">Tout autre usage impliquant la copie, la reproduction, la distribution, la transformation, la communication publique ou toute autre action similaire de tout ou partie du contenu du site web est expressément réservé. Aucun utilisateur ne peut effectuer ces actions sans l'autorisation préalable et écrite de CAVEDUKE.</p>
+				</section>
+
+				<section>
+					<h2 class="font-display text-2xl text-[var(--color-ivory)] mb-4">11. Politique de Confidentialité et Protection des Données</h2>
+					<p>Pour accéder à la Politique de Confidentialité, veuillez consulter le lien suivant : <a href="/fr/politique-de-confidentialite" class="text-[var(--color-gold)] hover:underline">Informations sur la Politique de Confidentialité</a>.</p>
+				</section>
+
+				<section>
+					<h2 class="font-display text-2xl text-[var(--color-ivory)] mb-4">12. Législation Applicable et Juridiction Compétente</h2>
+					<p>Les présentes Mentions Légales seront interprétées et régies conformément à la législation espagnole. CAVEDUKE et les utilisateurs, renonçant expressément à tout autre for qui pourrait leur correspondre, se soumettent aux tribunaux du domicile de l'utilisateur pour tout litige pouvant découler de l'accès au site web ou de son utilisation.</p>
+					<p class="mt-3">Dans le cas où l'utilisateur aurait son domicile en dehors de l'Espagne, CAVEDUKE et l'utilisateur se soumettent, avec renonciation expresse à tout autre for, aux tribunaux du domicile de CAVEDUKE.</p>
+				</section>
+
+			</div>
+		</article>
+	</main>
+
+	<Footer />
+</BaseLayout>

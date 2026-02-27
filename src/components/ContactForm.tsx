@@ -14,6 +14,7 @@ const i18n = {
     message: 'Detalles de su visión',
     privacy: 'He leído y acepto la',
     privacyLink: 'Política de Privacidad',
+    privacyUrl: '/politica-de-privacidad',
     submit: 'Solicitar Asesoría',
     submitting: 'Enviando...',
     successTitle: 'Solicitud Recibida',
@@ -28,6 +29,7 @@ const i18n = {
     message: 'Details of your vision',
     privacy: 'I have read and accept the',
     privacyLink: 'Privacy Policy',
+    privacyUrl: '/en/privacy-policy',
     submit: 'Request Consultation',
     submitting: 'Sending...',
     successTitle: 'Request Received',
@@ -42,6 +44,7 @@ const i18n = {
     message: 'Détails de votre vision',
     privacy: 'J\'ai lu et j\'accepte la',
     privacyLink: 'Politique de Confidentialité',
+    privacyUrl: '/fr/politique-de-confidentialite',
     submit: 'Demander un Conseil',
     submitting: 'Envoi en cours...',
     successTitle: 'Demande Reçue',
@@ -77,7 +80,7 @@ export default function ContactForm({ lang = 'es' }: ContactFormProps) {
     );
   }
 
-  const labelBase = "absolute left-0 top-0 font-accent tracking-widest text-[var(--color-ivory)]/70 uppercase text-xs transition-all duration-300 peer-focus:-top-5 peer-focus:text-[var(--color-gold)] peer-focus:text-[10px] peer-not-placeholder-shown:-top-5 peer-not-placeholder-shown:text-[10px] pointer-events-none";
+  const labelBase = "absolute left-0 top-0 font-accent tracking-widest text-[var(--color-gold)]/80 uppercase text-xs transition-all duration-300 peer-focus:-top-5 peer-focus:text-[var(--color-gold)] peer-focus:text-[10px] peer-not-placeholder-shown:-top-5 peer-not-placeholder-shown:text-[10px] pointer-events-none";
 
   return (
     <form onSubmit={handleSubmit} class="flex flex-col gap-10">
@@ -123,17 +126,17 @@ export default function ContactForm({ lang = 'es' }: ContactFormProps) {
       </div>
 
       <div class="relative group mt-4">
-        <div class="font-accent tracking-widest text-[var(--color-ivory)]/70 uppercase text-xs mb-6">
+        <div class="font-accent tracking-widest text-[var(--color-gold)]/80 uppercase text-xs mb-6">
           {t.projectType}
         </div>
         <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
           {t.types.map(type => (
             <label class="flex items-center gap-2 cursor-pointer group/label">
               <input type="radio" name="project_type" value={type.toLowerCase()} class="hidden peer" />
-              <div class="w-4 h-4 rounded-full border border-[var(--color-silver)]/30 peer-checked:border-[var(--color-gold)] peer-checked:bg-[var(--color-gold)] transition-colors flex items-center justify-center">
+              <div class="w-4 h-4 rounded-full border border-[var(--color-gold)]/50 peer-checked:border-[var(--color-gold)] peer-checked:bg-[var(--color-gold)] transition-colors flex items-center justify-center">
                 <div class="w-1.5 h-1.5 rounded-full bg-[var(--color-noir)] opacity-0 peer-checked:opacity-100 transition-opacity"></div>
               </div>
-              <span class="font-body text-sm text-[var(--color-ivory)]/80 group-hover/label:text-[var(--color-ivory)] transition-colors">{type}</span>
+              <span class="font-body text-sm text-[var(--color-gold)]/80 group-hover/label:text-[var(--color-gold)] transition-colors">{type}</span>
             </label>
           ))}
         </div>
@@ -162,14 +165,14 @@ export default function ContactForm({ lang = 'es' }: ContactFormProps) {
               onChange={(e) => setPrivacyAccepted((e.target as HTMLInputElement).checked)}
               class="sr-only peer"
             />
-            <div class="w-5 h-5 border border-[var(--color-silver)]/40 peer-checked:border-[var(--color-gold)] peer-checked:bg-[var(--color-gold)] transition-all duration-300 flex items-center justify-center rounded-sm">
+            <div class="w-5 h-5 border border-[var(--color-gold)]/50 peer-checked:border-[var(--color-gold)] peer-checked:bg-[var(--color-gold)] transition-all duration-300 flex items-center justify-center rounded-sm">
               <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="var(--color-noir)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="opacity-0 peer-checked:opacity-100 transition-opacity"><path d="M20 6 9 17l-5-5" /></svg>
             </div>
           </div>
-          <span class="font-body text-sm text-[var(--color-silver)]/70 leading-relaxed group-hover/privacy:text-[var(--color-ivory)]/90 transition-colors">
+          <span class="font-body text-sm text-[var(--color-gold)]/70 leading-relaxed group-hover/privacy:text-[var(--color-gold)] transition-colors">
             {t.privacy}{' '}
             <a
-              href="/politica-de-privacidad"
+              href={t.privacyUrl}
               target="_blank"
               rel="noopener noreferrer"
               class="text-[var(--color-gold)] underline underline-offset-2 hover:text-[var(--color-gold)]/80 transition-colors"

@@ -2,13 +2,13 @@
 
 @theme {
   --color-noir: #0A0A0A;
-  --color-bordeaux: #6B1D2A;
+  --color-bordeaux: #1B5E20;
   --color-gold: #C9A96E;
   --color-ivory: #F5F0EA;
   --color-graphite: #2A2A2A;
   --color-oak: #8B6F47;
   --color-silver: #B8B8B0;
-  --color-mist: #3D2B3D;
+  --color-mist: #1A3D2B;
   --color-crystal: #E8E4DE;
 
   --font-display: 'Cormorant Garamond', 'Georgia', serif;
@@ -23,7 +23,8 @@
     font-family: var(--font-body);
   }
 
-  html.lenis, html.lenis body {
+  html.lenis,
+  html.lenis body {
     height: auto;
   }
 
@@ -50,10 +51,10 @@
   }
 
   .premium-button {
-    @apply border border-(--color-gold) bg-transparent text-(--color-silver) transition-all duration-500 hover:bg-(--color-gold) hover:text-(--color-noir) px-6 py-3 font-(--font-accent) tracking-widest uppercase text-sm inline-flex items-center gap-2;
+    @apply border border-(--color-gold) bg-transparent text-(--color-gold) transition-all duration-500 hover:bg-(--color-gold) hover:text-(--color-noir) px-6 py-3 font-(--font-accent) tracking-widest uppercase text-sm inline-flex items-center gap-2;
   }
 
   .premium-input {
-    @apply bg-transparent border-b border-(--color-silver)/30 pb-2 text-(--color-ivory) outline-none focus:border-(--color-bordeaux) transition-colors w-full font-(--font-body) placeholder:text-(--color-silver)/50;
+    @apply bg-transparent border-b border-(--color-gold)/40 pb-2 text-(--color-gold) outline-none focus:border-(--color-gold) transition-colors w-full font-(--font-body) placeholder:text-(--color-gold)/30;
   }
 }

@@ -29,11 +29,11 @@ import { Instagram, Linkedin, Facebook } from 'lucide-react';
           {[
             { label: 'Heritage', href: '#heritage' },
             { label: 'Collections', href: '#collections' },
-            { label: 'Instagram', href: '#instagram' },
+            { label: 'Wine Cabinets ↗', href: 'https://caveduke.com/' },
             { label: 'Contact', href: '#contact' }
           ].map(link => (
             <li>
-              <a href={link.href} class="text-sm text-[var(--color-silver)]/70 hover:text-[var(--color-gold)] transition-colors">
+              <a href={link.href} class="text-sm text-[var(--color-silver)]/70 hover:text-[var(--color-gold)] transition-colors" target={link.href.startsWith('http') ? '_blank' : undefined} rel={link.href.startsWith('http') ? 'noopener noreferrer' : undefined}>
                 {link.label}
               </a>
             </li>
@@ -69,7 +69,7 @@ import { Instagram, Linkedin, Facebook } from 'lucide-react';
 
   <div class="max-w-7xl mx-auto pt-8 border-t border-[var(--color-silver)]/10 flex flex-col md:flex-row justify-between items-center gap-6">
     <p class="text-xs text-[var(--color-silver)]/50">
-      &copy; {new Date().getFullYear()} Caveduke. All rights reserved.
+      &copy; {new Date().getFullYear()} Caveduke. All rights reserved. · <a href="/en/privacy-policy" class="hover:text-[var(--color-gold)] transition-colors">Privacy Policy</a> · <a href="/en/legal-notice" class="hover:text-[var(--color-gold)] transition-colors">Legal Notice</a>
     </p>
 
     <div class="flex items-center gap-8">

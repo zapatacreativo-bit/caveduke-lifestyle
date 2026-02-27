@@ -1,0 +1,154 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Navbar from '../../components/fr/Navbar.astro';
+import Footer from '../../components/fr/Footer.astro';
+---
+
+<BaseLayout title="Politique de Confidentialité | Caveduke" description="Politique de confidentialité de Caveduke. Informations sur le traitement des données personnelles conformément au RGPD." lang="fr">
+	<Navbar />
+	
+	<main class="bg-[var(--color-noir)] pt-40 pb-24 px-6 md:px-12">
+		<article class="max-w-4xl mx-auto prose-legal">
+			
+			<div class="flex items-center gap-4 mb-8">
+				<div class="w-8 h-px bg-[var(--color-gold)]"></div>
+				<p class="font-accent text-[var(--color-gold)] tracking-widest uppercase text-sm">Mentions Légales</p>
+			</div>
+
+			<h1 class="font-display text-4xl md:text-5xl text-[var(--color-ivory)] leading-tight mb-6">
+				Politique de <span class="italic text-[var(--color-gold)]">Confidentialité</span>
+			</h1>
+
+			<p class="font-body text-sm text-[var(--color-silver)]/50 mb-12">Dernière mise à jour : 27 février 2026</p>
+
+			<div class="space-y-10 font-body text-[var(--color-silver)]/80 text-base leading-relaxed">
+
+				<!-- 1. Responsable -->
+				<section>
+					<h2 class="font-display text-2xl text-[var(--color-ivory)] mb-4">1. Responsable du Traitement</h2>
+					<ul class="space-y-1 list-none pl-0">
+						<li><strong class="text-[var(--color-ivory)]">Identité :</strong> Caveduke, S.L.</li>
+						<li><strong class="text-[var(--color-ivory)]">N° d'identification fiscale :</strong> [CIF de l'entreprise]</li>
+						<li><strong class="text-[var(--color-ivory)]">Siège social :</strong> C/ Juan Ramón Jiménez, 34, 08100 Mollet del Vallés (Barcelone), Espagne</li>
+						<li><strong class="text-[var(--color-ivory)]">Courriel :</strong> <a href="mailto:caveduke@caveduke.com" class="text-[var(--color-gold)] hover:underline">caveduke@caveduke.com</a></li>
+						<li><strong class="text-[var(--color-ivory)]">Téléphone :</strong> (+34) 697 182 482</li>
+					</ul>
+				</section>
+
+				<!-- 2. Données collectées -->
+				<section>
+					<h2 class="font-display text-2xl text-[var(--color-ivory)] mb-4">2. Données Personnelles Collectées</h2>
+					<p>Via notre site web, nous pouvons collecter les données personnelles suivantes :</p>
+					<ul class="list-disc pl-6 mt-3 space-y-2">
+						<li>Nom et prénom</li>
+						<li>Adresse électronique</li>
+						<li>Numéro de téléphone</li>
+						<li>Adresse postale (si nécessaire pour les devis ou livraisons)</li>
+						<li>Données de navigation (cookies, adresse IP, type de navigateur)</li>
+						<li>Toute information complémentaire fournie volontairement via nos formulaires de contact</li>
+					</ul>
+				</section>
+
+				<!-- 3. Finalité -->
+				<section>
+					<h2 class="font-display text-2xl text-[var(--color-ivory)] mb-4">3. Finalité du Traitement</h2>
+					<p>Les données personnelles que vous nous fournissez seront traitées aux fins suivantes :</p>
+					<ul class="list-disc pl-6 mt-3 space-y-2">
+						<li>Gestion des demandes de contact, des consultations et des devis</li>
+						<li>Envoi d'informations commerciales sur nos produits et services, avec votre consentement préalable explicite</li>
+						<li>Gestion de la relation commerciale avec les clients</li>
+						<li>Respect des obligations légales applicables</li>
+						<li>Amélioration de l'expérience utilisateur sur notre site web</li>
+					</ul>
+				</section>
+
+				<!-- 4. Base juridique -->
+				<section>
+					<h2 class="font-display text-2xl text-[var(--color-ivory)] mb-4">4. Base Juridique du Traitement</h2>
+					<p>Le traitement de vos données personnelles est fondé sur :</p>
+					<ul class="list-disc pl-6 mt-3 space-y-2">
+						<li><strong class="text-[var(--color-ivory)]">Le consentement</strong> (art. 6.1.a RGPD) : lors de la soumission de formulaires de contact ou de demandes d'information.</li>
+						<li><strong class="text-[var(--color-ivory)]">L'exécution d'un contrat</strong> (art. 6.1.b RGPD) : pour la gestion des commandes et des devis.</li>
+						<li><strong class="text-[var(--color-ivory)]">L'intérêt légitime</strong> (art. 6.1.f RGPD) : pour améliorer nos services et l'expérience utilisateur.</li>
+						<li><strong class="text-[var(--color-ivory)]">L'obligation légale</strong> (art. 6.1.c RGPD) : pour respecter les obligations fiscales et commerciales.</li>
+					</ul>
+				</section>
+
+				<!-- 5. Conservation -->
+				<section>
+					<h2 class="font-display text-2xl text-[var(--color-ivory)] mb-4">5. Conservation des Données</h2>
+					<p>Les données personnelles seront conservées pendant le temps nécessaire à l'accomplissement de la finalité pour laquelle elles ont été collectées. En particulier :</p>
+					<ul class="list-disc pl-6 mt-3 space-y-2">
+						<li>Données clients : pendant la durée de la relation contractuelle et, après son terme, pendant les délais de prescription légaux applicables.</li>
+						<li>Données de contact et consultations : pendant un maximum de 2 ans à compter de la dernière interaction.</li>
+						<li>Données de communications commerciales : jusqu'au retrait du consentement par l'intéressé.</li>
+					</ul>
+				</section>
+
+				<!-- 6. Destinataires -->
+				<section>
+					<h2 class="font-display text-2xl text-[var(--color-ivory)] mb-4">6. Destinataires des Données</h2>
+					<p>Aucune donnée personnelle ne sera communiquée à des tiers, sauf obligation légale. Peuvent avoir accès à vos données :</p>
+					<ul class="list-disc pl-6 mt-3 space-y-2">
+						<li>Prestataires de services technologiques (hébergement web, messagerie électronique)</li>
+						<li>Administrations publiques en cas d'obligation légale</li>
+						<li>Établissements financiers pour la gestion des encaissements et paiements</li>
+					</ul>
+				</section>
+
+				<!-- 7. Droits -->
+				<section>
+					<h2 class="font-display text-2xl text-[var(--color-ivory)] mb-4">7. Droits de la Personne Concernée</h2>
+					<p>Conformément au Règlement Général sur la Protection des Données (RGPD), vous disposez des droits suivants :</p>
+					<ul class="list-disc pl-6 mt-3 space-y-2">
+						<li><strong class="text-[var(--color-ivory)]">Accès :</strong> demander des informations sur les données personnelles que nous traitons.</li>
+						<li><strong class="text-[var(--color-ivory)]">Rectification :</strong> demander la correction de données inexactes ou incomplètes.</li>
+						<li><strong class="text-[var(--color-ivory)]">Effacement :</strong> demander la suppression de vos données lorsqu'elles ne sont plus nécessaires.</li>
+						<li><strong class="text-[var(--color-ivory)]">Limitation :</strong> demander la restriction du traitement dans certaines circonstances.</li>
+						<li><strong class="text-[var(--color-ivory)]">Portabilité :</strong> recevoir vos données dans un format structuré et couramment utilisé.</li>
+						<li><strong class="text-[var(--color-ivory)]">Opposition :</strong> vous opposer au traitement de vos données pour des motifs légitimes.</li>
+					</ul>
+					<p class="mt-4">Pour exercer ces droits, vous pouvez nous contacter à <a href="mailto:caveduke@caveduke.com" class="text-[var(--color-gold)] hover:underline">caveduke@caveduke.com</a> ou à notre adresse postale, en joignant une copie de votre pièce d'identité.</p>
+					<p class="mt-3">Vous avez également le droit d'introduire une réclamation auprès de l'<strong class="text-[var(--color-ivory)]">Agence Espagnole de Protection des Données (AEPD)</strong> sur <a href="https://www.aepd.es" target="_blank" rel="noopener noreferrer" class="text-[var(--color-gold)] hover:underline">www.aepd.es</a>, ou auprès de votre autorité de contrôle locale (en France : <a href="https://www.cnil.fr" target="_blank" rel="noopener noreferrer" class="text-[var(--color-gold)] hover:underline">CNIL</a>).</p>
+				</section>
+
+				<!-- 8. Cookies -->
+				<section>
+					<h2 class="font-display text-2xl text-[var(--color-ivory)] mb-4">8. Politique de Cookies</h2>
+					<p>Notre site web utilise des cookies propres et de tiers aux fins suivantes :</p>
+					<ul class="list-disc pl-6 mt-3 space-y-2">
+						<li><strong class="text-[var(--color-ivory)]">Cookies techniques :</strong> nécessaires au bon fonctionnement du site web.</li>
+						<li><strong class="text-[var(--color-ivory)]">Cookies analytiques :</strong> pour recueillir des statistiques anonymes sur l'utilisation du site.</li>
+					</ul>
+					<p class="mt-3">Vous pouvez configurer votre navigateur pour refuser les cookies, bien que cela puisse affecter le fonctionnement de certaines sections du site web.</p>
+				</section>
+
+				<!-- 9. Sécurité -->
+				<section>
+					<h2 class="font-display text-2xl text-[var(--color-ivory)] mb-4">9. Mesures de Sécurité</h2>
+					<p>Nous avons mis en place les mesures techniques et organisationnelles nécessaires pour garantir la sécurité des données personnelles et éviter leur altération, perte, traitement ou accès non autorisé, conformément à l'état de la technique, à la nature des données stockées et aux risques auxquels elles sont exposées.</p>
+				</section>
+
+				<!-- 10. Modifications -->
+				<section>
+					<h2 class="font-display text-2xl text-[var(--color-ivory)] mb-4">10. Modifications de la Politique</h2>
+					<p>Caveduke se réserve le droit de modifier la présente Politique de Confidentialité pour l'adapter aux évolutions législatives ou jurisprudentielles, ainsi qu'aux pratiques du secteur. Tout changement sera annoncé sur cette page avec un préavis raisonnable avant sa mise en œuvre.</p>
+				</section>
+
+				<!-- Réglementation -->
+				<section class="border-t border-[var(--color-silver)]/10 pt-8 mt-12">
+					<h2 class="font-display text-2xl text-[var(--color-ivory)] mb-4">Réglementation Applicable</h2>
+					<ul class="list-disc pl-6 space-y-2 text-sm">
+						<li>Règlement (UE) 2016/679 du Parlement européen et du Conseil (RGPD)</li>
+						<li>Loi organique espagnole 3/2018, du 5 décembre, sur la Protection des Données Personnelles et la garantie des droits numériques (LOPD-GDD)</li>
+						<li>Loi espagnole 34/2002, du 11 juillet, sur les Services de la Société de l'Information et le Commerce Électronique (LSSI-CE)</li>
+						<li>Loi française n° 78-17 du 6 janvier 1978 relative à l'informatique, aux fichiers et aux libertés (Loi Informatique et Libertés)</li>
+					</ul>
+				</section>
+
+			</div>
+		</article>
+	</main>
+
+	<Footer />
+</BaseLayout>
