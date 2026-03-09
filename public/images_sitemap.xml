@@ -1,19 +1,185 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+
+  <!-- Artículo 1: Cómo Elegir la Vinoteca Perfecta -->
   <url>
-    <loc>https://avinotecas.com/</loc>
+    <loc>https://avinotecas.com/blog/como-elegir-vinoteca-perfecta</loc>
     <image:image>
-      <image:loc>https://avinotecas.com/images/craftsman.png</image:loc>
-      <image:title>Artesano Caveduke trabajando en vinoteca de lujo</image:title>
+      <image:loc>https://avinotecas.com/images/blog/articulo-vinoteca/hero.png</image:loc>
+      <image:title>Vinoteca premium Caveduke iluminada con botellas de vino en ambiente de lujo</image:title>
+      <image:caption>Vinoteca de lujo Caveduke con iluminación LED ambiental y botellas premium</image:caption>
     </image:image>
     <image:image>
-      <image:loc>https://avinotecas.com/images/hero-bg.png</image:loc>
-      <image:title>Vinoteca Caveduke Premium</image:title>
+      <image:loc>https://avinotecas.com/images/blog/articulo-vinoteca/temperatura.png</image:loc>
+      <image:title>Panel de control digital de temperatura en vinoteca Caveduke</image:title>
+      <image:caption>Control preciso de temperatura para conservación óptima del vino</image:caption>
     </image:image>
     <image:image>
-      <image:loc>https://avinotecas.com/images/collections/madera-noble.png</image:loc>
-      <image:title>Vinoteca de Madera Noble Caveduke</image:title>
+      <image:loc>https://avinotecas.com/images/blog/articulo-vinoteca/tamanos.png</image:loc>
+      <image:title>Diferentes tamaños de vinotecas Caveduke para el hogar</image:title>
+      <image:caption>Gama de vinotecas desde 30 hasta más de 300 botellas</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://avinotecas.com/images/blog/articulo-vinoteca/materiales.png</image:loc>
+      <image:title>Materiales premium de vinotecas: madera noble, acero y cristal</image:title>
+      <image:caption>Selección de materiales premium para vinotecas de alta gama</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://avinotecas.com/images/blog/articulo-vinoteca/artesano.png</image:loc>
+      <image:title>Maestro artesano ensamblando una vinoteca Caveduke a mano</image:title>
+      <image:caption>Artesanía española en la fabricación de vinotecas de lujo</image:caption>
     </image:image>
   </url>
+
+  <!-- Artículo 2: Diseño a Medida -->
+  <url>
+    <loc>https://avinotecas.com/blog/diseno-a-medida-vinoteca</loc>
+    <image:image>
+      <image:loc>https://avinotecas.com/images/blog/articulo-diseno/hero.png</image:loc>
+      <image:title>Vinoteca integrada en arquitectura de diseño contemporáneo</image:title>
+      <image:caption>Integración perfecta de vinoteca en proyecto arquitectónico moderno</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://avinotecas.com/images/blog/articulo-diseno/empotrada-cocina.png</image:loc>
+      <image:title>Vinoteca empotrada en cocina de diseño gourmet</image:title>
+      <image:caption>Vinoteca Caveduke integrada en mueble de cocina de alta gama</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://avinotecas.com/images/blog/articulo-diseno/bajo-escalera.png</image:loc>
+      <image:title>Vinoteca instalada en hueco bajo escalera con iluminación LED</image:title>
+      <image:caption>Aprovechamiento del espacio bajo la escalera con vinoteca a medida</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://avinotecas.com/images/blog/articulo-diseno/wine-wall.png</image:loc>
+      <image:title>Wine wall de pared completa con cristal climatizado</image:title>
+      <image:caption>Muro de vino con cristal Climalit como elemento decorativo protagonista</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://avinotecas.com/images/blog/articulo-diseno/proceso-diseno.png</image:loc>
+      <image:title>Boceto y plano de diseño de vinoteca a medida</image:title>
+      <image:caption>Proceso de diseño personalizado de vinotecas Caveduke</image:caption>
+    </image:image>
+  </url>
+
+  <!-- Artículo 3: Temperatura y Humedad -->
+  <url>
+    <loc>https://avinotecas.com/blog/temperatura-humedad-conservacion-vino</loc>
+    <image:image>
+      <image:loc>https://avinotecas.com/images/blog/articulo-conservacion/hero.png</image:loc>
+      <image:title>Interior de vinoteca Caveduke mostrando control de clima</image:title>
+      <image:caption>Sistema de climatización preciso para conservación del vino</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://avinotecas.com/images/blog/articulo-conservacion/termometro.png</image:loc>
+      <image:title>Termómetro digital de precisión para vinoteca</image:title>
+      <image:caption>Sensor de temperatura de alta precisión ±0.3°C</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://avinotecas.com/images/blog/articulo-conservacion/corcho.png</image:loc>
+      <image:title>Detalle macro de corcho natural de botella de vino</image:title>
+      <image:caption>La humedad correcta mantiene el corcho flexible y sellado</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://avinotecas.com/images/blog/articulo-conservacion/vibracion.png</image:loc>
+      <image:title>Sistema anti-vibración de compresor de vinoteca Caveduke</image:title>
+      <image:caption>Tecnología anti-vibración para proteger los sedimentos del vino</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://avinotecas.com/images/blog/articulo-conservacion/zonas.png</image:loc>
+      <image:title>Vinoteca multitemperatura con zonas diferenciadas</image:title>
+      <image:caption>Zonas de temperatura independientes para tintos, blancos y espumosos</image:caption>
+    </image:image>
+  </url>
+
+  <!-- Artículo 4: Tendencias 2026 -->
+  <url>
+    <loc>https://avinotecas.com/blog/tendencias-2026-vinotecas-lujo</loc>
+    <image:image>
+      <image:loc>https://avinotecas.com/images/blog/articulo-tendencias/hero.png</image:loc>
+      <image:title>Vinoteca futurista con diseño minimalista y tecnología smart</image:title>
+      <image:caption>Tendencias 2026: el futuro de las vinotecas de lujo</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://avinotecas.com/images/blog/articulo-tendencias/minimalismo.png</image:loc>
+      <image:title>Vinoteca minimalista frameless integrada en pared</image:title>
+      <image:caption>Diseño minimalista sin marcos para vinotecas contemporáneas</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://avinotecas.com/images/blog/articulo-tendencias/domotica.png</image:loc>
+      <image:title>Control domótico de vinoteca desde smartphone</image:title>
+      <image:caption>Integración smart home: control de vinoteca por app y voz</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://avinotecas.com/images/blog/articulo-tendencias/sostenibilidad.png</image:loc>
+      <image:title>Vinoteca eco-friendly con materiales sostenibles</image:title>
+      <image:caption>Fabricación sostenible con madera certificada FSC y gases refrigerantes R600a</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://avinotecas.com/images/blog/articulo-tendencias/experiencia.png</image:loc>
+      <image:title>Experiencia inmersiva de cata junto a vinoteca de lujo</image:title>
+      <image:caption>De almacenar a vivir: la vinoteca como centro de experiencias</image:caption>
+    </image:image>
+  </url>
+
+  <!-- Artículo 5: Tecnología Silenciosa -->
+  <url>
+    <loc>https://avinotecas.com/blog/tecnologia-silenciosa-ingenieria-caveduke</loc>
+    <image:image>
+      <image:loc>https://avinotecas.com/images/blog/articulo-tecnologia/hero.png</image:loc>
+      <image:title>Panel digital de control de vinoteca Caveduke mostrando 12.8°C y 65% HR</image:title>
+      <image:caption>Tecnología silenciosa: panel de control de precisión Caveduke</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://avinotecas.com/images/blog/articulo-tecnologia/compresor.png</image:loc>
+      <image:title>Sección transversal del sistema de compresor inverter de vinoteca</image:title>
+      <image:caption>Compresor inverter amortiguado: menos de 25 dB de emisión sonora</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://avinotecas.com/images/blog/articulo-tecnologia/climalit.png</image:loc>
+      <image:title>Cristal Climalit doble capa con filtro UV para vinoteca</image:title>
+      <image:caption>Cristal Climalit: aislamiento térmico, filtro UV 99% y anti-condensación</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://avinotecas.com/images/blog/articulo-tecnologia/sensores.png</image:loc>
+      <image:title>Sensores NTC de precisión y circuitos IoT en vinoteca</image:title>
+      <image:caption>Red de sensores inteligentes con tolerancia de ±0.3°C</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://avinotecas.com/images/blog/articulo-tecnologia/artesano.png</image:loc>
+      <image:title>Artesano ensamblando capas de aislamiento de vinoteca</image:title>
+      <image:caption>Sistema de aislamiento multicapa de 45mm de espesor</image:caption>
+    </image:image>
+  </url>
+
+  <!-- Artículo 6: Ritual de la Cata -->
+  <url>
+    <loc>https://avinotecas.com/blog/ritual-cata-vino-vinoteca-copa</loc>
+    <image:image>
+      <image:loc>https://avinotecas.com/images/blog/articulo-cata/hero.png</image:loc>
+      <image:title>Sumiller profesional sirviendo vino tinto en bodega de lujo</image:title>
+      <image:caption>El ritual de la cata: del sumiller a la copa perfecta</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://avinotecas.com/images/blog/articulo-cata/temperatura-servicio.png</image:loc>
+      <image:title>Termómetro digital mostrando temperatura de servicio del vino</image:title>
+      <image:caption>Temperatura de servicio óptima para cada tipo de vino</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://avinotecas.com/images/blog/articulo-cata/corcho-extraccion.png</image:loc>
+      <image:title>Corcho natural de vino recién extraído mostrando textura porosa</image:title>
+      <image:caption>El corcho revela la historia del vino: textura, humedad y aroma</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://avinotecas.com/images/blog/articulo-cata/experiencia-cata.png</image:loc>
+      <image:title>Pareja disfrutando de una cata de vino junto a vinoteca</image:title>
+      <image:caption>El ritual completo: de la vinoteca a una experiencia gastronómica inolvidable</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://avinotecas.com/images/blog/articulo-cata/copas-cristal.png</image:loc>
+      <image:title>Selección de copas de cristal para diferentes tipos de vino</image:title>
+      <image:caption>Copa Burdeos, Borgoña, Universal, Flauta y Blanco: cada vino, su copa</image:caption>
+    </image:image>
+  </url>
+
 </urlset>

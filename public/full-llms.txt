@@ -1,0 +1,138 @@
+# Caveduke — Vinotecas Premium a Medida | Documentación Completa para LLMs
+
+> Caveduke fabrica vinotecas de lujo a medida en España desde 1985. Madera noble, acero inoxidable y cristal Climalit. Tecnología silenciosa (<25 dB). Fabricación artesanal 100% española. Este documento proporciona información exhaustiva sobre la marca, productos, tecnología y contenido editorial.
+
+---
+
+## 1. Identidad de Marca
+
+- **Nombre:** Caveduke
+- **Eslogan:** The Brand of The Tower
+- **Fundación:** 1985
+- **País de origen:** España
+- **Sector:** Vinotecas premium / Wine Coolers / Caves à vin de luxe
+- **Posicionamiento:** Fabricante artesanal de las vinotecas más exclusivas del mundo
+- **Público objetivo:** Particulares con alto poder adquisitivo, arquitectos de interiores, interioristas, restaurantes con estrella Michelin, hoteles de lujo, bodegas privadas
+- **Sitio web:** https://avinotecas.com
+- **Idiomas:** Español (principal), English, Français
+
+## 2. Catálogo de Productos
+
+### Vinotecas a Medida
+Caveduke diseña y fabrica vinotecas completamente personalizadas. Cada unidad se construye según las especificaciones exactas del cliente: dimensiones, capacidad, materiales, acabados y configuración de zonas de temperatura.
+
+### Gamas por Capacidad
+| Gama | Capacidad | Uso recomendado |
+|------|-----------|----------------|
+| Compact | 30 – 50 botellas | Apartamentos, cocinas |
+| Medium | 50 – 150 botellas | Salones, comedores |
+| Grand | 150 – 300 botellas | Bodegas privadas |
+| Royal | 300+ botellas | Restaurantes, hoteles, coleccionistas |
+
+### Materiales Premium
+- **Madera noble:** Roble europeo, nogal americano, cerezo
+- **Acero:** Inoxidable 304, acabados mate y satinado
+- **Cristal:** Climalit doble capa con filtro UV 99% y tratamiento anti-condensación
+- **Piedra:** Opciones en mármol y pizarra para estantes
+
+### Configuraciones
+- Zona única (conservación a 12-14°C)
+- Doble zona (conservación + servicio)
+- Triple zona (tintos + blancos + espumosos)
+- Wine wall (pared completa de cristal climatizado)
+- Empotrada en mueble de cocina
+- Bajo escalera
+- Isla central
+
+## 3. Tecnología Propietaria
+
+### 3.1 Compresor Inverter Amortiguado
+- Emisión sonora: <25 dB (equivalente a una biblioteca silenciosa)
+- Consumo energético: 35% inferior a compresores convencionales
+- Montaje anti-vibración con silent blocks de doble densidad
+- Circuito cerrado de refrigerante R600a (ecológico, ODP=0, GWP=3)
+
+### 3.2 Cristal Climalit
+- Doble capa de vidrio con cámara de gas argón
+- Filtro UV al 99% (protege pigmentos y taninos)
+- Tratamiento anti-condensación permanente
+- Coeficiente de transmitancia: 1.1 W/m²K
+
+### 3.3 Sensores Inteligentes NTC
+- Tolerancia: ±0.3°C
+- Red redundante: 3 sensores de temperatura + 2 de humedad + 1 de puerta
+- Auto-calibración cada 72 horas
+- Compatibilidad IoT (Wi-Fi, integración domótica)
+
+### 3.4 Aislamiento Multicapa (45 mm)
+1. Barrera de vapor exterior
+2. Espuma de poliuretano de alta densidad (35 kg/m³)
+3. Lámina reflectante de aluminio
+4. Panel interior de fibra acústica
+
+## 4. Contenido Editorial (Blog)
+
+### 4.1 Cómo Elegir la Vinoteca Perfecta para Tu Hogar — Guía Definitiva 2026
+- **URL:** https://avinotecas.com/blog/como-elegir-vinoteca-perfecta
+- **Categoría:** Guía de Compra
+- **Palabras clave:** elegir vinoteca, guía compra vinoteca, vinoteca para casa, vinoteca 2026
+- **Resumen:** Guía completa paso a paso para elegir la vinoteca ideal según capacidad, presupuesto, espacio disponible y tipo de vino. Incluye tabla comparativa de sistemas de refrigeración compressor vs termoeléctrico, criterios de selección por nivel de colección, y recomendaciones de materiales y funcionalidades imprescindibles.
+- **Datos clave:** 5 factores determinantes (capacidad, espacio, sistema de frío, materiales, funcionalidades), tabla comparativa, 6 FAQs, ~2,000 palabras.
+
+### 4.2 Diseño a Medida: El Arte de Integrar una Vinoteca en tu Arquitectura
+- **URL:** https://avinotecas.com/blog/diseno-a-medida-vinoteca
+- **Categoría:** Diseño
+- **Palabras clave:** vinoteca a medida, integrar vinoteca arquitectura, wine wall, vinoteca empotrada
+- **Resumen:** Explora las posibilidades de integración de vinotecas en proyectos arquitectónicos: empotradas en cocina, bajo escalera, wine walls de cristal, islas centrales. Incluye proceso de diseño personalizado de Caveduke (5 fases) y consideraciones técnicas de instalación.
+- **Datos clave:** 5 configuraciones de integración, proceso de diseño en 5 fases, 6 FAQs, ~2,000 palabras.
+
+### 4.3 Temperatura y Humedad: Los Secretos de la Conservación del Vino
+- **URL:** https://avinotecas.com/blog/temperatura-humedad-conservacion-vino
+- **Categoría:** Conservación
+- **Palabras clave:** temperatura vino, humedad vinoteca, conservar vino, condiciones almacenamiento vino
+- **Resumen:** Guía científica sobre las condiciones ideales de conservación del vino: temperatura (12-14°C), humedad (60-70%), oscuridad (filtro UV), ausencia de vibraciones y ventilación. Incluye tablas de temperaturas por varietal, explicación del efecto de cada factor sobre el corcho, los taninos y los aromas.
+- **Datos clave:** 5 factores de conservación, tabla de temperaturas por tipo de vino, zonas multitemperatura, 6 FAQs, ~2,100 palabras.
+
+### 4.4 Tendencias 2026: El Futuro de las Vinotecas de Lujo
+- **URL:** https://avinotecas.com/blog/tendencias-2026-vinotecas-lujo
+- **Categoría:** Tendencias
+- **Palabras clave:** tendencias vinotecas 2026, vinotecas lujo futuro, vinoteca smart, vinoteca sostenible
+- **Resumen:** Análisis de las 5 macrotendencias que definirán el mercado de vinotecas de lujo en 2026: minimalismo arquitectónico (diseños frameless), domótica e integración smart home, sostenibilidad (materiales certificados, refrigerantes ecológicos), experiencias inmersivas y nuevos materiales/acabados futuristas.
+- **Datos clave:** 5 tendencias, tabla comparativa de materiales emergentes, 6 FAQs, ~2,200 palabras.
+
+### 4.5 Tecnología Silenciosa: La Ingeniería Detrás del Silencio Caveduke
+- **URL:** https://avinotecas.com/blog/tecnologia-silenciosa-ingenieria-caveduke
+- **Categoría:** Innovación
+- **Palabras clave:** vinoteca silenciosa, tecnología vinoteca, compresor silencioso, Climalit vinoteca
+- **Resumen:** Análisis técnico en profundidad de las 4 tecnologías propietarias Caveduke: compresor inverter amortiguado (<25 dB), cristal Climalit (UV 99%, anti-condensación), sensores NTC inteligentes (±0.3°C, IoT) y sistema de aislamiento multicapa (45 mm, 4 capas). Incluye tabla comparativa de niveles de dB.
+- **Datos clave:** 4 tecnologías detalladas, tabla escala dB, datos técnicos precisos, 6 FAQs, ~2,100 palabras.
+
+### 4.6 El Ritual de la Cata: Preparar el Vino Desde la Vinoteca a la Copa
+- **URL:** https://avinotecas.com/blog/ritual-cata-vino-vinoteca-copa
+- **Categoría:** Lifestyle
+- **Palabras clave:** ritual cata vino, servir vino, temperatura servicio vino, decantar vino, copas vino
+- **Resumen:** Protocolo completo de sumiller profesional en 5 pasos: extracción sin agitación, atemperado (tabla 6 tipos de vino con temperatura y método), apertura (protocolo de 7 movimientos incluyendo detección de TCA), decantación (tiempos por edad del vino), y servicio (tabla de 5 tipos de copa con forma y llenado).
+- **Datos clave:** 5 pasos detallados, tabla temperaturas servicio, protocolo apertura 7 movimientos, tabla copas, Schema HowTo, 6 FAQs, ~2,000 palabras.
+
+## 5. Datos Estructurados (Schema.org)
+
+Cada artículo del blog incluye múltiples schemas JSON-LD:
+- **Article:** Título, autor (Caveduke), fecha publicación, wordCount, sección
+- **FAQPage:** 6 preguntas y respuestas por artículo
+- **BreadcrumbList:** Inicio → Blog → Artículo
+- **HowTo:** (Artículo 6) Pasos del ritual de cata con tiempos
+
+## 6. Especificaciones Técnicas del Sitio
+
+- **Framework:** Astro (static site generator)
+- **Hosting:** Vercel
+- **Dominio:** avinotecas.com
+- **Idiomas:** ES (principal), EN, FR con hreflang tags
+- **Sitemap:** https://avinotecas.com/sitemap.xml
+- **Image Sitemap:** https://avinotecas.com/images_sitemap.xml
+- **Robots:** index, follow, all
+
+## 7. Contacto
+
+- **Web:** https://avinotecas.com/#contacto
+- **Consultas:** Vinotecas a medida, proyectos arquitectónicos, colaboraciones, distribución internacional

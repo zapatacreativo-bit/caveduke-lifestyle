@@ -1,31 +1,126 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:xhtml="http://www.w3.org/1999/xhtml">
+
+  <!-- Páginas principales ES -->
   <url>
     <loc>https://avinotecas.com/</loc>
+    <lastmod>2026-03-09</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
     <xhtml:link rel="alternate" hreflang="es" href="https://avinotecas.com/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://avinotecas.com/en"/>
     <xhtml:link rel="alternate" hreflang="fr" href="https://avinotecas.com/fr"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://avinotecas.com/"/>
-    <priority>1.0</priority>
-    <changefreq>monthly</changefreq>
   </url>
+
+  <url>
+    <loc>https://avinotecas.com/aviso-legal</loc>
+    <lastmod>2026-03-09</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.2</priority>
+  </url>
+
+  <url>
+    <loc>https://avinotecas.com/politica-de-privacidad</loc>
+    <lastmod>2026-03-09</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.2</priority>
+  </url>
+
+  <!-- Páginas principales EN -->
   <url>
     <loc>https://avinotecas.com/en</loc>
+    <lastmod>2026-03-09</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
     <xhtml:link rel="alternate" hreflang="es" href="https://avinotecas.com/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://avinotecas.com/en"/>
     <xhtml:link rel="alternate" hreflang="fr" href="https://avinotecas.com/fr"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://avinotecas.com/"/>
-    <priority>0.8</priority>
-    <changefreq>monthly</changefreq>
   </url>
+
+  <url>
+    <loc>https://avinotecas.com/en/legal-notice</loc>
+    <lastmod>2026-03-09</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.2</priority>
+  </url>
+
+  <url>
+    <loc>https://avinotecas.com/en/privacy-policy</loc>
+    <lastmod>2026-03-09</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.2</priority>
+  </url>
+
+  <!-- Páginas principales FR -->
   <url>
     <loc>https://avinotecas.com/fr</loc>
+    <lastmod>2026-03-09</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
     <xhtml:link rel="alternate" hreflang="es" href="https://avinotecas.com/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://avinotecas.com/en"/>
     <xhtml:link rel="alternate" hreflang="fr" href="https://avinotecas.com/fr"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://avinotecas.com/"/>
-    <priority>0.8</priority>
-    <changefreq>monthly</changefreq>
   </url>
+
+  <url>
+    <loc>https://avinotecas.com/fr/mentions-legales</loc>
+    <lastmod>2026-03-09</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.2</priority>
+  </url>
+
+  <url>
+    <loc>https://avinotecas.com/fr/politique-de-confidentialite</loc>
+    <lastmod>2026-03-09</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.2</priority>
+  </url>
+
+  <!-- Blog Articles -->
+  <url>
+    <loc>https://avinotecas.com/blog/como-elegir-vinoteca-perfecta</loc>
+    <lastmod>2026-03-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://avinotecas.com/blog/diseno-a-medida-vinoteca</loc>
+    <lastmod>2026-03-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://avinotecas.com/blog/temperatura-humedad-conservacion-vino</loc>
+    <lastmod>2026-03-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://avinotecas.com/blog/tendencias-2026-vinotecas-lujo</loc>
+    <lastmod>2026-03-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://avinotecas.com/blog/tecnologia-silenciosa-ingenieria-caveduke</loc>
+    <lastmod>2026-03-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://avinotecas.com/blog/ritual-cata-vino-vinoteca-copa</loc>
+    <lastmod>2026-03-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
 </urlset>

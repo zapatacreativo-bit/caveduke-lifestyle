@@ -1,10 +1,32 @@
-# Caveduke - Handcrafted Luxury Wine Cabinets since 1985
+# Caveduke — Vinotecas Premium a Medida
 
-Premium custom wine cabinets manufactured in Spain (Barcelona). Specializing in noble woods, steel, and glass.
+> Caveduke fabrica vinotecas de lujo a medida en España desde 1985. Madera noble, acero inoxidable y cristal Climalit. Tecnología silenciosa (<25 dB). Fabricación artesanal 100% española.
 
-## Contact Info
-- **Address:** C/ Juan Ramón Jiménez, 34, 08100 Mollet del Vallés (Barcelona) – España
-- **Hours:** Monday – Saturday, 10am – 7pm
-- **Email:** caveduke@caveduke.com
-- **Phone:** (+34) 697 182 482
-- **Origin:** Spain (Barcelona)
+## Información clave
+
+- **Marca:** Caveduke (The Brand of The Tower)
+- **Fundación:** 1985, España
+- **Especialidad:** Vinotecas premium a medida para el hogar, hostelería y proyectos arquitectónicos
+- **Materiales:** Madera noble (roble, nogal), acero inoxidable, cristal Climalit con filtro UV 99%
+- **Tecnología:** Compresor inverter amortiguado <25 dB, sensores NTC ±0.3°C, IoT, aislamiento multicapa 45 mm
+- **Idiomas del sitio:** Español, English, Français
+- **Sitio web:** https://avinotecas.com
+
+## Páginas principales
+
+- [Inicio (ES)](https://avinotecas.com/)
+- [Home (EN)](https://avinotecas.com/en)
+- [Accueil (FR)](https://avinotecas.com/fr)
+
+## Blog — Artículos
+
+- [Cómo Elegir la Vinoteca Perfecta para Tu Hogar](https://avinotecas.com/blog/como-elegir-vinoteca-perfecta)
+- [Diseño a Medida: El Arte de Integrar una Vinoteca en tu Arquitectura](https://avinotecas.com/blog/diseno-a-medida-vinoteca)
+- [Temperatura y Humedad: Los Secretos de la Conservación del Vino](https://avinotecas.com/blog/temperatura-humedad-conservacion-vino)
+- [Tendencias 2026: El Futuro de las Vinotecas de Lujo](https://avinotecas.com/blog/tendencias-2026-vinotecas-lujo)
+- [Tecnología Silenciosa: La Ingeniería Detrás del Silencio Caveduke](https://avinotecas.com/blog/tecnologia-silenciosa-ingenieria-caveduke)
+- [El Ritual de la Cata: Preparar el Vino Desde la Vinoteca a la Copa](https://avinotecas.com/blog/ritual-cata-vino-vinoteca-copa)
+
+## Contacto
+
+Para consultas sobre vinotecas a medida, proyectos de arquitectura o colaboraciones, visitar la sección de contacto en https://avinotecas.com/#contacto
