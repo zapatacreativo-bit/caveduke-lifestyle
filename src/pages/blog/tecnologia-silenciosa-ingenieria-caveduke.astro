@@ -1,0 +1,451 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Navbar from '../../components/Navbar.astro';
+import Footer from '../../components/Footer.astro';
+
+const title = "Tecnología Silenciosa: La Ingeniería Detrás del Silencio Caveduke | Caveduke";
+const description = "Descubre las 4 tecnologías que hacen de Caveduke la vinoteca más silenciosa del mercado: compresión amortiguada, cristal Climalit, sensores inteligentes y aislamiento multicapa.";
+const publishDate = "2026-02-10";
+const modifiedDate = "2026-03-09";
+const readTime = "6 min";
+const wordCount = 2100;
+const heroImage = "/images/blog/articulo-tecnologia/hero.png";
+const canonicalURL = "https://avinotecas.com/blog/tecnologia-silenciosa-ingenieria-caveduke";
+
+const faqs = [
+  {
+    question: "¿Cuántos decibelios produce una vinoteca Caveduke?",
+    answer: "Una vinoteca Caveduke con compresión amortiguada produce menos de 25 dB en funcionamiento normal, equivalente al sonido de una habitación tranquila por la noche. Las vinotecas convencionales oscilan entre 35 y 45 dB. La diferencia es perceptible: 25 dB es inaudible a más de 1 metro de distancia, mientras que 40 dB equivale al ruido de una nevera doméstica estándar."
+  },
+  {
+    question: "¿Qué es el cristal Climalit y por qué es importante?",
+    answer: "El cristal Climalit es un doble acristalamiento formado por dos láminas de vidrio separadas por una cámara de aire deshidratado o gas argón. En las vinotecas Caveduke, incorpora además un filtro UV que bloquea el 99% de la radiación ultravioleta. Sus tres funciones principales son: aislamiento térmico (reduce la pérdida de frío un 40%), protección UV (evita la degradación del vino por luz) y anti-condensación (elimina la formación de vaho en el exterior del cristal)."
+  },
+  {
+    question: "¿Cada cuánto tiempo hay que calibrar los sensores de una vinoteca?",
+    answer: "Los sensores de precisión Caveduke se calibran de fábrica y no requieren recalibración manual durante su vida útil estimada de 10-15 años. El firmware realiza una auto-calibración cada 72 horas comparando las lecturas de los sensores redundantes (cada vinoteca tiene al menos 3 sensores de temperatura y 2 de humedad). Si se detecta una desviación superior a ±0,3°C, el sistema envía una alerta automática."
+  },
+  {
+    question: "¿La compresión amortiguada consume más energía?",
+    answer: "No, al contrario. Los compresores con tecnología inverter y amortiguación ajustan su velocidad de forma continua en lugar de encenderse y apagarse bruscamente (on/off). Esto resulta en un consumo energético entre un 30% y un 40% menor que un compresor convencional. Las vinotecas Caveduke alcanzan la clasificación energética A++, con un consumo típico de 80-120 kWh/año."
+  },
+  {
+    question: "¿Puedo instalar una vinoteca Caveduke en un salón abierto?",
+    answer: "Sí, es el escenario ideal para el que están diseñadas. Gracias a los menos de 25 dB de emisión sonora, la compresión amortiguada no interfiere con conversaciones normales (60 dB) ni con la música ambiente. El sistema de ventilación frontal permite empotrar la vinoteca sin necesidad de dejar espacios laterales, y el cristal Climalit evita la condensación que arruinaría la estética en espacios de diseño."
+  },
+  {
+    question: "¿Las vinotecas de absorción (termoeléctrica) son más silenciosas?",
+    answer: "Las vinotecas termoeléctricas (Peltier) no tienen compresor y técnicamente producen 0 dB de vibración mecánica. Sin embargo, su ventilador de disipación genera entre 30 y 38 dB, y su capacidad de enfriamiento es limitada (máximo 18°C por debajo de la temperatura ambiente). No son viables para climas cálidos ni para colecciones de valor. La compresión amortiguada Caveduke ofrece un rendimiento superior con un nivel de ruido comparable (< 25 dB)."
+  }
+];
+
+const articleSchema = {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Tecnología Silenciosa: La Ingeniería Detrás del Silencio Caveduke",
+  "description": description,
+  "image": `https://avinotecas.com${heroImage}`,
+  "author": { "@type": "Organization", "name": "Caveduke", "url": "https://avinotecas.com" },
+  "publisher": { "@type": "Organization", "name": "Caveduke", "logo": { "@type": "ImageObject", "url": "https://avinotecas.com/images/logo-caveduke.png" } },
+  "datePublished": publishDate,
+  "dateModified": modifiedDate,
+  "mainEntityOfPage": canonicalURL,
+  "wordCount": wordCount,
+  "articleSection": "Innovación",
+  "keywords": "vinoteca silenciosa, compresión amortiguada, cristal Climalit, sensores vinoteca, vinoteca sin ruido, tecnología vinoteca, aislamiento vinoteca, vinoteca Caveduke"
+};
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": faqs.map(faq => ({
+    "@type": "Question",
+    "name": faq.question,
+    "acceptedAnswer": { "@type": "Answer", "text": faq.answer }
+  }))
+};
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Inicio", "item": "https://avinotecas.com/" },
+    { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://avinotecas.com/blog" },
+    { "@type": "ListItem", "position": 3, "name": "Tecnología Silenciosa" }
+  ]
+};
+---
+
+<BaseLayout title={title} description={description}>
+  <script type="application/ld+json" set:html={JSON.stringify(articleSchema)} />
+  <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+  <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
+
+  <Navbar />
+
+  <main class="bg-[var(--color-noir)]">
+
+    <!-- ========== HERO ========== -->
+    <header class="relative w-full min-h-[70vh] flex items-end overflow-hidden">
+      <div class="absolute inset-0">
+        <img src={heroImage} alt="Panel de control digital de vinoteca Caveduke mostrando temperatura 12.8 grados y humedad 65 por ciento con retroiluminación ámbar" class="w-full h-full object-cover" loading="eager" fetchpriority="high" />
+        <div class="absolute inset-0 bg-gradient-to-t from-[var(--color-noir)] via-[var(--color-noir)]/60 to-transparent"></div>
+      </div>
+
+      <div class="relative z-10 max-w-4xl mx-auto px-6 md:px-12 pb-16 md:pb-24 w-full">
+        <nav aria-label="Breadcrumb" class="mb-8">
+          <ol class="flex items-center gap-2 font-accent text-[11px] tracking-[0.15em] uppercase text-[var(--color-silver)]/50">
+            <li><a href="/" class="hover:text-[var(--color-gold)] transition-colors">Inicio</a></li>
+            <li class="text-[var(--color-gold)]/40">·</li>
+            <li><a href="/#blog" class="hover:text-[var(--color-gold)] transition-colors">Blog</a></li>
+            <li class="text-[var(--color-gold)]/40">·</li>
+            <li class="text-[var(--color-gold)]">Innovación</li>
+          </ol>
+        </nav>
+
+        <div class="flex items-center gap-3 mb-6">
+          <span class="bg-[var(--color-gold)] text-[var(--color-noir)] font-accent text-[10px] tracking-[0.2em] uppercase px-3 py-1.5 rounded-sm">Innovación</span>
+          <span class="font-accent text-[var(--color-silver)]/50 text-[11px] tracking-[0.15em] uppercase">10 Feb 2026</span>
+          <span class="w-1 h-1 rounded-full bg-[var(--color-gold)]/40"></span>
+          <span class="font-accent text-[var(--color-silver)]/50 text-[11px] tracking-[0.15em] uppercase">{readTime} lectura</span>
+        </div>
+
+        <h1 class="font-display text-4xl md:text-5xl lg:text-6xl text-[var(--color-ivory)] leading-[1.1] mb-6 hero-title">
+          Tecnología Silenciosa: <br class="hidden md:block"/>
+          La Ingeniería Detrás del <span class="italic text-[var(--color-gold)]">Silencio</span>
+        </h1>
+
+        <p class="font-body text-lg md:text-xl text-[var(--color-silver)]/70 leading-relaxed max-w-2xl">
+          Compresión amortiguada, cristal Climalit y sensores inteligentes. La revolución tecnológica que protege cada botella.
+        </p>
+      </div>
+    </header>
+
+
+    <!-- ========== ARTICLE BODY ========== -->
+    <article class="max-w-4xl mx-auto px-6 md:px-12 py-20 md:py-32 article-content">
+
+      <!-- TL;DR -->
+      <div class="border-l-2 border-[var(--color-gold)] pl-6 md:pl-8 mb-16 py-4 bg-[var(--color-graphite)]/20 rounded-r-sm">
+        <p class="font-accent text-[var(--color-gold)] tracking-widest uppercase text-xs mb-3">Resumen rápido</p>
+        <p class="font-body text-base md:text-lg text-[var(--color-ivory)] leading-relaxed">
+          Caveduke ha desarrollado cuatro tecnologías propietarias que, combinadas, logran un nivel de ruido inferior a <strong class="text-[var(--color-gold)]">25 dB</strong> (inaudible a 1 metro): <strong class="text-[var(--color-gold)]">compresión amortiguada</strong> con montaje anti-vibración, <strong class="text-[var(--color-gold)]">cristal Climalit</strong> con filtro UV del 99%, <strong class="text-[var(--color-gold)]">sensores de precisión ±0,3 °C</strong> con auto-calibración y <strong class="text-[var(--color-gold)]">aislamiento multicapa</strong> de 45 mm. Juntas, garantizan la conservación perfecta en silencio absoluto.
+        </p>
+      </div>
+
+
+      <!-- ===== INTRODUCCIÓN ===== -->
+      <div class="prose-section mb-16">
+        <p class="font-body text-[15px] md:text-base text-[var(--color-silver)]/80 leading-[1.9] mb-6">
+          El ruido de una vinoteca es una contradicción: si puedes oírla, probablemente esté comprometiendo la conservación de tu vino. Los <strong class="text-[var(--color-ivory)]">compresores convencionales</strong> generan vibraciones de 2 a 5 Hz que alteran los sedimentos, aceleran la degradación de los taninos y producen un zumbido constante de 35-45 dB que convierte cualquier salón en un entorno incómodo.
+        </p>
+        <p class="font-body text-[15px] md:text-base text-[var(--color-silver)]/80 leading-[1.9]">
+          En Caveduke, entendimos hace tres décadas que el silencio no es un lujo, sino un <strong class="text-[var(--color-ivory)]">requisito funcional</strong>. Cada vinoteca que sale de nuestro taller incorpora cuatro capas de ingeniería diseñadas específicamente para eliminar el ruido sin comprometer ni un grado de temperatura ni un punto porcentual de humedad. Este artículo desvela la ciencia y la artesanía detrás de cada capa.
+        </p>
+      </div>
+
+
+      <!-- ===== SECCIÓN 1: Compresión Amortiguada ===== -->
+      <section class="mb-20">
+        <h2 class="font-display text-3xl md:text-4xl text-[var(--color-ivory)] leading-tight mb-8">
+          1. Compresión Amortiguada: <span class="italic text-[var(--color-silver)]/50">Cero Vibraciones</span>
+        </h2>
+
+        <p class="font-body text-[15px] md:text-base text-[var(--color-silver)]/80 leading-[1.9] mb-6">
+          El compresor es el corazón de cualquier vinoteca, y también su principal fuente de ruido. Un compresor convencional funciona en modo on/off: se enciende a máxima potencia, enfría el habitáculo y se apaga hasta que la temperatura sube de nuevo. Cada arranque genera un pico de vibración de 40-50 dB y una sacudida mecánica que se transmite a las botellas.
+        </p>
+
+        <div class="flex flex-col md:flex-row gap-8 items-start mb-10">
+          <div class="md:w-1/2 space-y-4">
+            <div class="p-5 bg-[var(--color-graphite)]/15 border border-[var(--color-silver)]/10 rounded-sm">
+              <p class="font-accent text-[var(--color-gold)] tracking-widest uppercase text-xs mb-3">Tecnología inverter</p>
+              <p class="font-body text-sm text-[var(--color-silver)]/70 leading-relaxed">El compresor Caveduke ajusta su velocidad de forma continua y gradual, sin paradas ni arranques bruscos. Funciona como un variador de velocidad: cuando la temperatura está estable, gira al 15-20% de su capacidad; cuando se abre la puerta, incrementa progresivamente hasta el 80%. Nunca alcanza el 100% en condiciones normales.</p>
+            </div>
+            <div class="p-5 bg-[var(--color-graphite)]/15 border border-[var(--color-silver)]/10 rounded-sm">
+              <p class="font-accent text-[var(--color-gold)] tracking-widest uppercase text-xs mb-3">Montaje anti-vibración</p>
+              <p class="font-body text-sm text-[var(--color-silver)]/70 leading-relaxed">El bloque compresor se asienta sobre 4 soportes de elastómero de doble densidad (caucho EPDM + silicona) que absorben el 98% de las vibraciones mecánicas. Los tubos de cobre del circuito refrigerante incluyen bucles de absorción para evitar la transmisión de resonancias al chasis.</p>
+            </div>
+            <div class="p-5 bg-[var(--color-graphite)]/15 border border-[var(--color-silver)]/10 rounded-sm">
+              <p class="font-accent text-[var(--color-gold)] tracking-widest uppercase text-xs mb-3">Resultado medible</p>
+              <p class="font-body text-sm text-[var(--color-silver)]/70 leading-relaxed">Emisión acústica inferior a <strong class="text-[var(--color-gold)]">25 dB</strong> (equivalente al susurro de las hojas de un árbol). Consumo energético un <strong class="text-[var(--color-gold)]">35% menor</strong> que un compresor convencional. Vida útil estimada: <strong class="text-[var(--color-gold)]">20+ años</strong>.</p>
+            </div>
+          </div>
+          <div class="md:w-1/2">
+            <figure>
+              <div class="aspect-[4/3] overflow-hidden rounded-sm relative">
+                <img src="/images/blog/articulo-tecnologia/compresor.png" alt="Sección transversal del sistema de compresión Caveduke con soportes anti-vibración de caucho, tubos de cobre y capas de aislamiento" class="w-full h-full object-cover hover:scale-105 transition-transform duration-[2s]" loading="lazy" decoding="async" />
+                <div class="absolute inset-0 border border-[var(--color-silver)]/10 m-3 pointer-events-none"></div>
+              </div>
+              <figcaption class="font-accent text-[11px] tracking-[0.1em] text-[var(--color-silver)]/40 uppercase mt-3 text-center">Sección del sistema de compresión amortiguada con soportes anti-vibración</figcaption>
+            </figure>
+          </div>
+        </div>
+
+        <!-- Escala de dB -->
+        <div class="overflow-x-auto mb-4">
+          <table class="w-full border-collapse text-sm">
+            <thead>
+              <tr class="border-b border-[var(--color-gold)]/30">
+                <th class="py-3 px-4 text-left font-accent text-[var(--color-gold)] tracking-widest uppercase text-xs">Fuente de sonido</th>
+                <th class="py-3 px-4 text-left font-accent text-[var(--color-gold)] tracking-widest uppercase text-xs">Nivel (dB)</th>
+                <th class="py-3 px-4 text-left font-accent text-[var(--color-gold)] tracking-widest uppercase text-xs">Percepción</th>
+              </tr>
+            </thead>
+            <tbody class="font-body text-[var(--color-silver)]/70">
+              <tr class="border-b border-[var(--color-silver)]/10">
+                <td class="py-3 px-4 text-[var(--color-ivory)]">Respiración humana</td>
+                <td class="py-3 px-4">10 dB</td>
+                <td class="py-3 px-4">Imperceptible</td>
+              </tr>
+              <tr class="border-b border-[var(--color-silver)]/10 bg-[var(--color-gold)]/5">
+                <td class="py-3 px-4 text-[var(--color-gold)] font-medium">✦ Vinoteca Caveduke</td>
+                <td class="py-3 px-4 text-[var(--color-gold)]">&lt; 25 dB</td>
+                <td class="py-3 px-4 text-[var(--color-gold)]">Inaudible a 1 metro</td>
+              </tr>
+              <tr class="border-b border-[var(--color-silver)]/10">
+                <td class="py-3 px-4 text-[var(--color-ivory)]">Vinoteca convencional</td>
+                <td class="py-3 px-4">35–45 dB</td>
+                <td class="py-3 px-4">Zumbido constante molesto</td>
+              </tr>
+              <tr class="border-b border-[var(--color-silver)]/10">
+                <td class="py-3 px-4 text-[var(--color-ivory)]">Conversación normal</td>
+                <td class="py-3 px-4">60 dB</td>
+                <td class="py-3 px-4">Claramente audible</td>
+              </tr>
+              <tr>
+                <td class="py-3 px-4 text-[var(--color-ivory)]">Tráfico urbano</td>
+                <td class="py-3 px-4">80 dB</td>
+                <td class="py-3 px-4">Ruidoso e incómodo</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+
+      <!-- ===== SECCIÓN 2: Cristal Climalit ===== -->
+      <section class="mb-20">
+        <h2 class="font-display text-3xl md:text-4xl text-[var(--color-ivory)] leading-tight mb-8">
+          2. Cristal Climalit: <span class="italic text-[var(--color-silver)]/50">Tres Barreras en Una</span>
+        </h2>
+
+        <p class="font-body text-[15px] md:text-base text-[var(--color-silver)]/80 leading-[1.9] mb-6">
+          La puerta de cristal es el punto más vulnerable de una vinoteca: por ella entra la luz, escapa el frío y se condensa la humedad. El cristal Climalit de Caveduke resuelve los tres problemas con una <strong class="text-[var(--color-ivory)]">estructura de triple función</strong>.
+        </p>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-10">
+          <div class="text-center p-8 border border-[var(--color-silver)]/10 bg-[var(--color-graphite)]/20 rounded-sm hover:border-[var(--color-gold)]/30 transition-colors duration-500">
+            <span class="font-display text-5xl text-[var(--color-gold)] block mb-3">🛡️</span>
+            <p class="font-accent text-[11px] tracking-[0.15em] uppercase text-[var(--color-ivory)] mb-2">Aislamiento térmico</p>
+            <p class="font-body text-sm text-[var(--color-silver)]/50 leading-relaxed">Cámara de 16 mm rellena de gas argón. Reduce la pérdida de frío un 40% respecto al cristal simple. Coeficiente U: 1,1 W/m²K.</p>
+          </div>
+          <div class="text-center p-8 border border-[var(--color-silver)]/10 bg-[var(--color-graphite)]/20 rounded-sm hover:border-[var(--color-gold)]/30 transition-colors duration-500">
+            <span class="font-display text-5xl text-[var(--color-gold)] block mb-3">☀️</span>
+            <p class="font-accent text-[11px] tracking-[0.15em] uppercase text-[var(--color-ivory)] mb-2">Filtro UV 99%</p>
+            <p class="font-body text-sm text-[var(--color-silver)]/50 leading-relaxed">Capa de óxidos metálicos depositada por magnetrón que bloquea el 99% de la radiación ultravioleta sin alterar la transparencia del cristal.</p>
+          </div>
+          <div class="text-center p-8 border border-[var(--color-silver)]/10 bg-[var(--color-graphite)]/20 rounded-sm hover:border-[var(--color-gold)]/30 transition-colors duration-500">
+            <span class="font-display text-5xl text-[var(--color-gold)] block mb-3">💧</span>
+            <p class="font-accent text-[11px] tracking-[0.15em] uppercase text-[var(--color-ivory)] mb-2">Anti-condensación</p>
+            <p class="font-body text-sm text-[var(--color-silver)]/50 leading-relaxed">Resistencia calefactora perimetral integrada en el marco que mantiene la superficie exterior del cristal por encima del punto de rocío. Cero vaho, siempre.</p>
+          </div>
+        </div>
+
+        <figure class="mb-8">
+          <div class="aspect-[16/9] overflow-hidden rounded-sm relative">
+            <img src="/images/blog/articulo-tecnologia/climalit.png" alt="Detalle de cristal Climalit de doble capa en puerta de vinoteca Caveduke con cámara de argón y filtro UV visible como reflejo azul sutil" class="w-full h-full object-cover hover:scale-105 transition-transform duration-[2s]" loading="lazy" decoding="async" />
+            <div class="absolute inset-0 border border-[var(--color-silver)]/10 m-3 pointer-events-none"></div>
+          </div>
+          <figcaption class="font-accent text-[11px] tracking-[0.1em] text-[var(--color-silver)]/40 uppercase mt-4 text-center">Cristal Climalit: doble acristalamiento con cámara de argón y filtro UV de 99%</figcaption>
+        </figure>
+      </section>
+
+
+      <!-- ===== SECCIÓN 3: Sensores ===== -->
+      <section class="mb-20">
+        <h2 class="font-display text-3xl md:text-4xl text-[var(--color-ivory)] leading-tight mb-8">
+          3. Sensores Inteligentes: <span class="italic text-[var(--color-silver)]/50">Precisión Obsesiva</span>
+        </h2>
+
+        <p class="font-body text-[15px] md:text-base text-[var(--color-silver)]/80 leading-[1.9] mb-6">
+          Una vinoteca es tan precisa como sus sensores. Los sensores baratos de las vinotecas convencionales tienen una tolerancia de ±2 °C —suficiente para que una zona configurada a 14 °C oscile realmente entre 12 °C y 16 °C. Caveduke utiliza <strong class="text-[var(--color-ivory)]">sensores de precisión NTC con tolerancia de ±0,3 °C</strong> y un sistema redundante que garantiza lecturas consistentes.
+        </p>
+
+        <div class="flex flex-col md:flex-row-reverse gap-8 items-start mb-8">
+          <div class="md:w-1/2 space-y-4">
+            <div class="flex gap-4 items-start">
+              <span class="font-display text-2xl text-[var(--color-gold)] mt-1 flex-shrink-0">3×</span>
+              <div>
+                <p class="font-body text-[var(--color-ivory)] font-medium">Sensores de temperatura redundantes</p>
+                <p class="font-body text-sm text-[var(--color-silver)]/60">Tres sensores NTC distribuidos en diferentes alturas del habitáculo. El firmware calcula la media ponderada y detecta anomalías por comparación cruzada.</p>
+              </div>
+            </div>
+            <div class="flex gap-4 items-start">
+              <span class="font-display text-2xl text-[var(--color-gold)] mt-1 flex-shrink-0">2×</span>
+              <div>
+                <p class="font-body text-[var(--color-ivory)] font-medium">Sensores de humedad capacitivos</p>
+                <p class="font-body text-sm text-[var(--color-silver)]/60">Precisión de ±2% HR. Uno en la zona superior y otro en la inferior para detectar gradientes de humedad y ajustar la ventilación interna.</p>
+              </div>
+            </div>
+            <div class="flex gap-4 items-start">
+              <span class="font-display text-2xl text-[var(--color-gold)] mt-1 flex-shrink-0">72h</span>
+              <div>
+                <p class="font-body text-[var(--color-ivory)] font-medium">Auto-calibración periódica</p>
+                <p class="font-body text-sm text-[var(--color-silver)]/60">El firmware compara las lecturas de los sensores redundantes cada 72 horas. Si detecta una desviación superior a ±0,3 °C, envía una alerta push y ajusta la compensación automáticamente.</p>
+              </div>
+            </div>
+            <div class="flex gap-4 items-start">
+              <span class="font-display text-2xl text-[var(--color-gold)] mt-1 flex-shrink-0">1×</span>
+              <div>
+                <p class="font-body text-[var(--color-ivory)] font-medium">Sensor de puerta magnético</p>
+                <p class="font-body text-sm text-[var(--color-silver)]/60">Detecta apertura y cierre de la puerta en milisegundos. Si la puerta permanece abierta más de 60 segundos, activa una alerta sonora y push simultáneas.</p>
+              </div>
+            </div>
+          </div>
+          <div class="md:w-1/2">
+            <figure>
+              <div class="aspect-[4/3] overflow-hidden rounded-sm relative">
+                <img src="/images/blog/articulo-tecnologia/sensores.png" alt="Sensores de precisión NTC y circuitos IoT de monitorización para vinoteca inteligente Caveduke sobre superficie oscura con iluminación técnica" class="w-full h-full object-cover hover:scale-105 transition-transform duration-[2s]" loading="lazy" decoding="async" />
+                <div class="absolute inset-0 border border-[var(--color-silver)]/10 m-3 pointer-events-none"></div>
+              </div>
+              <figcaption class="font-accent text-[11px] tracking-[0.1em] text-[var(--color-silver)]/40 uppercase mt-3 text-center">Sensores de precisión NTC con tolerancia de ±0,3 °C y auto-calibración cada 72h</figcaption>
+            </figure>
+          </div>
+        </div>
+      </section>
+
+
+      <!-- ===== SECCIÓN 4: Aislamiento ===== -->
+      <section class="mb-20">
+        <h2 class="font-display text-3xl md:text-4xl text-[var(--color-ivory)] leading-tight mb-8">
+          4. Aislamiento Multicapa: <span class="italic text-[var(--color-silver)]/50">45 mm de Protección</span>
+        </h2>
+
+        <p class="font-body text-[15px] md:text-base text-[var(--color-silver)]/80 leading-[1.9] mb-6">
+          El aislamiento no solo conserva la temperatura: también amortigua el sonido y bloquea las vibraciones externas. Caveduke utiliza un <strong class="text-[var(--color-ivory)]">sistema de cuatro capas</strong> con un espesor total de 45 mm que iguala o supera al aislamiento de cámaras frigoríficas industriales.
+        </p>
+
+        <!-- Capas de aislamiento visual -->
+        <div class="space-y-3 mb-10">
+          <div class="flex items-center gap-4 p-4 bg-[var(--color-graphite)]/30 border-l-4 border-[var(--color-gold)] rounded-r-sm">
+            <span class="font-display text-lg text-[var(--color-gold)] flex-shrink-0 w-12 text-center">01</span>
+            <div>
+              <p class="font-body text-[var(--color-ivory)] text-sm font-medium">Chapa exterior de acero con pintura epoxi</p>
+              <p class="font-body text-xs text-[var(--color-silver)]/50">Resistencia a la corrosión y acabado premium. Espesor: 0,8 mm.</p>
+            </div>
+          </div>
+          <div class="flex items-center gap-4 p-4 bg-[var(--color-graphite)]/25 border-l-4 border-[var(--color-silver)]/30 rounded-r-sm">
+            <span class="font-display text-lg text-[var(--color-silver)]/60 flex-shrink-0 w-12 text-center">02</span>
+            <div>
+              <p class="font-body text-[var(--color-ivory)] text-sm font-medium">Espuma de poliuretano inyectada de alta densidad</p>
+              <p class="font-body text-xs text-[var(--color-silver)]/50">Aislamiento térmico principal. Conductividad: 0,022 W/mK. Espesor: 35 mm.</p>
+            </div>
+          </div>
+          <div class="flex items-center gap-4 p-4 bg-[var(--color-graphite)]/20 border-l-4 border-[var(--color-silver)]/20 rounded-r-sm">
+            <span class="font-display text-lg text-[var(--color-silver)]/40 flex-shrink-0 w-12 text-center">03</span>
+            <div>
+              <p class="font-body text-[var(--color-ivory)] text-sm font-medium">Barrera de vapor de aluminio</p>
+              <p class="font-body text-xs text-[var(--color-silver)]/50">Impide la migración de humedad al interior del aislamiento. Espesor: 0,1 mm.</p>
+            </div>
+          </div>
+          <div class="flex items-center gap-4 p-4 bg-[var(--color-graphite)]/15 border-l-4 border-[var(--color-silver)]/10 rounded-r-sm">
+            <span class="font-display text-lg text-[var(--color-silver)]/30 flex-shrink-0 w-12 text-center">04</span>
+            <div>
+              <p class="font-body text-[var(--color-ivory)] text-sm font-medium">Revestimiento interior de aluminio alimentario</p>
+              <p class="font-body text-xs text-[var(--color-silver)]/50">Superficie higiénica, reflectante y resistente a la corrosión. Facilita la limpieza. Espesor: 0,5 mm.</p>
+            </div>
+          </div>
+        </div>
+
+        <figure class="mb-8">
+          <div class="aspect-[16/9] overflow-hidden rounded-sm relative">
+            <img src="/images/blog/articulo-tecnologia/artesano.png" alt="Maestro artesano de Caveduke ensamblando el interior de una vinoteca premium con instrumentos de precisión en taller de fabricación" class="w-full h-full object-cover hover:scale-105 transition-transform duration-[2s]" loading="lazy" decoding="async" />
+            <div class="absolute inset-0 border border-[var(--color-silver)]/10 m-3 pointer-events-none"></div>
+          </div>
+          <figcaption class="font-accent text-[11px] tracking-[0.1em] text-[var(--color-silver)]/40 uppercase mt-4 text-center">Control de calidad artesanal: cada vinoteca Caveduke pasa 48 horas de pruebas antes de salir del taller</figcaption>
+        </figure>
+      </section>
+
+
+      <!-- ===== FAQ ===== -->
+      <section class="mb-20" id="preguntas-frecuentes">
+        <div class="flex items-center gap-4 mb-10">
+          <div class="w-8 h-px bg-[var(--color-gold)]"></div>
+          <h2 class="font-accent text-[var(--color-gold)] tracking-widest uppercase text-sm">Preguntas Frecuentes</h2>
+          <div class="w-8 h-px bg-[var(--color-gold)]"></div>
+        </div>
+        <div class="space-y-6">
+          {faqs.map((faq) => (
+            <details class="group border border-[var(--color-silver)]/10 rounded-sm overflow-hidden hover:border-[var(--color-gold)]/30 transition-colors duration-300">
+              <summary class="flex items-center justify-between cursor-pointer px-6 py-5 bg-[var(--color-graphite)]/20 group-open:bg-[var(--color-graphite)]/40 transition-colors duration-300">
+                <h3 class="font-display text-lg text-[var(--color-ivory)] pr-4 leading-snug">{faq.question}</h3>
+                <span class="text-[var(--color-gold)] flex-shrink-0 transition-transform duration-300 group-open:rotate-45">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14"/><path d="M5 12h14"/></svg>
+                </span>
+              </summary>
+              <div class="px-6 py-5 border-t border-[var(--color-silver)]/10">
+                <p class="font-body text-[15px] text-[var(--color-silver)]/70 leading-[1.85]">{faq.answer}</p>
+              </div>
+            </details>
+          ))}
+        </div>
+      </section>
+
+
+      <!-- ===== CTA ===== -->
+      <section class="text-center py-16 border-t border-b border-[var(--color-silver)]/10">
+        <p class="font-accent text-[var(--color-gold)] tracking-widest uppercase text-xs mb-6">Ingeniería del silencio</p>
+        <h2 class="font-display text-3xl md:text-4xl text-[var(--color-ivory)] leading-tight mb-6">
+          Escucha el <span class="italic text-[var(--color-gold)]">Silencio</span>
+        </h2>
+        <p class="font-body text-[var(--color-silver)]/60 text-base max-w-xl mx-auto leading-relaxed mb-10">
+          Menos de 25 dB. Precisión de ±0,3 °C. Filtro UV del 99%. Aislamiento de 45 mm. Cuatro tecnologías, un solo objetivo: la perfección absoluta.
+        </p>
+        <a href="/#contacto" class="premium-button">
+          <span>Descubrir la Tecnología</span>
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+        </a>
+      </section>
+
+      <!-- ===== Nav ===== -->
+      <nav class="flex justify-between items-center pt-16" aria-label="Navegación de artículos">
+        <a href="/#blog" class="flex items-center gap-2 text-[var(--color-silver)]/50 hover:text-[var(--color-gold)] transition-colors font-accent tracking-widest text-xs uppercase">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m12 19-7-7 7-7"/><path d="M19 12H5"/></svg>
+          <span>Volver al Blog</span>
+        </a>
+        <a href="/blog/tendencias-2026-vinotecas-lujo" class="flex items-center gap-2 text-[var(--color-silver)]/50 hover:text-[var(--color-gold)] transition-colors font-accent tracking-widest text-xs uppercase">
+          <span>Artículo anterior</span>
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+        </a>
+      </nav>
+    </article>
+  </main>
+
+  <Footer />
+</BaseLayout>
+
+<style>
+  details summary::-webkit-details-marker { display: none; }
+  details summary { list-style: none; }
+  details[open] summary ~ div { animation: fadeIn 0.3s ease-out; }
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-8px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+</style>
+
+<script>
+  import { gsap } from 'gsap';
+  import { ScrollTrigger } from 'gsap/ScrollTrigger';
+  gsap.registerPlugin(ScrollTrigger);
+
+  gsap.fromTo('.hero-title', { y: 40, opacity: 0 }, { y: 0, opacity: 1, duration: 1.2, ease: 'power3.out', delay: 0.3 });
+
+  gsap.utils.toArray('.prose-section, section').forEach((section: any) => {
+    gsap.fromTo(section, { y: 40, opacity: 0 }, { y: 0, opacity: 1, duration: 1, ease: 'power3.out', scrollTrigger: { trigger: section, start: 'top 90%' } });
+  });
+
+  gsap.utils.toArray('figure').forEach((fig: any) => {
+    gsap.fromTo(fig, { clipPath: 'inset(100% 0 0 0)' }, { clipPath: 'inset(0% 0 0 0)', duration: 1.5, ease: 'power4.inOut', scrollTrigger: { trigger: fig, start: 'top 95%' } });
+  });
+</script>

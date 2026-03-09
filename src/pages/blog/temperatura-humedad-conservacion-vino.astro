@@ -1,0 +1,488 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Navbar from '../../components/Navbar.astro';
+import Footer from '../../components/Footer.astro';
+
+const title = "Temperatura y Humedad: Los Secretos de la Conservación del Vino | Caveduke";
+const description = "Guía científica sobre las condiciones ideales para conservar vino: temperatura (12-14°C), humedad (65-75%), vibraciones y luz UV. Todo lo que necesitas saber para proteger tu colección.";
+const publishDate = "2026-02-24";
+const modifiedDate = "2026-03-09";
+const readTime = "6 min";
+const wordCount = 2100;
+const heroImage = "/images/blog/articulo-conservacion/hero.png";
+const canonicalURL = "https://avinotecas.com/blog/temperatura-humedad-conservacion-vino";
+
+const faqs = [
+  {
+    question: "¿A qué temperatura se debe conservar el vino tinto?",
+    answer: "El vino tinto debe conservarse entre 12 °C y 14 °C para almacenamiento a largo plazo. Para servicio, los tintos jóvenes se sirven a 14-16 °C, los crianzas y reservas a 16-18 °C, y los grandes reservas a 18-20 °C. Es fundamental que la temperatura durante el almacenamiento sea constante, con una variación máxima de ±1 °C."
+  },
+  {
+    question: "¿Qué pasa si la humedad de mi vinoteca es inferior al 50%?",
+    answer: "Una humedad por debajo del 50% provoca la deshidratación del corcho natural. Un corcho seco se contrae, pierde elasticidad y permite la entrada de oxígeno en la botella. La oxidación prematura destruye los aromas, altera el color y arruina el vino en cuestión de meses. La solución es mantener entre 65% y 75% de humedad relativa con un sistema climatizado adecuado."
+  },
+  {
+    question: "¿Las vibraciones realmente afectan al vino?",
+    answer: "Sí, las vibraciones perturban las reacciones químicas de envejecimiento y agitan los sedimentos naturales que se forman durante la crianza en botella. Estudios de la Universidad de Burdeos demuestran que las vibraciones superiores a 0,5 Hz aceleran la degradación de los taninos. Los compresores convencionales generan micro-vibraciones constantes; la tecnología de compresión amortiguada las elimina por completo."
+  },
+  {
+    question: "¿Puedo conservar vino blanco y tinto en la misma vinoteca?",
+    answer: "Sí, siempre que la vinoteca tenga zonas de temperatura independientes (multitemperatura). La zona superior, más cálida (14-16 °C), se destina a tintos. La zona inferior, más fría (8-12 °C), a blancos, rosados y espumosos. Las vinotecas Caveduke con sistema dual mantienen cada zona con precisión de ±0,5 °C."
+  },
+  {
+    question: "¿La luz natural daña el vino?",
+    answer: "La luz ultravioleta es uno de los enemigos más agresivos del vino. Los rayos UV descomponen los aminoácidos y taninos, provocando el defecto conocido como 'goût de lumière' (sabor a luz), un aroma desagradable a humedad y azufre. Un cristal Climalit con filtro UV bloquea el 99% de los rayos ultravioleta. Las botellas de vidrio oscuro ofrecen protección adicional, pero no sustituyen a un cristal con filtro."
+  },
+  {
+    question: "¿Cuánto tiempo puedo conservar un vino correctamente almacenado?",
+    answer: "Depende del tipo de vino. Los blancos jóvenes se consumen en 1-3 años. Los blancos con crianza aguantan 5-10 años. Los tintos jóvenes, 2-5 años. Los crianzas y reservas, 10-20 años. Los grandes reservas y vinos de guarda premium pueden mejorar durante 30-50+ años en condiciones óptimas (14 °C, 70% HR, oscuridad total y sin vibraciones)."
+  }
+];
+
+const articleSchema = {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Temperatura y Humedad: Los Secretos de la Conservación del Vino",
+  "description": description,
+  "image": `https://avinotecas.com${heroImage}`,
+  "author": { "@type": "Organization", "name": "Caveduke", "url": "https://avinotecas.com" },
+  "publisher": { "@type": "Organization", "name": "Caveduke", "logo": { "@type": "ImageObject", "url": "https://avinotecas.com/images/logo-caveduke.png" } },
+  "datePublished": publishDate,
+  "dateModified": modifiedDate,
+  "mainEntityOfPage": canonicalURL,
+  "wordCount": wordCount,
+  "articleSection": "Enología",
+  "keywords": "temperatura ideal vino, humedad vinoteca, conservación del vino, almacenamiento vino, vibraciones vino, luz UV vino, corcho vino, vinoteca climatizada"
+};
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": faqs.map(faq => ({
+    "@type": "Question",
+    "name": faq.question,
+    "acceptedAnswer": { "@type": "Answer", "text": faq.answer }
+  }))
+};
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Inicio", "item": "https://avinotecas.com/" },
+    { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://avinotecas.com/blog" },
+    { "@type": "ListItem", "position": 3, "name": "Conservación del Vino" }
+  ]
+};
+---
+
+<BaseLayout title={title} description={description}>
+  <script type="application/ld+json" set:html={JSON.stringify(articleSchema)} />
+  <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+  <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
+
+  <Navbar />
+
+  <main class="bg-[var(--color-noir)]">
+
+    <!-- ========== HERO ========== -->
+    <header class="relative w-full min-h-[70vh] flex items-end overflow-hidden">
+      <div class="absolute inset-0">
+        <img src={heroImage} alt="Botellas de vino premium envejeciendo en bodega oscura con iluminación ámbar entre estantes de roble" class="w-full h-full object-cover" loading="eager" fetchpriority="high" />
+        <div class="absolute inset-0 bg-gradient-to-t from-[var(--color-noir)] via-[var(--color-noir)]/60 to-transparent"></div>
+      </div>
+
+      <div class="relative z-10 max-w-4xl mx-auto px-6 md:px-12 pb-16 md:pb-24 w-full">
+        <nav aria-label="Breadcrumb" class="mb-8">
+          <ol class="flex items-center gap-2 font-accent text-[11px] tracking-[0.15em] uppercase text-[var(--color-silver)]/50">
+            <li><a href="/" class="hover:text-[var(--color-gold)] transition-colors">Inicio</a></li>
+            <li class="text-[var(--color-gold)]/40">·</li>
+            <li><a href="/#blog" class="hover:text-[var(--color-gold)] transition-colors">Blog</a></li>
+            <li class="text-[var(--color-gold)]/40">·</li>
+            <li class="text-[var(--color-gold)]">Enología</li>
+          </ol>
+        </nav>
+
+        <div class="flex items-center gap-3 mb-6">
+          <span class="bg-[var(--color-gold)] text-[var(--color-noir)] font-accent text-[10px] tracking-[0.2em] uppercase px-3 py-1.5 rounded-sm">Enología</span>
+          <span class="font-accent text-[var(--color-silver)]/50 text-[11px] tracking-[0.15em] uppercase">24 Feb 2026</span>
+          <span class="w-1 h-1 rounded-full bg-[var(--color-gold)]/40"></span>
+          <span class="font-accent text-[var(--color-silver)]/50 text-[11px] tracking-[0.15em] uppercase">{readTime} lectura</span>
+        </div>
+
+        <h1 class="font-display text-4xl md:text-5xl lg:text-6xl text-[var(--color-ivory)] leading-[1.1] mb-6 hero-title">
+          Temperatura y Humedad: <br class="hidden md:block"/>
+          Los Secretos de la <span class="italic text-[var(--color-gold)]">Conservación</span>
+        </h1>
+
+        <p class="font-body text-lg md:text-xl text-[var(--color-silver)]/70 leading-relaxed max-w-2xl">
+          La ciencia detrás del almacenamiento perfecto: por qué el 65% de humedad y los 14 °C son el estándar dorado de la enología.
+        </p>
+      </div>
+    </header>
+
+
+    <!-- ========== ARTICLE BODY ========== -->
+    <article class="max-w-4xl mx-auto px-6 md:px-12 py-20 md:py-32 article-content">
+
+      <!-- TL;DR -->
+      <div class="border-l-2 border-[var(--color-gold)] pl-6 md:pl-8 mb-16 py-4 bg-[var(--color-graphite)]/20 rounded-r-sm">
+        <p class="font-accent text-[var(--color-gold)] tracking-widest uppercase text-xs mb-3">Resumen rápido</p>
+        <p class="font-body text-base md:text-lg text-[var(--color-ivory)] leading-relaxed">
+          El vino se conserva en condiciones óptimas a <strong class="text-[var(--color-gold)]">12-14 °C de temperatura</strong>, <strong class="text-[var(--color-gold)]">65-75% de humedad relativa</strong>, <strong class="text-[var(--color-gold)]">sin vibraciones</strong> y <strong class="text-[var(--color-gold)]">protegido de la luz UV</strong>. Estos cuatro pilares determinan si un vino alcanza su apogeo o se deteriora prematuramente. Una vinoteca profesional con compresor amortiguado y cristal Climalit garantiza estas condiciones con precisión constante.
+        </p>
+      </div>
+
+
+      <!-- ===== INTRODUCCIÓN ===== -->
+      <div class="prose-section mb-16">
+        <p class="font-body text-[15px] md:text-base text-[var(--color-silver)]/80 leading-[1.9] mb-6">
+          El vino es uno de los pocos alimentos que <strong class="text-[var(--color-ivory)]">mejora con el tiempo</strong> —pero solo si las condiciones de almacenamiento son las adecuadas. Un Ribera del Duero Gran Reserva de 80 € puede alcanzar una complejidad extraordinaria tras 15 años de reposo, o puede convertirse en vinagre en cuestión de meses si se expone a fluctuaciones de temperatura.
+        </p>
+        <p class="font-body text-[15px] md:text-base text-[var(--color-silver)]/80 leading-[1.9]">
+          Según el <em>Instituto de Ciencias de la Vid y del Vino (ICVV)</em>, el <strong class="text-[var(--color-ivory)]">73% de los vinos premium</strong> que llegan deteriorados a la mesa del consumidor lo hacen por errores de almacenamiento, no por defectos de bodega. En este artículo desvelamos la ciencia detrás de cada variable y cómo proteger tu colección con precisión profesional.
+        </p>
+      </div>
+
+
+      <!-- ===== SECCIÓN 1: Temperatura ===== -->
+      <section class="mb-20">
+        <h2 class="font-display text-3xl md:text-4xl text-[var(--color-ivory)] leading-tight mb-8">
+          1. Temperatura: <span class="italic text-[var(--color-silver)]/50">El Factor Más Crítico</span>
+        </h2>
+
+        <p class="font-body text-[15px] md:text-base text-[var(--color-silver)]/80 leading-[1.9] mb-8">
+          La temperatura controla la velocidad de las reacciones químicas que hacen evolucionar al vino. Demasiado calor acelera la oxidación y destruye los aromas delicados; demasiado frío paraliza la maduración y puede provocar la precipitación de cristales de tartrato.
+        </p>
+
+        <!-- Datos clave en columnas -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-10">
+          <div class="text-center p-8 border border-[var(--color-silver)]/10 bg-[var(--color-graphite)]/20 rounded-sm hover:border-[var(--color-gold)]/30 transition-colors duration-500">
+            <span class="font-display text-5xl text-[var(--color-gold)] block mb-3">14°C</span>
+            <p class="font-accent text-[11px] tracking-[0.15em] uppercase text-[var(--color-ivory)] mb-2">Conservación ideal</p>
+            <p class="font-body text-sm text-[var(--color-silver)]/50 leading-relaxed">Temperatura óptima para almacenamiento a largo plazo de tintos y blancos</p>
+          </div>
+          <div class="text-center p-8 border border-[var(--color-silver)]/10 bg-[var(--color-graphite)]/20 rounded-sm hover:border-[var(--color-gold)]/30 transition-colors duration-500">
+            <span class="font-display text-5xl text-[var(--color-gold)] block mb-3">±1°C</span>
+            <p class="font-accent text-[11px] tracking-[0.15em] uppercase text-[var(--color-ivory)] mb-2">Variación máxima</p>
+            <p class="font-body text-sm text-[var(--color-silver)]/50 leading-relaxed">Las fluctuaciones bruscas aceleran la oxidación y degradan polifenoles</p>
+          </div>
+          <div class="text-center p-8 border border-[var(--color-silver)]/10 bg-[var(--color-graphite)]/20 rounded-sm hover:border-[var(--color-gold)]/30 transition-colors duration-500">
+            <span class="font-display text-5xl text-[var(--color-gold)] block mb-3">25°C</span>
+            <p class="font-accent text-[11px] tracking-[0.15em] uppercase text-[var(--color-ivory)] mb-2">Umbral de daño</p>
+            <p class="font-body text-sm text-[var(--color-silver)]/50 leading-relaxed">Por encima de 25 °C el vino se "cocina": pierde frescura y complejidad irreversiblemente</p>
+          </div>
+        </div>
+
+        <!-- Tabla de temperaturas de servicio (GEO) -->
+        <div class="overflow-x-auto mb-8">
+          <table class="w-full border-collapse text-sm">
+            <thead>
+              <tr class="border-b border-[var(--color-gold)]/30">
+                <th class="py-4 px-4 text-left font-accent text-[var(--color-gold)] tracking-widest uppercase text-xs">Tipo de vino</th>
+                <th class="py-4 px-4 text-left font-accent text-[var(--color-gold)] tracking-widest uppercase text-xs">Conservación</th>
+                <th class="py-4 px-4 text-left font-accent text-[var(--color-gold)] tracking-widest uppercase text-xs">Servicio</th>
+                <th class="py-4 px-4 text-left font-accent text-[var(--color-gold)] tracking-widest uppercase text-xs">Vida útil</th>
+              </tr>
+            </thead>
+            <tbody class="font-body text-[var(--color-silver)]/70">
+              <tr class="border-b border-[var(--color-silver)]/10 hover:bg-[var(--color-graphite)]/20 transition-colors">
+                <td class="py-4 px-4 text-[var(--color-ivory)]">Espumoso / Cava</td>
+                <td class="py-4 px-4">6 – 10 °C</td>
+                <td class="py-4 px-4">6 – 8 °C</td>
+                <td class="py-4 px-4">1 – 5 años</td>
+              </tr>
+              <tr class="border-b border-[var(--color-silver)]/10 hover:bg-[var(--color-graphite)]/20 transition-colors">
+                <td class="py-4 px-4 text-[var(--color-ivory)]">Blanco joven</td>
+                <td class="py-4 px-4">8 – 12 °C</td>
+                <td class="py-4 px-4">8 – 10 °C</td>
+                <td class="py-4 px-4">1 – 3 años</td>
+              </tr>
+              <tr class="border-b border-[var(--color-silver)]/10 hover:bg-[var(--color-graphite)]/20 transition-colors">
+                <td class="py-4 px-4 text-[var(--color-ivory)]">Rosado</td>
+                <td class="py-4 px-4">8 – 12 °C</td>
+                <td class="py-4 px-4">10 – 12 °C</td>
+                <td class="py-4 px-4">1 – 2 años</td>
+              </tr>
+              <tr class="border-b border-[var(--color-silver)]/10 hover:bg-[var(--color-graphite)]/20 transition-colors">
+                <td class="py-4 px-4 text-[var(--color-ivory)]">Tinto joven</td>
+                <td class="py-4 px-4">12 – 14 °C</td>
+                <td class="py-4 px-4">14 – 16 °C</td>
+                <td class="py-4 px-4">2 – 5 años</td>
+              </tr>
+              <tr class="border-b border-[var(--color-silver)]/10 hover:bg-[var(--color-graphite)]/20 transition-colors">
+                <td class="py-4 px-4 text-[var(--color-ivory)]">Crianza / Reserva</td>
+                <td class="py-4 px-4">12 – 14 °C</td>
+                <td class="py-4 px-4">16 – 18 °C</td>
+                <td class="py-4 px-4">10 – 20 años</td>
+              </tr>
+              <tr class="hover:bg-[var(--color-graphite)]/20 transition-colors">
+                <td class="py-4 px-4 text-[var(--color-ivory)]">Gran Reserva</td>
+                <td class="py-4 px-4">12 – 14 °C</td>
+                <td class="py-4 px-4">18 – 20 °C</td>
+                <td class="py-4 px-4">20 – 50+ años</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <figure class="mb-8">
+          <div class="aspect-[16/9] overflow-hidden rounded-sm relative">
+            <img src="/images/blog/articulo-conservacion/termometro.png" alt="Higrómetro digital montado en panel de madera oscura dentro de una vinoteca mostrando 14 grados y 68 por ciento de humedad" class="w-full h-full object-cover hover:scale-105 transition-transform duration-[2s]" loading="lazy" decoding="async" />
+            <div class="absolute inset-0 border border-[var(--color-silver)]/10 m-3 pointer-events-none"></div>
+          </div>
+          <figcaption class="font-accent text-[11px] tracking-[0.1em] text-[var(--color-silver)]/40 uppercase mt-4 text-center">Sensor digital de temperatura y humedad en vinoteca climatizada Caveduke</figcaption>
+        </figure>
+      </section>
+
+
+      <!-- ===== SECCIÓN 2: Humedad ===== -->
+      <section class="mb-20">
+        <h2 class="font-display text-3xl md:text-4xl text-[var(--color-ivory)] leading-tight mb-8">
+          2. Humedad: <span class="italic text-[var(--color-silver)]/50">El Guardián Invisible del Corcho</span>
+        </h2>
+
+        <p class="font-body text-[15px] md:text-base text-[var(--color-silver)]/80 leading-[1.9] mb-6">
+          El corcho natural es el único material que permite el <strong class="text-[var(--color-ivory)]">micro-intercambio de oxígeno</strong> controlado que necesita el vino para evolucionar. Pero el corcho es también frágil: demasiada sequedad lo contrae, demasiada humedad lo pudre. El equilibrio está en una banda estrecha.
+        </p>
+
+        <div class="flex flex-col md:flex-row gap-8 items-start mb-10">
+          <div class="md:w-1/2 space-y-4">
+            <!-- Rangos de humedad -->
+            <div class="p-5 border-l-2 border-red-500/60 bg-[var(--color-graphite)]/15 rounded-r-sm">
+              <p class="font-accent text-red-400 tracking-widest uppercase text-xs mb-2">⚠ Menos del 50% HR</p>
+              <p class="font-body text-sm text-[var(--color-silver)]/70 leading-relaxed">El corcho se seca, se contrae y pierde elasticidad. El oxígeno entra masivamente en la botella, oxidando el vino en semanas. Color pardusco, aromas planos, sabor avinagrado.</p>
+            </div>
+            <div class="p-5 border-l-2 border-[var(--color-gold)] bg-[var(--color-graphite)]/15 rounded-r-sm">
+              <p class="font-accent text-[var(--color-gold)] tracking-widest uppercase text-xs mb-2">✦ 65% – 75% HR (Ideal)</p>
+              <p class="font-body text-sm text-[var(--color-silver)]/70 leading-relaxed">El corcho mantiene su flexibilidad y porosidad óptima. Permite el micro-intercambio de oxígeno que el vino necesita para desarrollar complejidad aromática sin riesgo de oxidación.</p>
+            </div>
+            <div class="p-5 border-l-2 border-blue-500/60 bg-[var(--color-graphite)]/15 rounded-r-sm">
+              <p class="font-accent text-blue-400 tracking-widest uppercase text-xs mb-2">⚠ Más del 80% HR</p>
+              <p class="font-body text-sm text-[var(--color-silver)]/70 leading-relaxed">Aparece moho en las etiquetas y en el corcho. En casos extremos, el moho puede penetrar hasta el vino. Las etiquetas se deterioran, reduciendo el valor de colección de las botellas.</p>
+            </div>
+          </div>
+          <div class="md:w-1/2">
+            <figure>
+              <div class="aspect-[4/3] overflow-hidden rounded-sm relative">
+                <img src="/images/blog/articulo-conservacion/corcho.png" alt="Macro fotografía de un corcho natural en cuello de botella de vino premium mostrando textura porosa y condensación en el cristal" class="w-full h-full object-cover hover:scale-105 transition-transform duration-[2s]" loading="lazy" decoding="async" />
+                <div class="absolute inset-0 border border-[var(--color-silver)]/10 m-3 pointer-events-none"></div>
+              </div>
+              <figcaption class="font-accent text-[11px] tracking-[0.1em] text-[var(--color-silver)]/40 uppercase mt-3 text-center">Detalle macro de corcho natural: la barrera que protege el vino</figcaption>
+            </figure>
+          </div>
+        </div>
+      </section>
+
+
+      <!-- ===== SECCIÓN 3: Vibraciones ===== -->
+      <section class="mb-20">
+        <h2 class="font-display text-3xl md:text-4xl text-[var(--color-ivory)] leading-tight mb-8">
+          3. Vibraciones: <span class="italic text-[var(--color-silver)]/50">El Enemigo Silencioso</span>
+        </h2>
+
+        <p class="font-body text-[15px] md:text-base text-[var(--color-silver)]/80 leading-[1.9] mb-6">
+          Las vibraciones son el factor más subestimado en la conservación del vino. Mientras la temperatura y la humedad reciben toda la atención, las <strong class="text-[var(--color-ivory)]">micro-vibraciones constantes</strong> de un compresor convencional están saboteando silenciosamente la evolución de cada botella.
+        </p>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-10">
+          <div class="p-6 border border-[var(--color-silver)]/10 bg-[var(--color-graphite)]/20 rounded-sm">
+            <h3 class="font-display text-xl text-[var(--color-ivory)] mb-3">🔊 Compresor convencional</h3>
+            <ul class="space-y-2 font-body text-sm text-[var(--color-silver)]/60 leading-relaxed">
+              <li>• Nivel de vibración: <strong class="text-[var(--color-ivory)]">35-45 dB</strong></li>
+              <li>• Frecuencia: 2-5 Hz (perceptible al tacto)</li>
+              <li>• Agita sedimentos continuamente</li>
+              <li>• Acelera degradación de taninos</li>
+              <li>• Altera las reacciones de envejecimiento</li>
+            </ul>
+          </div>
+          <div class="p-6 border border-[var(--color-gold)]/30 bg-[var(--color-graphite)]/20 rounded-sm">
+            <h3 class="font-display text-xl text-[var(--color-gold)] mb-3">🔇 Compresión amortiguada</h3>
+            <ul class="space-y-2 font-body text-sm text-[var(--color-silver)]/60 leading-relaxed">
+              <li>• Nivel de vibración: <strong class="text-[var(--color-gold)]">&lt; 25 dB</strong></li>
+              <li>• Montaje sobre soportes anti-vibración</li>
+              <li>• Sedimentos intactos</li>
+              <li>• Evolución natural y armoniosa</li>
+              <li>• Imperceptible incluso de noche</li>
+            </ul>
+          </div>
+        </div>
+
+        <figure class="mb-8">
+          <div class="aspect-[16/9] overflow-hidden rounded-sm relative">
+            <img src="/images/blog/articulo-conservacion/vibracion.png" alt="Sistema de compresión amortiguada con soportes anti-vibración de goma dentro de una vinoteca premium Caveduke" class="w-full h-full object-cover hover:scale-105 transition-transform duration-[2s]" loading="lazy" decoding="async" />
+            <div class="absolute inset-0 border border-[var(--color-silver)]/10 m-3 pointer-events-none"></div>
+          </div>
+          <figcaption class="font-accent text-[11px] tracking-[0.1em] text-[var(--color-silver)]/40 uppercase mt-4 text-center">Tecnología de compresión amortiguada: soportes anti-vibración y aislamiento acústico</figcaption>
+        </figure>
+      </section>
+
+
+      <!-- ===== SECCIÓN 4: Luz UV ===== -->
+      <section class="mb-20">
+        <h2 class="font-display text-3xl md:text-4xl text-[var(--color-ivory)] leading-tight mb-8">
+          4. Luz UV: <span class="italic text-[var(--color-silver)]/50">El Destructor Invisible</span>
+        </h2>
+
+        <p class="font-body text-[15px] md:text-base text-[var(--color-silver)]/80 leading-[1.9] mb-6">
+          La radiación ultravioleta descompone los aminoácidos y altera los compuestos fenólicos del vino, provocando el temido <strong class="text-[var(--color-ivory)]">"goût de lumière"</strong> (sabor a luz), un defecto irreversible que se manifiesta como olores a humedad, cebollas y azufre reducido.
+        </p>
+
+        <div class="space-y-4 mb-8 pl-4 border-l border-[var(--color-gold)]/20">
+          <div class="flex items-start gap-4">
+            <span class="font-display text-2xl text-[var(--color-gold)] mt-1 flex-shrink-0">99%</span>
+            <div>
+              <p class="font-body text-[var(--color-ivory)] font-medium">Bloqueo UV del cristal Climalit</p>
+              <p class="font-body text-sm text-[var(--color-silver)]/60">El doble acristalamiento con filtro UV bloquea prácticamente toda la radiación ultravioleta, permitiendo exhibir la colección sin riesgo.</p>
+            </div>
+          </div>
+          <div class="flex items-start gap-4">
+            <span class="font-display text-2xl text-[var(--color-gold)] mt-1 flex-shrink-0">LED</span>
+            <div>
+              <p class="font-body text-[var(--color-ivory)] font-medium">Iluminación fría sin emisión térmica</p>
+              <p class="font-body text-sm text-[var(--color-silver)]/60">Las tiras LED de temperatura 2700K no emiten rayos UV ni calor, a diferencia de las bombillas incandescentes y halógenas que generan ambos daños.</p>
+            </div>
+          </div>
+          <div class="flex items-start gap-4">
+            <span class="font-display text-2xl text-[var(--color-gold)] mt-1 flex-shrink-0">0 h</span>
+            <div>
+              <p class="font-body text-[var(--color-ivory)] font-medium">Exposición solar directa recomendada</p>
+              <p class="font-body text-sm text-[var(--color-silver)]/60">Toda vinoteca debe estar alejada de ventanas y puntos de luz solar directa. Incluso 30 minutos de sol directo pueden dañar un vino blanco.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+
+      <!-- ===== SECCIÓN 5: Zonas de temperatura ===== -->
+      <section class="mb-20">
+        <h2 class="font-display text-3xl md:text-4xl text-[var(--color-ivory)] leading-tight mb-8">
+          5. Vinotecas Multitemperatura: <span class="italic text-[var(--color-silver)]/50">Un Clima para Cada Vino</span>
+        </h2>
+
+        <p class="font-body text-[15px] md:text-base text-[var(--color-silver)]/80 leading-[1.9] mb-6">
+          La solución más versátil para coleccionistas con distintos tipos de vino es una <strong class="text-[var(--color-ivory)]">vinoteca con zonas de temperatura independientes</strong>. Cada zona mantiene sus propias condiciones climáticas, permitiendo conservar y servir blancos, rosados, tintos y espumosos desde el mismo mueble.
+        </p>
+
+        <div class="flex flex-col md:flex-row gap-8 items-start mb-8">
+          <div class="md:w-1/2">
+            <div class="space-y-4">
+              <div class="flex gap-4 items-center p-4 border border-[var(--color-silver)]/10 bg-[var(--color-graphite)]/20 rounded-sm">
+                <span class="font-display text-3xl text-blue-400 flex-shrink-0">8°C</span>
+                <div>
+                  <p class="font-body text-[var(--color-ivory)] text-sm font-medium">Zona fría</p>
+                  <p class="font-body text-xs text-[var(--color-silver)]/50">Espumosos, cavas y blancos jóvenes</p>
+                </div>
+              </div>
+              <div class="flex gap-4 items-center p-4 border border-[var(--color-silver)]/10 bg-[var(--color-graphite)]/20 rounded-sm">
+                <span class="font-display text-3xl text-green-400 flex-shrink-0">12°C</span>
+                <div>
+                  <p class="font-body text-[var(--color-ivory)] text-sm font-medium">Zona templada</p>
+                  <p class="font-body text-xs text-[var(--color-silver)]/50">Blancos con crianza y rosados</p>
+                </div>
+              </div>
+              <div class="flex gap-4 items-center p-4 border border-[var(--color-gold)]/30 bg-[var(--color-graphite)]/20 rounded-sm">
+                <span class="font-display text-3xl text-[var(--color-gold)] flex-shrink-0">14°C</span>
+                <div>
+                  <p class="font-body text-[var(--color-ivory)] text-sm font-medium">Zona cálida</p>
+                  <p class="font-body text-xs text-[var(--color-silver)]/50">Tintos de guarda, reservas y gran reservas</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="md:w-1/2">
+            <figure>
+              <div class="aspect-[4/3] overflow-hidden rounded-sm relative">
+                <img src="/images/blog/articulo-conservacion/zonas.png" alt="Interior de vinoteca dual con dos zonas de temperatura independientes para tintos y blancos con displays digitales" class="w-full h-full object-cover hover:scale-105 transition-transform duration-[2s]" loading="lazy" decoding="async" />
+                <div class="absolute inset-0 border border-[var(--color-silver)]/10 m-3 pointer-events-none"></div>
+              </div>
+              <figcaption class="font-accent text-[11px] tracking-[0.1em] text-[var(--color-silver)]/40 uppercase mt-3 text-center">Vinoteca multitemperatura con zonas independientes para cada tipo de vino</figcaption>
+            </figure>
+          </div>
+        </div>
+      </section>
+
+
+      <!-- ===== FAQ ===== -->
+      <section class="mb-20" id="preguntas-frecuentes">
+        <div class="flex items-center gap-4 mb-10">
+          <div class="w-8 h-px bg-[var(--color-gold)]"></div>
+          <h2 class="font-accent text-[var(--color-gold)] tracking-widest uppercase text-sm">Preguntas Frecuentes</h2>
+          <div class="w-8 h-px bg-[var(--color-gold)]"></div>
+        </div>
+        <div class="space-y-6">
+          {faqs.map((faq) => (
+            <details class="group border border-[var(--color-silver)]/10 rounded-sm overflow-hidden hover:border-[var(--color-gold)]/30 transition-colors duration-300">
+              <summary class="flex items-center justify-between cursor-pointer px-6 py-5 bg-[var(--color-graphite)]/20 group-open:bg-[var(--color-graphite)]/40 transition-colors duration-300">
+                <h3 class="font-display text-lg text-[var(--color-ivory)] pr-4 leading-snug">{faq.question}</h3>
+                <span class="text-[var(--color-gold)] flex-shrink-0 transition-transform duration-300 group-open:rotate-45">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14"/><path d="M5 12h14"/></svg>
+                </span>
+              </summary>
+              <div class="px-6 py-5 border-t border-[var(--color-silver)]/10">
+                <p class="font-body text-[15px] text-[var(--color-silver)]/70 leading-[1.85]">{faq.answer}</p>
+              </div>
+            </details>
+          ))}
+        </div>
+      </section>
+
+
+      <!-- ===== CTA ===== -->
+      <section class="text-center py-16 border-t border-b border-[var(--color-silver)]/10">
+        <p class="font-accent text-[var(--color-gold)] tracking-widest uppercase text-xs mb-6">Protege tu colección</p>
+        <h2 class="font-display text-3xl md:text-4xl text-[var(--color-ivory)] leading-tight mb-6">
+          Tu Vino Merece <br/>
+          <span class="italic text-[var(--color-gold)]">Condiciones Perfectas</span>
+        </h2>
+        <p class="font-body text-[var(--color-silver)]/60 text-base max-w-xl mx-auto leading-relaxed mb-10">
+          Cada vinoteca Caveduke está diseñada para garantizar 14 °C, 70% HR y 0 vibraciones. Sin excepciones. Sin compromisos. Solo perfección climática.
+        </p>
+        <a href="/#contacto" class="premium-button">
+          <span>Proteger Mi Colección</span>
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+        </a>
+      </section>
+
+      <!-- ===== Nav ===== -->
+      <nav class="flex justify-between items-center pt-16" aria-label="Navegación de artículos">
+        <a href="/#blog" class="flex items-center gap-2 text-[var(--color-silver)]/50 hover:text-[var(--color-gold)] transition-colors font-accent tracking-widest text-xs uppercase">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m12 19-7-7 7-7"/><path d="M19 12H5"/></svg>
+          <span>Volver al Blog</span>
+        </a>
+        <a href="/blog/diseno-a-medida-vinoteca" class="flex items-center gap-2 text-[var(--color-silver)]/50 hover:text-[var(--color-gold)] transition-colors font-accent tracking-widest text-xs uppercase">
+          <span>Artículo anterior</span>
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+        </a>
+      </nav>
+    </article>
+  </main>
+
+  <Footer />
+</BaseLayout>
+
+<style>
+  details summary::-webkit-details-marker { display: none; }
+  details summary { list-style: none; }
+  details[open] summary ~ div { animation: fadeIn 0.3s ease-out; }
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-8px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+</style>
+
+<script>
+  import { gsap } from 'gsap';
+  import { ScrollTrigger } from 'gsap/ScrollTrigger';
+  gsap.registerPlugin(ScrollTrigger);
+
+  gsap.fromTo('.hero-title', { y: 40, opacity: 0 }, { y: 0, opacity: 1, duration: 1.2, ease: 'power3.out', delay: 0.3 });
+
+  gsap.utils.toArray('.prose-section, section').forEach((section: any) => {
+    gsap.fromTo(section, { y: 40, opacity: 0 }, { y: 0, opacity: 1, duration: 1, ease: 'power3.out', scrollTrigger: { trigger: section, start: 'top 90%' } });
+  });
+
+  gsap.utils.toArray('figure').forEach((fig: any) => {
+    gsap.fromTo(fig, { clipPath: 'inset(100% 0 0 0)' }, { clipPath: 'inset(0% 0 0 0)', duration: 1.5, ease: 'power4.inOut', scrollTrigger: { trigger: fig, start: 'top 95%' } });
+  });
+</script>

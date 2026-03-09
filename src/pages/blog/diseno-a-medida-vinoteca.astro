@@ -1,0 +1,564 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Navbar from '../../components/Navbar.astro';
+import Footer from '../../components/Footer.astro';
+
+const title = "Diseño a Medida: El Arte de Integrar una Vinoteca en tu Arquitectura | Caveduke";
+const description = "Descubre cómo los diseñadores de Caveduke crean vinotecas a medida que se integran perfectamente en tu hogar. Empotradas, bajo escalera, wine walls y más. Guía completa de diseño arquitectónico.";
+const publishDate = "2026-03-02";
+const modifiedDate = "2026-03-09";
+const author = "Caveduke";
+const readTime = "5 min";
+const wordCount = 2050;
+const heroImage = "/images/blog/articulo-diseno/hero.png";
+const canonicalURL = "https://avinotecas.com/blog/diseno-a-medida-vinoteca";
+
+// FAQ Data
+const faqs = [
+  {
+    question: "¿Cuánto tiempo tarda el diseño y fabricación de una vinoteca a medida?",
+    answer: "El proceso completo suele durar entre 8 y 14 semanas. La fase de diseño y validación con el cliente ocupa las primeras 2-3 semanas. La fabricación artesanal requiere entre 4 y 8 semanas dependiendo de la complejidad. La instalación in-situ se completa en 1-3 días. Caveduke asigna un diseñador dedicado que acompaña al cliente durante todo el proceso."
+  },
+  {
+    question: "¿Puedo integrar una vinoteca a medida sin hacer obra?",
+    answer: "Sí, muchas integraciones no requieren obra. Las vinotecas empotradas en huecos de armario existentes, los muebles-vinoteca independientes y las estanterías climatizadas se instalan sin modificar la estructura del hogar. Solo las wine walls de suelo a techo, las bodegas bajo escalera que impliquen modificar muros, o las instalaciones que requieran nuevas tomas eléctricas pueden necesitar obra menor."
+  },
+  {
+    question: "¿Qué profesionales intervienen en un proyecto a medida?",
+    answer: "Un proyecto completo involucra hasta cinco especialistas: un diseñador de interiores que coordina la estética, un ingeniero climático que dimensiona el sistema de refrigeración, un maestro ebanista que fabrica la estructura, un electricista certificado para la instalación eléctrica, y un sumiller consultor que asesora sobre la distribución interior según los tipos de vino del cliente."
+  },
+  {
+    question: "¿Es posible integrar una vinoteca en un piso pequeño?",
+    answer: "Absolutamente. Las soluciones más populares para espacios reducidos incluyen: vinotecas columna de 45 cm de ancho (20-30 botellas), módulos empotrados en la isla de cocina, estanterías climatizadas en pasillos, y mini-bodegas en rincones muertos. Caveduke ha diseñado vinotecas funcionales desde tan solo 0,2 m² de superficie."
+  },
+  {
+    question: "¿Cuánto cuesta una vinoteca a medida frente a una estándar de catálogo?",
+    answer: "Una vinoteca estándar de calidad oscila entre 1.500 € y 5.000 €. Una vinoteca a medida parte de 5.000 € para modelos compactos y puede superar los 30.000 € para bodegas completas. La diferencia se justifica por: integración perfecta con el espacio, materiales nobles seleccionados, sistema climático dimensionado específicamente, y una durabilidad que supera los 20 años sin mantenimiento estructural."
+  },
+  {
+    question: "¿Qué estilos arquitectónicos combinan mejor con una vinoteca integrada?",
+    answer: "Las vinotecas a medida se adaptan a cualquier estilo. En interiores modernos y minimalistas, las wine walls de cristal y acero son la tendencia dominante. En espacios clásicos y rústicos, la madera noble (roble, nogal) con molduras artesanales es la elección natural. Los espacios industriales combinan perfectamente con acero corten y hormigón visto. Los interiores nórdicos prefieren maderas claras y líneas suaves."
+  }
+];
+
+// Article Schema JSON-LD
+const articleSchema = {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Diseño a Medida: El Arte de Integrar una Vinoteca en tu Arquitectura",
+  "description": description,
+  "image": `https://avinotecas.com${heroImage}`,
+  "author": {
+    "@type": "Organization",
+    "name": "Caveduke",
+    "url": "https://avinotecas.com"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Caveduke",
+    "logo": { "@type": "ImageObject", "url": "https://avinotecas.com/images/logo-caveduke.png" }
+  },
+  "datePublished": publishDate,
+  "dateModified": modifiedDate,
+  "mainEntityOfPage": canonicalURL,
+  "wordCount": wordCount,
+  "articleSection": "Diseño",
+  "keywords": "vinoteca a medida, diseño vinoteca, vinoteca empotrada, wine wall, vinoteca bajo escalera, integración arquitectónica vinoteca, diseño interior bodega"
+};
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": faqs.map(faq => ({
+    "@type": "Question",
+    "name": faq.question,
+    "acceptedAnswer": { "@type": "Answer", "text": faq.answer }
+  }))
+};
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Inicio", "item": "https://avinotecas.com/" },
+    { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://avinotecas.com/blog" },
+    { "@type": "ListItem", "position": 3, "name": "Diseño a Medida" }
+  ]
+};
+---
+
+<BaseLayout title={title} description={description}>
+  <script type="application/ld+json" set:html={JSON.stringify(articleSchema)} />
+  <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+  <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
+
+  <Navbar />
+
+  <main class="bg-[var(--color-noir)]">
+
+    <!-- ========== HERO ========== -->
+    <header class="relative w-full min-h-[70vh] flex items-end overflow-hidden">
+      <div class="absolute inset-0">
+        <img 
+          src={heroImage}
+          alt="Diseñadora de interiores revisando planos de una vinoteca artesanal Caveduke con bodega de roble al fondo"
+          class="w-full h-full object-cover"
+          loading="eager"
+          fetchpriority="high"
+        />
+        <div class="absolute inset-0 bg-gradient-to-t from-[var(--color-noir)] via-[var(--color-noir)]/60 to-transparent"></div>
+      </div>
+
+      <div class="relative z-10 max-w-4xl mx-auto px-6 md:px-12 pb-16 md:pb-24 w-full">
+        <nav aria-label="Breadcrumb" class="mb-8">
+          <ol class="flex items-center gap-2 font-accent text-[11px] tracking-[0.15em] uppercase text-[var(--color-silver)]/50">
+            <li><a href="/" class="hover:text-[var(--color-gold)] transition-colors">Inicio</a></li>
+            <li class="text-[var(--color-gold)]/40">·</li>
+            <li><a href="/#blog" class="hover:text-[var(--color-gold)] transition-colors">Blog</a></li>
+            <li class="text-[var(--color-gold)]/40">·</li>
+            <li class="text-[var(--color-gold)]">Diseño</li>
+          </ol>
+        </nav>
+
+        <div class="flex items-center gap-3 mb-6">
+          <span class="bg-[var(--color-gold)] text-[var(--color-noir)] font-accent text-[10px] tracking-[0.2em] uppercase px-3 py-1.5 rounded-sm">Diseño</span>
+          <span class="font-accent text-[var(--color-silver)]/50 text-[11px] tracking-[0.15em] uppercase">2 Mar 2026</span>
+          <span class="w-1 h-1 rounded-full bg-[var(--color-gold)]/40"></span>
+          <span class="font-accent text-[var(--color-silver)]/50 text-[11px] tracking-[0.15em] uppercase">{readTime} lectura</span>
+        </div>
+
+        <h1 class="font-display text-4xl md:text-5xl lg:text-6xl text-[var(--color-ivory)] leading-[1.1] mb-6 hero-title">
+          Diseño a Medida: El Arte de <br class="hidden md:block"/>
+          <span class="italic text-[var(--color-gold)]">Integrar</span> una Vinoteca
+        </h1>
+
+        <p class="font-body text-lg md:text-xl text-[var(--color-silver)]/70 leading-relaxed max-w-2xl">
+          Cómo nuestros diseñadores crean vinotecas que se funden con el mobiliario existente, respetando cada línea del espacio.
+        </p>
+      </div>
+    </header>
+
+
+    <!-- ========== ARTICLE BODY ========== -->
+    <article class="max-w-4xl mx-auto px-6 md:px-12 py-20 md:py-32 article-content">
+
+      <!-- TL;DR / Key Takeaway (AEO) -->
+      <div class="border-l-2 border-[var(--color-gold)] pl-6 md:pl-8 mb-16 py-4 bg-[var(--color-graphite)]/20 rounded-r-sm">
+        <p class="font-accent text-[var(--color-gold)] tracking-widest uppercase text-xs mb-3">Resumen rápido</p>
+        <p class="font-body text-base md:text-lg text-[var(--color-ivory)] leading-relaxed">
+          Una vinoteca a medida es la solución ideal cuando se busca <strong class="text-[var(--color-gold)]">integración arquitectónica total</strong>. Las tres tipologías más demandadas son: empotrada en mobiliario, bajo escalera y wine wall de suelo a techo. El proceso de diseño parte de un levantamiento del espacio, pasa por la selección de materiales y sistemas climáticos, y culmina en una fabricación artesanal de 8 a 14 semanas. La inversión típica oscila entre 5.000 € y 30.000 €, con una durabilidad superior a 20 años.
+        </p>
+      </div>
+
+
+      <!-- ===== SECCIÓN 1: Introducción ===== -->
+      <div class="prose-section mb-16">
+        <p class="font-body text-[15px] md:text-base text-[var(--color-silver)]/80 leading-[1.9] mb-6">
+          En el mundo del diseño de interiores de alta gama, la vinoteca ha dejado de ser un electrodoméstico para convertirse en una <strong class="text-[var(--color-ivory)]">pieza arquitectónica</strong> que define el carácter de un espacio. Los propietarios más exigentes ya no buscan una solución prefabricada que "quepa" en su hogar; exigen una vinoteca que parezca haber sido concebida junto con la propia vivienda.
+        </p>
+        <p class="font-body text-[15px] md:text-base text-[var(--color-silver)]/80 leading-[1.9]">
+          Según la <em>Asociación Española de Diseño de Interiores</em>, las solicitudes de vinotecas integradas han crecido un <strong class="text-[var(--color-ivory)]">47% entre 2023 y 2025</strong>, impulsadas por el auge de las cocinas abiertas, los salones multifuncionales y la búsqueda de experiencias gastronómicas en el hogar. En este artículo, te guiamos paso a paso por el proceso de diseño y las opciones que tienes al alcance.
+        </p>
+      </div>
+
+
+      <!-- ===== SECCIÓN 2: El proceso de diseño ===== -->
+      <section class="mb-20">
+        <h2 class="font-display text-3xl md:text-4xl text-[var(--color-ivory)] leading-tight mb-8">
+          1. El Proceso de Diseño: <span class="italic text-[var(--color-silver)]/50">De la Idea al Plano</span>
+        </h2>
+
+        <p class="font-body text-[15px] md:text-base text-[var(--color-silver)]/80 leading-[1.9] mb-8">
+          Diseñar una vinoteca a medida no es simplemente encajar un armario en un hueco. Es un proceso creativo y técnico que involucra hasta cinco fases claramente diferenciadas:
+        </p>
+
+        <!-- Fases del proceso -->
+        <div class="space-y-6 mb-10">
+          <div class="flex gap-6 items-start p-6 bg-[var(--color-graphite)]/20 border border-[var(--color-silver)]/10 rounded-sm hover:border-[var(--color-gold)]/30 transition-colors duration-500">
+            <span class="font-display text-4xl text-[var(--color-gold)] flex-shrink-0">01</span>
+            <div>
+              <h3 class="font-display text-lg text-[var(--color-ivory)] mb-2">Levantamiento y diagnóstico del espacio</h3>
+              <p class="font-body text-sm text-[var(--color-silver)]/60 leading-relaxed">Un diseñador visita tu hogar para tomar medidas milimétricas, evaluar la ventilación natural, identificar tomas eléctricas cercanas y analizar las condiciones de luz y humedad ambiente. Se documenta fotográficamente el contexto arquitectónico: materiales del suelo, tonalidad de las paredes, carpintería existente y estilo decorativo general.</p>
+            </div>
+          </div>
+          <div class="flex gap-6 items-start p-6 bg-[var(--color-graphite)]/20 border border-[var(--color-silver)]/10 rounded-sm hover:border-[var(--color-gold)]/30 transition-colors duration-500">
+            <span class="font-display text-4xl text-[var(--color-gold)] flex-shrink-0">02</span>
+            <div>
+              <h3 class="font-display text-lg text-[var(--color-ivory)] mb-2">Propuesta conceptual y selección de materiales</h3>
+              <p class="font-body text-sm text-[var(--color-silver)]/60 leading-relaxed">El equipo creativo genera entre dos y tres propuestas visuales con renders 3D fotorrealistas. El cliente elige materiales —roble, nogal, acero, cristal Climalit— y acabados superficiales. Se define la distribución interior: baldas inclinadas para Burdeos, horizontales para Borgoña, cajones para magnum y espacios de exhibición.</p>
+            </div>
+          </div>
+          <div class="flex gap-6 items-start p-6 bg-[var(--color-graphite)]/20 border border-[var(--color-silver)]/10 rounded-sm hover:border-[var(--color-gold)]/30 transition-colors duration-500">
+            <span class="font-display text-4xl text-[var(--color-gold)] flex-shrink-0">03</span>
+            <div>
+              <h3 class="font-display text-lg text-[var(--color-ivory)] mb-2">Ingeniería climática personalizada</h3>
+              <p class="font-body text-sm text-[var(--color-silver)]/60 leading-relaxed">Cada vinoteca tiene un volumen distinto, y por tanto necesita un sistema de refrigeración dimensionado específicamente. Se calcula la carga térmica total (aislamiento de paredes, exposición solar, temperatura ambiente) para seleccionar el compresor adecuado y garantizar los 12-14 °C y el 65-75% de humedad relativa sin fluctuaciones.</p>
+            </div>
+          </div>
+          <div class="flex gap-6 items-start p-6 bg-[var(--color-graphite)]/20 border border-[var(--color-silver)]/10 rounded-sm hover:border-[var(--color-gold)]/30 transition-colors duration-500">
+            <span class="font-display text-4xl text-[var(--color-gold)] flex-shrink-0">04</span>
+            <div>
+              <h3 class="font-display text-lg text-[var(--color-ivory)] mb-2">Fabricación artesanal</h3>
+              <p class="font-body text-sm text-[var(--color-silver)]/60 leading-relaxed">Las piezas se fabrican en taller con cortes láser de precisión milimétrica. La madera se cura durante semanas para eliminar resinas volátiles que podrían afectar al aroma del vino. Cada junta se ensambla manualmente, sin clavos ni tornillos visibles. Los acabados se aplican en capas sucesivas con secado natural entre manos.</p>
+            </div>
+          </div>
+          <div class="flex gap-6 items-start p-6 bg-[var(--color-graphite)]/20 border border-[var(--color-silver)]/10 rounded-sm hover:border-[var(--color-gold)]/30 transition-colors duration-500">
+            <span class="font-display text-4xl text-[var(--color-gold)] flex-shrink-0">05</span>
+            <div>
+              <h3 class="font-display text-lg text-[var(--color-ivory)] mb-2">Instalación in-situ y calibración</h3>
+              <p class="font-body text-sm text-[var(--color-silver)]/60 leading-relaxed">Un equipo de instaladores especializados monta la vinoteca en su ubicación definitiva. Se calibran los sensores de temperatura y humedad, se ajusta la iluminación LED, se verifica la hermeticidad de las juntas del cristal y se realiza una prueba de funcionamiento de 24 horas antes de la entrega oficial al cliente.</p>
+            </div>
+          </div>
+        </div>
+
+        <figure class="mb-8">
+          <div class="aspect-[16/9] overflow-hidden rounded-sm relative">
+            <img 
+              src="/images/blog/articulo-diseno/proceso-diseno.png"
+              alt="Mesa de diseño con bocetos técnicos de vinoteca, muestras de madera de nogal y roble, herramientas de arquitectura y mood board de materiales premium"
+              class="w-full h-full object-cover hover:scale-105 transition-transform duration-[2s]"
+              loading="lazy"
+              decoding="async"
+            />
+            <div class="absolute inset-0 border border-[var(--color-silver)]/10 m-3 pointer-events-none"></div>
+          </div>
+          <figcaption class="font-accent text-[11px] tracking-[0.1em] text-[var(--color-silver)]/40 uppercase mt-4 text-center">
+            Mesa de trabajo del estudio de diseño Caveduke: bocetos, muestras de materiales y planos técnicos
+          </figcaption>
+        </figure>
+      </section>
+
+
+      <!-- ===== SECCIÓN 3: Tipologías ===== -->
+      <section class="mb-20">
+        <h2 class="font-display text-3xl md:text-4xl text-[var(--color-ivory)] leading-tight mb-8">
+          2. Las Tres Grandes Tipologías: <span class="italic text-[var(--color-silver)]/50">Empotrada, Bajo Escalera y Wine Wall</span>
+        </h2>
+
+        <p class="font-body text-[15px] md:text-base text-[var(--color-silver)]/80 leading-[1.9] mb-10">
+          Aunque cada proyecto es único, existen tres configuraciones que concentran el <strong class="text-[var(--color-ivory)]">80% de las solicitudes</strong> de diseño a medida. Cada una resuelve un reto arquitectónico diferente:
+        </p>
+
+
+        <!-- TIPOLOGÍA 1: Empotrada -->
+        <div class="mb-16">
+          <h3 class="font-display text-2xl text-[var(--color-ivory)] mb-4 flex items-center gap-3">
+            <span class="text-[var(--color-gold)]">A.</span> Vinoteca Empotrada en Mobiliario
+          </h3>
+          <div class="flex flex-col md:flex-row gap-8 items-start">
+            <div class="md:w-1/2">
+              <p class="font-body text-[15px] text-[var(--color-silver)]/80 leading-[1.9] mb-4">
+                La integración más demandada. La vinoteca se aloja en un hueco de la cocina, el salón o el comedor, enrasada con el resto del mobiliario. Desde fuera, parece un armario más; desde dentro, es un ecosistema climatizado de precisión milimétrica.
+              </p>
+              <ul class="space-y-2 mb-4">
+                <li class="flex items-start gap-3 font-body text-sm text-[var(--color-silver)]/70">
+                  <span class="text-[var(--color-gold)] mt-1 flex-shrink-0">✦</span>
+                  <span><strong class="text-[var(--color-ivory)]">Ideal para:</strong> cocinas abiertas, comedores formales y salones con carpintería existente</span>
+                </li>
+                <li class="flex items-start gap-3 font-body text-sm text-[var(--color-silver)]/70">
+                  <span class="text-[var(--color-gold)] mt-1 flex-shrink-0">✦</span>
+                  <span><strong class="text-[var(--color-ivory)]">Capacidad habitual:</strong> 30 – 120 botellas</span>
+                </li>
+                <li class="flex items-start gap-3 font-body text-sm text-[var(--color-silver)]/70">
+                  <span class="text-[var(--color-gold)] mt-1 flex-shrink-0">✦</span>
+                  <span><strong class="text-[var(--color-ivory)]">Ventaja clave:</strong> invisibilidad total cuando está cerrada; protagonismo absoluto cuando se abre</span>
+                </li>
+              </ul>
+            </div>
+            <div class="md:w-1/2">
+              <figure>
+                <div class="aspect-[4/3] overflow-hidden rounded-sm relative">
+                  <img 
+                    src="/images/blog/articulo-diseno/empotrada-cocina.png"
+                    alt="Vinoteca a medida empotrada en cocina moderna con paneles de nogal a juego con la carpintería y puerta de cristal con iluminación LED"
+                    class="w-full h-full object-cover hover:scale-105 transition-transform duration-[2s]"
+                    loading="lazy" decoding="async"
+                  />
+                  <div class="absolute inset-0 border border-[var(--color-silver)]/10 m-3 pointer-events-none"></div>
+                </div>
+                <figcaption class="font-accent text-[11px] tracking-[0.1em] text-[var(--color-silver)]/40 uppercase mt-3 text-center">
+                  Integración empotrada en cocina con acabado de nogal
+                </figcaption>
+              </figure>
+            </div>
+          </div>
+        </div>
+
+
+        <!-- TIPOLOGÍA 2: Bajo Escalera -->
+        <div class="mb-16">
+          <h3 class="font-display text-2xl text-[var(--color-ivory)] mb-4 flex items-center gap-3">
+            <span class="text-[var(--color-gold)]">B.</span> Bodega Bajo Escalera
+          </h3>
+          <div class="flex flex-col md:flex-row-reverse gap-8 items-start">
+            <div class="md:w-1/2">
+              <p class="font-body text-[15px] text-[var(--color-silver)]/80 leading-[1.9] mb-4">
+                Transformar el espacio residual bajo la escalera en una bodega espectacular es uno de los retos más gratificantes del diseño a medida. La geometría triangular obliga a soluciones creativas que aprovechan cada centímetro, creando una pieza escultórica que sorprende a los invitados.
+              </p>
+              <ul class="space-y-2 mb-4">
+                <li class="flex items-start gap-3 font-body text-sm text-[var(--color-silver)]/70">
+                  <span class="text-[var(--color-gold)] mt-1 flex-shrink-0">✦</span>
+                  <span><strong class="text-[var(--color-ivory)]">Ideal para:</strong> viviendas de dos plantas, dúplex y chalés con escalera principal</span>
+                </li>
+                <li class="flex items-start gap-3 font-body text-sm text-[var(--color-silver)]/70">
+                  <span class="text-[var(--color-gold)] mt-1 flex-shrink-0">✦</span>
+                  <span><strong class="text-[var(--color-ivory)]">Capacidad habitual:</strong> 80 – 300+ botellas</span>
+                </li>
+                <li class="flex items-start gap-3 font-body text-sm text-[var(--color-silver)]/70">
+                  <span class="text-[var(--color-gold)] mt-1 flex-shrink-0">✦</span>
+                  <span><strong class="text-[var(--color-ivory)]">Ventaja clave:</strong> transforma un espacio muerto en el punto focal más impactante de la casa</span>
+                </li>
+              </ul>
+            </div>
+            <div class="md:w-1/2">
+              <figure>
+                <div class="aspect-[4/3] overflow-hidden rounded-sm relative">
+                  <img 
+                    src="/images/blog/articulo-diseno/bajo-escalera.png"
+                    alt="Bodega climatizada a medida bajo escalera moderna con estantes de roble, cristal templado y cientos de botellas iluminadas con LED cálido"
+                    class="w-full h-full object-cover hover:scale-105 transition-transform duration-[2s]"
+                    loading="lazy" decoding="async"
+                  />
+                  <div class="absolute inset-0 border border-[var(--color-silver)]/10 m-3 pointer-events-none"></div>
+                </div>
+                <figcaption class="font-accent text-[11px] tracking-[0.1em] text-[var(--color-silver)]/40 uppercase mt-3 text-center">
+                  Bodega bajo escalera con cristal templado y roble macizo
+                </figcaption>
+              </figure>
+            </div>
+          </div>
+        </div>
+
+
+        <!-- TIPOLOGÍA 3: Wine Wall -->
+        <div class="mb-10">
+          <h3 class="font-display text-2xl text-[var(--color-ivory)] mb-4 flex items-center gap-3">
+            <span class="text-[var(--color-gold)]">C.</span> Wine Wall (Muro de Vinos)
+          </h3>
+          <div class="flex flex-col md:flex-row gap-8 items-start">
+            <div class="md:w-1/2">
+              <p class="font-body text-[15px] text-[var(--color-silver)]/80 leading-[1.9] mb-4">
+                La tendencia más espectacular del diseño contemporáneo. Una pared completa se convierte en un expositor climatizado con paneles de cristal templado de suelo a techo. La colección queda exhibida como una obra de arte, iluminada con tiras LED que crean un efecto dramático especialmente potente de noche.
+              </p>
+              <ul class="space-y-2 mb-4">
+                <li class="flex items-start gap-3 font-body text-sm text-[var(--color-silver)]/70">
+                  <span class="text-[var(--color-gold)] mt-1 flex-shrink-0">✦</span>
+                  <span><strong class="text-[var(--color-ivory)]">Ideal para:</strong> restaurantes de alta cocina, áticos, salones de grandes dimensiones y espacios comerciales</span>
+                </li>
+                <li class="flex items-start gap-3 font-body text-sm text-[var(--color-silver)]/70">
+                  <span class="text-[var(--color-gold)] mt-1 flex-shrink-0">✦</span>
+                  <span><strong class="text-[var(--color-ivory)]">Capacidad habitual:</strong> 200 – 1.000+ botellas</span>
+                </li>
+                <li class="flex items-start gap-3 font-body text-sm text-[var(--color-silver)]/70">
+                  <span class="text-[var(--color-gold)] mt-1 flex-shrink-0">✦</span>
+                  <span><strong class="text-[var(--color-ivory)]">Ventaja clave:</strong> máximo impacto visual y funcionalidad; la colección se convierte en arte vivo</span>
+                </li>
+              </ul>
+            </div>
+            <div class="md:w-1/2">
+              <figure>
+                <div class="aspect-[4/3] overflow-hidden rounded-sm relative">
+                  <img 
+                    src="/images/blog/articulo-diseno/wine-wall.png"
+                    alt="Wine wall de cristal templado de suelo a techo en ático de lujo con cientos de botellas iluminadas, mobiliario moderno y vistas nocturnas de la ciudad"
+                    class="w-full h-full object-cover hover:scale-105 transition-transform duration-[2s]"
+                    loading="lazy" decoding="async"
+                  />
+                  <div class="absolute inset-0 border border-[var(--color-silver)]/10 m-3 pointer-events-none"></div>
+                </div>
+                <figcaption class="font-accent text-[11px] tracking-[0.1em] text-[var(--color-silver)]/40 uppercase mt-3 text-center">
+                  Wine wall de cristal en ático de lujo con iluminación LED ambiental
+                </figcaption>
+              </figure>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tabla comparativa de tipologías (GEO) -->
+        <div class="overflow-x-auto mt-10">
+          <table class="w-full border-collapse text-sm">
+            <thead>
+              <tr class="border-b border-[var(--color-gold)]/30">
+                <th class="py-4 px-4 text-left font-accent text-[var(--color-gold)] tracking-widest uppercase text-xs">Tipología</th>
+                <th class="py-4 px-4 text-left font-accent text-[var(--color-gold)] tracking-widest uppercase text-xs">Capacidad</th>
+                <th class="py-4 px-4 text-left font-accent text-[var(--color-gold)] tracking-widest uppercase text-xs">Obra necesaria</th>
+                <th class="py-4 px-4 text-left font-accent text-[var(--color-gold)] tracking-widest uppercase text-xs">Inversión desde</th>
+                <th class="py-4 px-4 text-left font-accent text-[var(--color-gold)] tracking-widest uppercase text-xs">Plazo</th>
+              </tr>
+            </thead>
+            <tbody class="font-body text-[var(--color-silver)]/70">
+              <tr class="border-b border-[var(--color-silver)]/10 hover:bg-[var(--color-graphite)]/20 transition-colors">
+                <td class="py-4 px-4 text-[var(--color-ivory)]">Empotrada</td>
+                <td class="py-4 px-4">30 – 120 bot.</td>
+                <td class="py-4 px-4">Mínima o ninguna</td>
+                <td class="py-4 px-4">5.000 €</td>
+                <td class="py-4 px-4">8 – 10 sem.</td>
+              </tr>
+              <tr class="border-b border-[var(--color-silver)]/10 hover:bg-[var(--color-graphite)]/20 transition-colors">
+                <td class="py-4 px-4 text-[var(--color-ivory)]">Bajo escalera</td>
+                <td class="py-4 px-4">80 – 300+ bot.</td>
+                <td class="py-4 px-4">Obra menor</td>
+                <td class="py-4 px-4">8.000 €</td>
+                <td class="py-4 px-4">10 – 14 sem.</td>
+              </tr>
+              <tr class="hover:bg-[var(--color-graphite)]/20 transition-colors">
+                <td class="py-4 px-4 text-[var(--color-ivory)]">Wine wall</td>
+                <td class="py-4 px-4">200 – 1.000+ bot.</td>
+                <td class="py-4 px-4">Obra media</td>
+                <td class="py-4 px-4">15.000 €</td>
+                <td class="py-4 px-4">12 – 16 sem.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+
+      <!-- ===== SECCIÓN 4: Errores a evitar ===== -->
+      <section class="mb-20">
+        <h2 class="font-display text-3xl md:text-4xl text-[var(--color-ivory)] leading-tight mb-8">
+          3. Los 7 Errores que Arruinan <span class="italic text-[var(--color-silver)]/50">un Proyecto a Medida</span>
+        </h2>
+
+        <p class="font-body text-[15px] md:text-base text-[var(--color-silver)]/80 leading-[1.9] mb-8">
+          Después de cuatro décadas diseñando vinotecas, hemos identificado los errores más comunes que comprometen la calidad y la durabilidad del resultado final:
+        </p>
+
+        <ol class="space-y-5 mb-8">
+          {[
+            { error: "Calcular la capacidad justa", fix: "Proyectar siempre un 30% más que la colección actual. Las colecciones crecen, la vinoteca no." },
+            { error: "Ignorar la ventilación del compresor", fix: "Todo sistema de refrigeración necesita disipar calor. Dejar mínimo 10 cm de holgura en la parte trasera y lateral." },
+            { error: "Elegir materiales por catálogo sin verlos", fix: "Las vetas de la madera, los reflejos del acero y la transparencia del cristal solo se aprecian en persona. Siempre solicitar muestras físicas." },
+            { error: "No prever la instalación eléctrica", fix: "Una vinoteca necesita una línea eléctrica dedicada (10A mínimo) con toma de tierra independiente. Planificarlo antes de la obra evita reformas posteriores." },
+            { error: "Sacrificar aislamiento por estética", fix: "Un cristal simple sin cámara de aire arruina la eficiencia energética. Insistir siempre en doble acristalamiento Climalit con filtro UV." },
+            { error: "Alinear las baldas para un solo formato", fix: "Las botellas Borgoña, Burdeos, Rhin y magnum tienen diámetros y alturas distintos. Diseñar baldas modulares y ajustables." },
+            { error: "No documentar el proyecto con renders 3D", fix: "Un render fotorrealista previene malentendidos. Ningún proyecto debería comenzar sin la aprobación visual del cliente sobre un modelo tridimensional." }
+          ].map((item, i) => (
+            <li class="flex items-start gap-4 p-5 bg-[var(--color-graphite)]/15 border-l-2 border-[var(--color-gold)]/40 rounded-r-sm">
+              <span class="font-display text-lg text-[var(--color-gold)] flex-shrink-0 mt-0.5">{String(i + 1).padStart(2, '0')}</span>
+              <div>
+                <p class="font-body text-[var(--color-ivory)] font-medium mb-1">❌ {item.error}</p>
+                <p class="font-body text-sm text-[var(--color-silver)]/60 leading-relaxed">✅ {item.fix}</p>
+              </div>
+            </li>
+          ))}
+        </ol>
+      </section>
+
+
+      <!-- ===== SECCIÓN FAQ (AEO + Schema) ===== -->
+      <section class="mb-20" id="preguntas-frecuentes">
+        <div class="flex items-center gap-4 mb-10">
+          <div class="w-8 h-px bg-[var(--color-gold)]"></div>
+          <h2 class="font-accent text-[var(--color-gold)] tracking-widest uppercase text-sm">Preguntas Frecuentes</h2>
+          <div class="w-8 h-px bg-[var(--color-gold)]"></div>
+        </div>
+
+        <div class="space-y-6">
+          {faqs.map((faq) => (
+            <details class="group border border-[var(--color-silver)]/10 rounded-sm overflow-hidden hover:border-[var(--color-gold)]/30 transition-colors duration-300">
+              <summary class="flex items-center justify-between cursor-pointer px-6 py-5 bg-[var(--color-graphite)]/20 group-open:bg-[var(--color-graphite)]/40 transition-colors duration-300">
+                <h3 class="font-display text-lg text-[var(--color-ivory)] pr-4 leading-snug">{faq.question}</h3>
+                <span class="text-[var(--color-gold)] flex-shrink-0 transition-transform duration-300 group-open:rotate-45">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M12 5v14"/>
+                    <path d="M5 12h14"/>
+                  </svg>
+                </span>
+              </summary>
+              <div class="px-6 py-5 border-t border-[var(--color-silver)]/10">
+                <p class="font-body text-[15px] text-[var(--color-silver)]/70 leading-[1.85]">{faq.answer}</p>
+              </div>
+            </details>
+          ))}
+        </div>
+      </section>
+
+
+      <!-- ===== CTA Final ===== -->
+      <section class="text-center py-16 border-t border-b border-[var(--color-silver)]/10">
+        <p class="font-accent text-[var(--color-gold)] tracking-widest uppercase text-xs mb-6">Tu vinoteca, tu diseño</p>
+        <h2 class="font-display text-3xl md:text-4xl text-[var(--color-ivory)] leading-tight mb-6">
+          Hablemos de <br/>
+          <span class="italic text-[var(--color-gold)]">Tu Proyecto</span>
+        </h2>
+        <p class="font-body text-[var(--color-silver)]/60 text-base max-w-xl mx-auto leading-relaxed mb-10">
+          Cada vinoteca Caveduke nace de un diálogo entre nuestros diseñadores y el cliente. Sin catálogos. Sin límites. Solo tu espacio, tu colección y nuestra artesanía.
+        </p>
+        <a href="/#contacto" class="premium-button">
+          <span>Iniciar Mi Proyecto</span>
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M5 12h14"/>
+            <path d="m12 5 7 7-7 7"/>
+          </svg>
+        </a>
+      </section>
+
+
+      <!-- ===== Navegación ===== -->
+      <nav class="flex justify-between items-center pt-16" aria-label="Navegación de artículos">
+        <a href="/#blog" class="flex items-center gap-2 text-[var(--color-silver)]/50 hover:text-[var(--color-gold)] transition-colors font-accent tracking-widest text-xs uppercase">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="m12 19-7-7 7-7"/>
+            <path d="M19 12H5"/>
+          </svg>
+          <span>Volver al Blog</span>
+        </a>
+        <a href="/blog/como-elegir-vinoteca-perfecta" class="flex items-center gap-2 text-[var(--color-silver)]/50 hover:text-[var(--color-gold)] transition-colors font-accent tracking-widest text-xs uppercase">
+          <span>Artículo anterior</span>
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M5 12h14"/>
+            <path d="m12 5 7 7-7 7"/>
+          </svg>
+        </a>
+      </nav>
+
+    </article>
+  </main>
+
+  <Footer />
+</BaseLayout>
+
+<style>
+  details summary::-webkit-details-marker { display: none; }
+  details summary { list-style: none; }
+  details[open] summary ~ div {
+    animation: fadeIn 0.3s ease-out;
+  }
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-8px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+</style>
+
+<script>
+  import { gsap } from 'gsap';
+  import { ScrollTrigger } from 'gsap/ScrollTrigger';
+
+  gsap.registerPlugin(ScrollTrigger);
+
+  gsap.fromTo('.hero-title',
+    { y: 40, opacity: 0 },
+    { y: 0, opacity: 1, duration: 1.2, ease: 'power3.out', delay: 0.3 }
+  );
+
+  gsap.utils.toArray('.prose-section, section').forEach((section: any) => {
+    gsap.fromTo(section,
+      { y: 40, opacity: 0 },
+      {
+        y: 0, opacity: 1, duration: 1, ease: 'power3.out',
+        scrollTrigger: { trigger: section, start: 'top 90%' }
+      }
+    );
+  });
+
+  gsap.utils.toArray('figure').forEach((fig: any) => {
+    gsap.fromTo(fig,
+      { clipPath: 'inset(100% 0 0 0)' },
+      {
+        clipPath: 'inset(0% 0 0 0)', duration: 1.5, ease: 'power4.inOut',
+        scrollTrigger: { trigger: fig, start: 'top 95%' }
+      }
+    );
+  });
+</script>

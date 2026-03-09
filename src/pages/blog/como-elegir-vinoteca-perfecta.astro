@@ -1,0 +1,566 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Navbar from '../../components/Navbar.astro';
+import Footer from '../../components/Footer.astro';
+
+const title = "Cómo Elegir la Vinoteca Perfecta para Tu Hogar — Guía Definitiva 2026 | Caveduke";
+const description = "Guía experta para elegir la vinoteca ideal: materiales, dimensiones, temperatura, capacidad y diseño. Todo lo que necesitas saber antes de invertir en una vinoteca de lujo para tu hogar.";
+const publishDate = "2026-03-08";
+const modifiedDate = "2026-03-09";
+const author = "Caveduke";
+const readTime = "7 min";
+const wordCount = 2100;
+const heroImage = "/images/blog/articulo-vinoteca/hero.png";
+const canonicalURL = "https://avinotecas.com/blog/como-elegir-vinoteca-perfecta";
+
+// FAQ Data for Schema + visual section
+const faqs = [
+  {
+    question: "¿Cuántas botellas debería almacenar mi vinoteca?",
+    answer: "Depende de tu perfil como coleccionista. Para uso personal y cenas ocasionales, entre 20 y 50 botellas es suficiente. Los aficionados serios necesitan entre 50 y 150 botellas. Los coleccionistas privados y sumilleres suelen requerir más de 200 botellas, optando por bodegas climatizadas a medida."
+  },
+  {
+    question: "¿Cuál es la temperatura ideal para conservar el vino?",
+    answer: "La temperatura óptima para la conservación a largo plazo es de 12 °C a 14 °C con una variación máxima de ±1 °C. Los vinos blancos pueden servirse a 8-12 °C, mientras que los tintos se benefician de 16-18 °C. Una vinoteca profesional con tecnología de compresión amortiguada garantiza esta estabilidad sin vibraciones."
+  },
+  {
+    question: "¿Qué material es mejor: madera, acero o cristal?",
+    answer: "El roble macizo es ideal para bodegas clásicas por su aislamiento natural y estética atemporal. El acero inoxidable destaca en diseños contemporáneos y cocinas modernas. El cristal templado maximiza la exhibición visual. La elección óptima depende de tu espacio, estilo decorativo y del nivel de protección UV que requieran tus vinos."
+  },
+  {
+    question: "¿Merece la pena una vinoteca a medida frente a una estándar?",
+    answer: "Las vinotecas a medida se integran perfectamente con tu mobiliario existente, aprovechan cada centímetro del espacio y permiten configurar zonas de temperatura independientes. Aunque la inversión inicial es mayor, su durabilidad (más de 20 años), eficiencia energética y valor añadido a la propiedad justifican la inversión a largo plazo."
+  },
+  {
+    question: "¿Cuánto cuesta una vinoteca de lujo?",
+    answer: "Las vinotecas compactas de calidad comienzan alrededor de 1.500 €. Los modelos de gama media, con compresor silencioso y acabados nobles, oscilan entre 3.000 € y 8.000 €. Las vinotecas artesanales a medida, como las de Caveduke, se presupuestan individualmente según proyecto, desde 5.000 € hasta más de 30.000 € para bodegas completas."
+  },
+  {
+    question: "¿Necesito permisos de obra para instalar una vinoteca?",
+    answer: "Las vinotecas independientes (freestanding) no requieren ningún permiso. Los modelos empotrados o bajo escalera pueden necesitar una comunicación de obras menores si implican modificaciones estructurales. Para bodegas climatizadas a medida que afecten a muros de carga o instalaciones eléctricas, se recomienda consultar con un arquitecto técnico."
+  }
+];
+
+// Article Schema JSON-LD
+const articleSchema = {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Cómo Elegir la Vinoteca Perfecta para Tu Hogar — Guía Definitiva 2026",
+  "description": description,
+  "image": `https://avinotecas.com${heroImage}`,
+  "author": {
+    "@type": "Organization",
+    "name": "Caveduke",
+    "url": "https://avinotecas.com"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Caveduke",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://avinotecas.com/images/logo-caveduke.png"
+    }
+  },
+  "datePublished": publishDate,
+  "dateModified": modifiedDate,
+  "mainEntityOfPage": canonicalURL,
+  "wordCount": wordCount,
+  "articleSection": "Guías",
+  "keywords": "vinoteca, vinoteca de lujo, cómo elegir vinoteca, vinoteca a medida, vinoteca de madera, conservación del vino, temperatura ideal vino, bodega en casa"
+};
+
+// FAQ Schema JSON-LD
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": faqs.map(faq => ({
+    "@type": "Question",
+    "name": faq.question,
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": faq.answer
+    }
+  }))
+};
+
+// BreadcrumbList Schema
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Inicio", "item": "https://avinotecas.com/" },
+    { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://avinotecas.com/blog" },
+    { "@type": "ListItem", "position": 3, "name": "Cómo Elegir la Vinoteca Perfecta" }
+  ]
+};
+---
+
+<BaseLayout title={title} description={description}>
+  <!-- Schema JSON-LD -->
+  <script type="application/ld+json" set:html={JSON.stringify(articleSchema)} />
+  <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+  <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
+
+  <Navbar />
+
+  <main class="bg-[var(--color-noir)]">
+
+    <!-- ========== HERO ========== -->
+    <header class="relative w-full min-h-[70vh] flex items-end overflow-hidden">
+      <div class="absolute inset-0">
+        <img 
+          src={heroImage}
+          alt="Vinoteca de lujo Caveduke de nogal macizo instalada en un salón elegante con iluminación LED cálida"
+          class="w-full h-full object-cover"
+          loading="eager"
+          fetchpriority="high"
+        />
+        <div class="absolute inset-0 bg-gradient-to-t from-[var(--color-noir)] via-[var(--color-noir)]/60 to-transparent"></div>
+      </div>
+
+      <div class="relative z-10 max-w-4xl mx-auto px-6 md:px-12 pb-16 md:pb-24 w-full">
+        <!-- Breadcrumbs -->
+        <nav aria-label="Breadcrumb" class="mb-8">
+          <ol class="flex items-center gap-2 font-accent text-[11px] tracking-[0.15em] uppercase text-[var(--color-silver)]/50">
+            <li><a href="/" class="hover:text-[var(--color-gold)] transition-colors">Inicio</a></li>
+            <li class="text-[var(--color-gold)]/40">·</li>
+            <li><a href="/#blog" class="hover:text-[var(--color-gold)] transition-colors">Blog</a></li>
+            <li class="text-[var(--color-gold)]/40">·</li>
+            <li class="text-[var(--color-gold)]">Guías</li>
+          </ol>
+        </nav>
+
+        <!-- Meta -->
+        <div class="flex items-center gap-3 mb-6">
+          <span class="bg-[var(--color-gold)] text-[var(--color-noir)] font-accent text-[10px] tracking-[0.2em] uppercase px-3 py-1.5 rounded-sm">Guías</span>
+          <span class="font-accent text-[var(--color-silver)]/50 text-[11px] tracking-[0.15em] uppercase">8 Mar 2026</span>
+          <span class="w-1 h-1 rounded-full bg-[var(--color-gold)]/40"></span>
+          <span class="font-accent text-[var(--color-silver)]/50 text-[11px] tracking-[0.15em] uppercase">{readTime} lectura</span>
+        </div>
+
+        <h1 class="font-display text-4xl md:text-5xl lg:text-6xl text-[var(--color-ivory)] leading-[1.1] mb-6 hero-title">
+          Cómo Elegir la Vinoteca <br class="hidden md:block"/>
+          <span class="italic text-[var(--color-gold)]">Perfecta</span> para Tu Hogar
+        </h1>
+
+        <p class="font-body text-lg md:text-xl text-[var(--color-silver)]/70 leading-relaxed max-w-2xl">
+          Guía definitiva para seleccionar dimensiones, materiales y prestaciones según tu espacio y colección. De la madera noble al acero inoxidable.
+        </p>
+      </div>
+    </header>
+
+
+    <!-- ========== ARTICLE BODY ========== -->
+    <article class="max-w-4xl mx-auto px-6 md:px-12 py-20 md:py-32 article-content">
+
+      <!-- TL;DR / Key Takeaway (AEO: Snippet directo) -->
+      <div class="border-l-2 border-[var(--color-gold)] pl-6 md:pl-8 mb-16 py-4 bg-[var(--color-graphite)]/20 rounded-r-sm">
+        <p class="font-accent text-[var(--color-gold)] tracking-widest uppercase text-xs mb-3">Resumen rápido</p>
+        <p class="font-body text-base md:text-lg text-[var(--color-ivory)] leading-relaxed">
+          Para elegir la vinoteca perfecta, evalúa estos <strong class="text-[var(--color-gold)]">cinco factores clave</strong>: el tamaño y capacidad según tu colección, los materiales de construcción (madera, acero o cristal), el sistema de refrigeración (compresión amortiguada vs termoeléctrico), las condiciones de temperatura y humedad (12-14 °C, 65-75% HR), y la integración estética con tu espacio. Una vinoteca a medida ofrece la mejor relación calidad-durabilidad a largo plazo.
+        </p>
+      </div>
+
+
+      <!-- ===== SECCIÓN 1: Introducción ===== -->
+      <div class="prose-section mb-16">
+        <p class="font-body text-[15px] md:text-base text-[var(--color-silver)]/80 leading-[1.9] mb-6">
+          Elegir una vinoteca no es simplemente una decisión estética: es una inversión en la <strong class="text-[var(--color-ivory)]">protección y evolución</strong> de cada botella que atesoras. Una vinoteca de calidad controla las tres variables esenciales —temperatura, humedad y ausencia de vibraciones— que determinan si un gran reserva alcanza su apogeo o se deteriora prematuramente.
+        </p>
+        <p class="font-body text-[15px] md:text-base text-[var(--color-silver)]/80 leading-[1.9]">
+          Según datos del <em>Observatorio Español del Mercado del Vino</em>, el consumo de vinos premium (más de 10 € por botella) ha crecido un 23% entre 2023 y 2025 en España. Este auge trae consigo una demanda creciente de soluciones de almacenamiento que estén a la altura de los caldos que protegen. En esta guía, recorremos cada factor decisivo para que tu elección sea tan precisa como el oficio de un sommelier.
+        </p>
+      </div>
+
+
+      <!-- ===== SECCIÓN 2: Tamaño y capacidad ===== -->
+      <section class="mb-20">
+        <h2 class="font-display text-3xl md:text-4xl text-[var(--color-ivory)] leading-tight mb-8">
+          1. Tamaño y Capacidad: <span class="italic text-[var(--color-silver)]/50">¿Cuántas Botellas Necesitas?</span>
+        </h2>
+
+        <p class="font-body text-[15px] md:text-base text-[var(--color-silver)]/80 leading-[1.9] mb-6">
+          El primer paso es auditar tu colección actual y proyectar su crecimiento a 3-5 años. Las vinotecas se clasifican habitualmente en tres rangos:
+        </p>
+
+        <!-- Tabla comparativa (GEO: datos estructurados citables) -->
+        <div class="overflow-x-auto mb-8">
+          <table class="w-full border-collapse text-sm">
+            <thead>
+              <tr class="border-b border-[var(--color-gold)]/30">
+                <th class="py-4 px-4 text-left font-accent text-[var(--color-gold)] tracking-widest uppercase text-xs">Categoría</th>
+                <th class="py-4 px-4 text-left font-accent text-[var(--color-gold)] tracking-widest uppercase text-xs">Capacidad</th>
+                <th class="py-4 px-4 text-left font-accent text-[var(--color-gold)] tracking-widest uppercase text-xs">Perfil ideal</th>
+                <th class="py-4 px-4 text-left font-accent text-[var(--color-gold)] tracking-widest uppercase text-xs">Espacio estimado</th>
+              </tr>
+            </thead>
+            <tbody class="font-body text-[var(--color-silver)]/70">
+              <tr class="border-b border-[var(--color-silver)]/10 hover:bg-[var(--color-graphite)]/20 transition-colors">
+                <td class="py-4 px-4 text-[var(--color-ivory)]">Compacta</td>
+                <td class="py-4 px-4">20 – 50 botellas</td>
+                <td class="py-4 px-4">Uso personal y cenas</td>
+                <td class="py-4 px-4">0,3 – 0,5 m²</td>
+              </tr>
+              <tr class="border-b border-[var(--color-silver)]/10 hover:bg-[var(--color-graphite)]/20 transition-colors">
+                <td class="py-4 px-4 text-[var(--color-ivory)]">Media</td>
+                <td class="py-4 px-4">50 – 150 botellas</td>
+                <td class="py-4 px-4">Aficionado serio</td>
+                <td class="py-4 px-4">0,5 – 1,2 m²</td>
+              </tr>
+              <tr class="hover:bg-[var(--color-graphite)]/20 transition-colors">
+                <td class="py-4 px-4 text-[var(--color-ivory)]">Gran Bodega</td>
+                <td class="py-4 px-4">200+ botellas</td>
+                <td class="py-4 px-4">Coleccionista / Sumiller</td>
+                <td class="py-4 px-4">2+ m² (a medida)</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <p class="font-body text-[15px] md:text-base text-[var(--color-silver)]/80 leading-[1.9] mb-8">
+          <strong class="text-[var(--color-ivory)]">Consejo profesional:</strong> siempre dimensiona un 20-30% por encima de tu colección actual. Los entusiastas del vino tienden a expandir su colección con el tiempo, y es más económico anticipar esa necesidad que rediseñar después.
+        </p>
+
+        <!-- Imagen inline -->
+        <figure class="mb-8">
+          <div class="aspect-[16/9] overflow-hidden rounded-sm relative">
+            <img 
+              src="/images/blog/articulo-vinoteca/tamanos.png"
+              alt="Comparación de tamaños de vinotecas: modelo compacto empotrado en cocina, modelo mediano en salón y bodega completa a medida"
+              class="w-full h-full object-cover hover:scale-105 transition-transform duration-[2s]"
+              loading="lazy"
+              decoding="async"
+            />
+            <div class="absolute inset-0 border border-[var(--color-silver)]/10 m-3 pointer-events-none"></div>
+          </div>
+          <figcaption class="font-accent text-[11px] tracking-[0.1em] text-[var(--color-silver)]/40 uppercase mt-4 text-center">
+            Tres escalas de vinoteca: compacta, mediana y bodega climatizada a medida
+          </figcaption>
+        </figure>
+      </section>
+
+
+      <!-- ===== SECCIÓN 3: Materiales ===== -->
+      <section class="mb-20">
+        <h2 class="font-display text-3xl md:text-4xl text-[var(--color-ivory)] leading-tight mb-8">
+          2. Materiales de Construcción: <span class="italic text-[var(--color-silver)]/50">Madera, Acero o Cristal</span>
+        </h2>
+
+        <p class="font-body text-[15px] md:text-base text-[var(--color-silver)]/80 leading-[1.9] mb-6">
+          La elección del material no es solo estética: afecta directamente al aislamiento térmico, la protección UV y la longevidad del mueble. Estos son los tres pilares de la construcción premium:
+        </p>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+          <!-- Madera -->
+          <div class="p-6 border border-[var(--color-silver)]/10 bg-[var(--color-graphite)]/20 rounded-sm hover:border-[var(--color-gold)]/30 transition-colors duration-500">
+            <h3 class="font-display text-xl text-[var(--color-ivory)] mb-3">🪵 Madera Noble</h3>
+            <p class="font-body text-sm text-[var(--color-silver)]/60 leading-relaxed">
+              <strong class="text-[var(--color-ivory)]">Roble, nogal y cerezo</strong> ofrecen aislamiento natural superior (conductividad térmica de 0,13 W/mK). Resisten décadas sin deformarse si la madera ha sido curada correctamente. Ideales para ambientes clásicos y rústicos donde el calor visual es fundamental.
+            </p>
+          </div>
+          <!-- Acero -->
+          <div class="p-6 border border-[var(--color-silver)]/10 bg-[var(--color-graphite)]/20 rounded-sm hover:border-[var(--color-gold)]/30 transition-colors duration-500">
+            <h3 class="font-display text-xl text-[var(--color-ivory)] mb-3">🔩 Acero Inoxidable</h3>
+            <p class="font-body text-sm text-[var(--color-silver)]/60 leading-relaxed">
+              Líneas puras, resistencia a la corrosión y mantenimiento mínimo. El acero 304 (18/8) es el estándar de la industria alimentaria. Combina perfectamente con <strong class="text-[var(--color-ivory)]">cocinas modernas y espacios minimalistas</strong>. Su conductividad se compensa con paneles aislantes de alta densidad.
+            </p>
+          </div>
+          <!-- Cristal -->
+          <div class="p-6 border border-[var(--color-silver)]/10 bg-[var(--color-graphite)]/20 rounded-sm hover:border-[var(--color-gold)]/30 transition-colors duration-500">
+            <h3 class="font-display text-xl text-[var(--color-ivory)] mb-3">💎 Cristal Templado</h3>
+            <p class="font-body text-sm text-[var(--color-silver)]/60 leading-relaxed">
+              El cristal <strong class="text-[var(--color-ivory)]">Climalit con filtro UV</strong> bloquea el 99% de los rayos ultravioleta mientras exhibe tu colección con elegancia. El doble acristalamiento (6-12-6 mm) crea una cámara de aire que actúa como barrera térmica, reduciendo pérdidas energéticas un 40%.
+            </p>
+          </div>
+        </div>
+
+        <figure class="mb-8">
+          <div class="aspect-[16/9] overflow-hidden rounded-sm relative">
+            <img 
+              src="/images/blog/articulo-vinoteca/materiales.png"
+              alt="Detalle de materiales premium para vinotecas: veta de nogal macizo, acero inoxidable cepillado y cristal templado reflectante"
+              class="w-full h-full object-cover hover:scale-105 transition-transform duration-[2s]"
+              loading="lazy"
+              decoding="async"
+            />
+            <div class="absolute inset-0 border border-[var(--color-silver)]/10 m-3 pointer-events-none"></div>
+          </div>
+          <figcaption class="font-accent text-[11px] tracking-[0.1em] text-[var(--color-silver)]/40 uppercase mt-4 text-center">
+            Detalle de acabados: nogal curado, acero 18/8 y cristal Climalit con filtro UV
+          </figcaption>
+        </figure>
+      </section>
+
+
+      <!-- ===== SECCIÓN 4: Temperatura y humedad ===== -->
+      <section class="mb-20">
+        <h2 class="font-display text-3xl md:text-4xl text-[var(--color-ivory)] leading-tight mb-8">
+          3. Temperatura y Humedad: <span class="italic text-[var(--color-silver)]/50">La Ciencia del Reposo</span>
+        </h2>
+
+        <p class="font-body text-[15px] md:text-base text-[var(--color-silver)]/80 leading-[1.9] mb-6">
+          El vino es un organismo vivo que evoluciona constantemente en botella. Las condiciones ambientales incorrectas pueden arruinar un Château Margaux de 500 € en cuestión de meses. Los parámetros que tu vinoteca debe garantizar son:
+        </p>
+
+        <!-- Datos clave en formato lista (AEO: respuesta directa) -->
+        <div class="space-y-4 mb-8 pl-4 border-l border-[var(--color-gold)]/20">
+          <div class="flex items-start gap-4">
+            <span class="font-display text-2xl text-[var(--color-gold)] mt-1 flex-shrink-0">14°C</span>
+            <div>
+              <p class="font-body text-[var(--color-ivory)] font-medium">Temperatura ideal de conservación</p>
+              <p class="font-body text-sm text-[var(--color-silver)]/60">Variación máxima admisible: ±1 °C. Las fluctuaciones bruscas aceleran la oxidación y degradan los polifenoles responsables del aroma y color.</p>
+            </div>
+          </div>
+          <div class="flex items-start gap-4">
+            <span class="font-display text-2xl text-[var(--color-gold)] mt-1 flex-shrink-0">70%</span>
+            <div>
+              <p class="font-body text-[var(--color-ivory)] font-medium">Humedad relativa óptima (65-75%)</p>
+              <p class="font-body text-sm text-[var(--color-silver)]/60">Previene la deshidratación del corcho (por debajo del 50%) y el desarrollo de moho (por encima del 80%). Un corcho seco permite la entrada de oxígeno, destruyendo el vino.</p>
+            </div>
+          </div>
+          <div class="flex items-start gap-4">
+            <span class="font-display text-2xl text-[var(--color-gold)] mt-1 flex-shrink-0">0 dB</span>
+            <div>
+              <p class="font-body text-[var(--color-ivory)] font-medium">Ausencia total de vibraciones</p>
+              <p class="font-body text-sm text-[var(--color-silver)]/60">Los compresores convencionales generan micro-vibraciones que agitan los sedimentos, perturbando la evolución natural del vino. La tecnología de compresión amortiguada elimina este problema por completo.</p>
+            </div>
+          </div>
+        </div>
+
+        <figure class="mb-8">
+          <div class="aspect-[16/9] overflow-hidden rounded-sm relative">
+            <img 
+              src="/images/blog/articulo-vinoteca/temperatura.png"
+              alt="Interior de vinoteca premium con display digital de temperatura a 14 grados y botellas de vino en estantes de madera con iluminación ámbar"
+              class="w-full h-full object-cover hover:scale-105 transition-transform duration-[2s]"
+              loading="lazy"
+              decoding="async"
+            />
+            <div class="absolute inset-0 border border-[var(--color-silver)]/10 m-3 pointer-events-none"></div>
+          </div>
+          <figcaption class="font-accent text-[11px] tracking-[0.1em] text-[var(--color-silver)]/40 uppercase mt-4 text-center">
+            Sistema de control climático con sensor de temperatura y humedad relativa
+          </figcaption>
+        </figure>
+      </section>
+
+
+      <!-- ===== SECCIÓN 5: Diseño e integración ===== -->
+      <section class="mb-20">
+        <h2 class="font-display text-3xl md:text-4xl text-[var(--color-ivory)] leading-tight mb-8">
+          4. Diseño e Integración: <span class="italic text-[var(--color-silver)]/50">El Arte de lo Invisible</span>
+        </h2>
+
+        <p class="font-body text-[15px] md:text-base text-[var(--color-silver)]/80 leading-[1.9] mb-6">
+          Una vinoteca excepcional no compite con el espacio; lo completa. Las tendencias de diseño en 2026 apuntan hacia la <strong class="text-[var(--color-ivory)]">integración arquitectónica total</strong>: vinotecas que parecen haber sido diseñadas junto con la propia vivienda.
+        </p>
+
+        <div class="space-y-6 mb-8">
+          <div class="flex gap-6 items-start p-6 bg-[var(--color-graphite)]/20 border border-[var(--color-silver)]/10 rounded-sm">
+            <span class="font-display text-4xl text-[var(--color-gold)] flex-shrink-0">01</span>
+            <div>
+              <h3 class="font-display text-lg text-[var(--color-ivory)] mb-2">Empotrada en mobiliario</h3>
+              <p class="font-body text-sm text-[var(--color-silver)]/60 leading-relaxed">Se integra en la carpintería existente de la cocina, el salón o el comedor. Visualmente, parece un armario más, pero en su interior alberga un ecosistema climatizado perfecto. Es la opción preferida por arquitectos de interiores.</p>
+            </div>
+          </div>
+          <div class="flex gap-6 items-start p-6 bg-[var(--color-graphite)]/20 border border-[var(--color-silver)]/10 rounded-sm">
+            <span class="font-display text-4xl text-[var(--color-gold)] flex-shrink-0">02</span>
+            <div>
+              <h3 class="font-display text-lg text-[var(--color-ivory)] mb-2">Bajo escalera</h3>
+              <p class="font-body text-sm text-[var(--color-silver)]/60 leading-relaxed">Transforma un espacio habitualmente desaprovechado en una bodega espectacular. La geometría triangular del hueco se aprovecha al máximo con diseños personalizados que siguen la pendiente exacta de la escalera.</p>
+            </div>
+          </div>
+          <div class="flex gap-6 items-start p-6 bg-[var(--color-graphite)]/20 border border-[var(--color-silver)]/10 rounded-sm">
+            <span class="font-display text-4xl text-[var(--color-gold)] flex-shrink-0">03</span>
+            <div>
+              <h3 class="font-display text-lg text-[var(--color-ivory)] mb-2">Muro de vinos (Wine Wall)</h3>
+              <p class="font-body text-sm text-[var(--color-silver)]/60 leading-relaxed">Una pared completa convertida en expositor climatizado con cristal de suelo a techo. Funciona como pieza de arte arquitectónico y punto focal del espacio. Es la tendencia más demandada en restaurantes y residencias de lujo.</p>
+            </div>
+          </div>
+        </div>
+
+        <figure class="mb-8">
+          <div class="aspect-[16/9] overflow-hidden rounded-sm relative">
+            <img 
+              src="/images/blog/articulo-vinoteca/artesano.png"
+              alt="Manos de maestro ebanista ensamblando la estructura de una vinoteca artesanal de roble con herramientas tradicionales en taller de Barcelona"
+              class="w-full h-full object-cover hover:scale-105 transition-transform duration-[2s]"
+              loading="lazy"
+              decoding="async"
+            />
+            <div class="absolute inset-0 border border-[var(--color-silver)]/10 m-3 pointer-events-none"></div>
+          </div>
+          <figcaption class="font-accent text-[11px] tracking-[0.1em] text-[var(--color-silver)]/40 uppercase mt-4 text-center">
+            Maestro ebanista de Caveduke ensamblando una estructura de roble macizo en su taller artesanal
+          </figcaption>
+        </figure>
+      </section>
+
+
+      <!-- ===== SECCIÓN 6: Checklist final ===== -->
+      <section class="mb-20">
+        <h2 class="font-display text-3xl md:text-4xl text-[var(--color-ivory)] leading-tight mb-8">
+          5. Checklist Final: <span class="italic text-[var(--color-silver)]/50">Los 10 Puntos Imprescindibles</span>
+        </h2>
+
+        <p class="font-body text-[15px] md:text-base text-[var(--color-silver)]/80 leading-[1.9] mb-8">
+          Antes de tomar tu decisión, asegúrate de verificar cada uno de estos puntos. Un "sí" a los diez te garantiza una vinoteca que funcionará impecablemente durante más de 20 años:
+        </p>
+
+        <ol class="space-y-4 mb-8">
+          {[
+            "¿La capacidad cubre tu colección actual + un 30% de margen de crecimiento?",
+            "¿El sistema de refrigeración es de compresión amortiguada (no termoeléctrico)?",
+            "¿Mantiene una temperatura estable entre 12 °C y 14 °C con ±1 °C de variación?",
+            "¿Controla la humedad relativa entre el 65% y el 75%?",
+            "¿El cristal tiene filtro UV que bloquea al menos el 95% de los rayos ultravioleta?",
+            "¿La madera ha sido tratada y curada para evitar transferencia de olores?",
+            "¿Las baldas permiten almacenar botellas de diferentes formatos (Borgoña, Burdeos, magnum)?",
+            "¿La iluminación interior es LED fría (sin emisión de calor)?",
+            "¿El fabricante ofrece garantía mínima de 5 años en el compresor?",
+            "¿El diseño se integra armónicamente con tu espacio y mobiliario existente?"
+          ].map((item, i) => (
+            <li class="flex items-start gap-4 font-body text-[15px] text-[var(--color-silver)]/80 leading-relaxed">
+              <span class="font-display text-lg text-[var(--color-gold)] flex-shrink-0 mt-0.5">{String(i + 1).padStart(2, '0')}</span>
+              <span>{item}</span>
+            </li>
+          ))}
+        </ol>
+      </section>
+
+
+      <!-- ===== SECCIÓN FAQ (AEO + Schema) ===== -->
+      <section class="mb-20" id="preguntas-frecuentes">
+        <div class="flex items-center gap-4 mb-10">
+          <div class="w-8 h-px bg-[var(--color-gold)]"></div>
+          <h2 class="font-accent text-[var(--color-gold)] tracking-widest uppercase text-sm">Preguntas Frecuentes</h2>
+          <div class="w-8 h-px bg-[var(--color-gold)]"></div>
+        </div>
+
+        <div class="space-y-6">
+          {faqs.map((faq, index) => (
+            <details class="group border border-[var(--color-silver)]/10 rounded-sm overflow-hidden hover:border-[var(--color-gold)]/30 transition-colors duration-300">
+              <summary class="flex items-center justify-between cursor-pointer px-6 py-5 bg-[var(--color-graphite)]/20 group-open:bg-[var(--color-graphite)]/40 transition-colors duration-300">
+                <h3 class="font-display text-lg text-[var(--color-ivory)] pr-4 leading-snug">{faq.question}</h3>
+                <span class="text-[var(--color-gold)] flex-shrink-0 transition-transform duration-300 group-open:rotate-45">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M12 5v14"/>
+                    <path d="M5 12h14"/>
+                  </svg>
+                </span>
+              </summary>
+              <div class="px-6 py-5 border-t border-[var(--color-silver)]/10">
+                <p class="font-body text-[15px] text-[var(--color-silver)]/70 leading-[1.85]">{faq.answer}</p>
+              </div>
+            </details>
+          ))}
+        </div>
+      </section>
+
+
+      <!-- ===== CTA Final ===== -->
+      <section class="text-center py-16 border-t border-b border-[var(--color-silver)]/10">
+        <p class="font-accent text-[var(--color-gold)] tracking-widest uppercase text-xs mb-6">¿Listo para tu vinoteca?</p>
+        <h2 class="font-display text-3xl md:text-4xl text-[var(--color-ivory)] leading-tight mb-6">
+          Cada Vinoteca Caveduke es <br/>
+          <span class="italic text-[var(--color-gold)]">Única</span>
+        </h2>
+        <p class="font-body text-[var(--color-silver)]/60 text-base max-w-xl mx-auto leading-relaxed mb-10">
+          Desde 1985, diseñamos y fabricamos vinotecas artesanales que protegen tu colección con la misma pasión con la que fue creada. Hablemos de tu proyecto.
+        </p>
+        <a href="/#contacto" class="premium-button">
+          <span>Solicitar Presupuesto</span>
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M5 12h14"/>
+            <path d="m12 5 7 7-7 7"/>
+          </svg>
+        </a>
+      </section>
+
+
+      <!-- ===== Navegación de artículos ===== -->
+      <nav class="flex justify-between items-center pt-16" aria-label="Navegación de artículos">
+        <a href="/#blog" class="flex items-center gap-2 text-[var(--color-silver)]/50 hover:text-[var(--color-gold)] transition-colors font-accent tracking-widest text-xs uppercase">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="m12 19-7-7 7-7"/>
+            <path d="M19 12H5"/>
+          </svg>
+          <span>Volver al Blog</span>
+        </a>
+      </nav>
+
+    </article>
+  </main>
+
+  <Footer />
+</BaseLayout>
+
+<style>
+  /* Smooth scroll for FAQ links */
+  html {
+    scroll-behavior: smooth;
+  }
+
+  /* Details/Summary animation */
+  details summary::-webkit-details-marker {
+    display: none;
+  }
+  details summary {
+    list-style: none;
+  }
+
+  details[open] summary ~ div {
+    animation: fadeIn 0.3s ease-out;
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-8px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+</style>
+
+<script>
+  import { gsap } from 'gsap';
+  import { ScrollTrigger } from 'gsap/ScrollTrigger';
+
+  gsap.registerPlugin(ScrollTrigger);
+
+  // Hero title reveal
+  gsap.fromTo('.hero-title',
+    { y: 40, opacity: 0 },
+    { y: 0, opacity: 1, duration: 1.2, ease: 'power3.out', delay: 0.3 }
+  );
+
+  // Article sections reveal on scroll
+  gsap.utils.toArray('.prose-section, section').forEach((section: any) => {
+    gsap.fromTo(section,
+      { y: 40, opacity: 0 },
+      {
+        y: 0,
+        opacity: 1,
+        duration: 1,
+        ease: 'power3.out',
+        scrollTrigger: {
+          trigger: section,
+          start: 'top 90%',
+        }
+      }
+    );
+  });
+
+  // Image reveals
+  gsap.utils.toArray('figure').forEach((fig: any) => {
+    gsap.fromTo(fig,
+      { clipPath: 'inset(100% 0 0 0)' },
+      {
+        clipPath: 'inset(0% 0 0 0)',
+        duration: 1.5,
+        ease: 'power4.inOut',
+        scrollTrigger: {
+          trigger: fig,
+          start: 'top 95%',
+        }
+      }
+    );
+  });
+</script>

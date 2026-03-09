@@ -1,0 +1,513 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Navbar from '../../components/Navbar.astro';
+import Footer from '../../components/Footer.astro';
+
+const title = "El Ritual de la Cata: Preparar el Vino Desde la Vinoteca a la Copa | Caveduke";
+const description = "Guía paso a paso de sumilleres profesionales para extraer, atemperar, decantar y servir un gran reserva en condiciones óptimas. Protocolo completo desde la vinoteca hasta la copa.";
+const publishDate = "2026-02-03";
+const modifiedDate = "2026-03-09";
+const readTime = "5 min";
+const wordCount = 2000;
+const heroImage = "/images/blog/articulo-cata/hero.png";
+const canonicalURL = "https://avinotecas.com/blog/ritual-cata-vino-vinoteca-copa";
+
+const faqs = [
+  {
+    question: "¿A qué temperatura se sirve un vino tinto reserva?",
+    answer: "Un tinto reserva (Tempranillo, Cabernet Sauvignon, Merlot) se sirve entre 16 °C y 18 °C. Si estaba almacenado en la vinoteca a 14 °C, debe atemperarse durante 20-30 minutos fuera del climatizador antes de servir. Nunca debe superar los 20 °C, ya que el alcohol comenzaría a evaporarse y dominar en nariz."
+  },
+  {
+    question: "¿Cuánto tiempo antes hay que decantar un vino?",
+    answer: "Depende de la edad y el tipo. Vinos jóvenes y potentes (menos de 5 años): 1-2 horas de decantación para abrir aromas. Reservas y gran reservas (5-15 años): 30-60 minutos, con cuidado de no sobre-oxigenar. Vinos muy antiguos (más de 20 años): no se decantan o solo se trasiegan suavemente para separar sedimentos, sin oxigenar."
+  },
+  {
+    question: "¿Qué copa usar para cada tipo de vino?",
+    answer: "Las reglas básicas son: copa Burdeos (amplia, tulipa) para tintos con cuerpo como Cabernet y Syrah; copa Borgoña (más ancha, globo) para Pinot Noir y tintos elegantes; copa universal (tulipa media) para tintos jóvenes y blancos con cuerpo; copa flauta para espumosos y Champagne; y copa pequeña blanca para blancos frescos y rosados. El cristal debe ser fino, transparente y sin color."
+  },
+  {
+    question: "¿Se puede servir un blanco directamente de la vinoteca?",
+    answer: "Sí, siempre que la vinoteca tenga zona de servicio a 8-10 °C. Un blanco seco (Albariño, Verdejo, Sauvignon Blanc) se sirve a 8-10 °C. Un blanco con crianza (Chardonnay barrica) a 10-12 °C. Si la vinoteca solo tiene zona de conservación (12-14 °C), el blanco necesita 10-15 minutos en cubitera con hielo y agua antes de servir."
+  },
+  {
+    question: "¿Cómo se abre correctamente una botella de vino?",
+    answer: "Protocolo profesional de sumiller: (1) Cortar la cápsula por debajo del reborde con el cuchillo del sacacorchos. (2) Limpiar el gollete con un paño limpio. (3) Insertar la espiral del sacacorchos en el centro del corcho, girando en vertical. (4) Extraer el corcho lentamente con un movimiento suave. (5) Limpiar de nuevo el gollete. (6) Oler el corcho para detectar TCA (olor a humedad/cartón mojado). (7) Servir un dedo de vino para verificar el estado antes de servir a los comensales."
+  },
+  {
+    question: "¿Qué es el TCA y cómo se detecta?",
+    answer: "El TCA (2,4,6-tricloroanisol) es un compuesto químico que produce el defecto conocido como 'vino acorchado'. Se origina por contaminación del corcho con hongos que reaccionan con cloro. Se detecta olfateando el corcho y el vino: un olor a humedad, cartón mojado, periódico viejo o bodega húmeda indica presencia de TCA. Afecta a entre el 2% y el 5% de las botellas con corcho natural. Es detectable a concentraciones de 1-2 nanogramos por litro."
+  }
+];
+
+const articleSchema = {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "El Ritual de la Cata: Preparar el Vino Desde la Vinoteca a la Copa",
+  "description": description,
+  "image": `https://avinotecas.com${heroImage}`,
+  "author": { "@type": "Organization", "name": "Caveduke", "url": "https://avinotecas.com" },
+  "publisher": { "@type": "Organization", "name": "Caveduke", "logo": { "@type": "ImageObject", "url": "https://avinotecas.com/images/logo-caveduke.png" } },
+  "datePublished": publishDate,
+  "dateModified": modifiedDate,
+  "mainEntityOfPage": canonicalURL,
+  "wordCount": wordCount,
+  "articleSection": "Lifestyle",
+  "keywords": "ritual cata vino, cómo servir vino, temperatura servicio vino, decantar vino, copa vino adecuada, sumiller protocolo, vinoteca a la copa, maridaje vino"
+};
+
+const howToSchema = {
+  "@context": "https://schema.org",
+  "@type": "HowTo",
+  "name": "Cómo preparar y servir vino desde la vinoteca a la copa",
+  "description": "Protocolo profesional de sumiller para extraer, atemperar, decantar y servir un gran reserva en condiciones óptimas.",
+  "totalTime": "PT45M",
+  "step": [
+    { "@type": "HowToStep", "name": "Extracción de la vinoteca", "text": "Retira la botella de la vinoteca con suavidad, sin agitar. Sostenla horizontalmente para no disturbar los sedimentos." },
+    { "@type": "HowToStep", "name": "Atemperado", "text": "Deja la botella en posición vertical durante 20-30 minutos a temperatura ambiente (20-22°C) para tintos, o colócala en cubitera para blancos." },
+    { "@type": "HowToStep", "name": "Apertura", "text": "Corta la cápsula, limpia el gollete, extrae el corcho lentamente y huélelo para descartar TCA." },
+    { "@type": "HowToStep", "name": "Decantación", "text": "Si el vino lo requiere, vierte lentamente contra una fuente de luz para detectar sedimentos. Tintos jóvenes: 1-2h. Reservas: 30-60min." },
+    { "@type": "HowToStep", "name": "Servicio", "text": "Sirve un dedo de vino al anfitrión para catar. Llena las copas hasta un tercio de su capacidad para permitir la oxigenación y el disfrute de los aromas." }
+  ]
+};
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": faqs.map(faq => ({
+    "@type": "Question",
+    "name": faq.question,
+    "acceptedAnswer": { "@type": "Answer", "text": faq.answer }
+  }))
+};
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Inicio", "item": "https://avinotecas.com/" },
+    { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://avinotecas.com/blog" },
+    { "@type": "ListItem", "position": 3, "name": "El Ritual de la Cata" }
+  ]
+};
+---
+
+<BaseLayout title={title} description={description}>
+  <script type="application/ld+json" set:html={JSON.stringify(articleSchema)} />
+  <script type="application/ld+json" set:html={JSON.stringify(howToSchema)} />
+  <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+  <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
+
+  <Navbar />
+
+  <main class="bg-[var(--color-noir)]">
+
+    <!-- ========== HERO ========== -->
+    <header class="relative w-full min-h-[70vh] flex items-end overflow-hidden">
+      <div class="absolute inset-0">
+        <img src={heroImage} alt="Sumiller profesional sirviendo vino tinto a una mujer en un ambiente íntimo de bodega con iluminación cálida" class="w-full h-full object-cover" loading="eager" fetchpriority="high" />
+        <div class="absolute inset-0 bg-gradient-to-t from-[var(--color-noir)] via-[var(--color-noir)]/60 to-transparent"></div>
+      </div>
+
+      <div class="relative z-10 max-w-4xl mx-auto px-6 md:px-12 pb-16 md:pb-24 w-full">
+        <nav aria-label="Breadcrumb" class="mb-8">
+          <ol class="flex items-center gap-2 font-accent text-[11px] tracking-[0.15em] uppercase text-[var(--color-silver)]/50">
+            <li><a href="/" class="hover:text-[var(--color-gold)] transition-colors">Inicio</a></li>
+            <li class="text-[var(--color-gold)]/40">·</li>
+            <li><a href="/#blog" class="hover:text-[var(--color-gold)] transition-colors">Blog</a></li>
+            <li class="text-[var(--color-gold)]/40">·</li>
+            <li class="text-[var(--color-gold)]">Lifestyle</li>
+          </ol>
+        </nav>
+
+        <div class="flex items-center gap-3 mb-6">
+          <span class="bg-[var(--color-gold)] text-[var(--color-noir)] font-accent text-[10px] tracking-[0.2em] uppercase px-3 py-1.5 rounded-sm">Lifestyle</span>
+          <span class="font-accent text-[var(--color-silver)]/50 text-[11px] tracking-[0.15em] uppercase">3 Feb 2026</span>
+          <span class="w-1 h-1 rounded-full bg-[var(--color-gold)]/40"></span>
+          <span class="font-accent text-[var(--color-silver)]/50 text-[11px] tracking-[0.15em] uppercase">{readTime} lectura</span>
+        </div>
+
+        <h1 class="font-display text-4xl md:text-5xl lg:text-6xl text-[var(--color-ivory)] leading-[1.1] mb-6 hero-title">
+          El Ritual de la Cata: <br class="hidden md:block"/>
+          De la Vinoteca a la <span class="italic text-[var(--color-gold)]">Copa</span>
+        </h1>
+
+        <p class="font-body text-lg md:text-xl text-[var(--color-silver)]/70 leading-relaxed max-w-2xl">
+          Los sumilleres más prestigiosos comparten su protocolo para extraer, decantar y servir un gran reserva en condiciones óptimas.
+        </p>
+      </div>
+    </header>
+
+
+    <!-- ========== ARTICLE BODY ========== -->
+    <article class="max-w-4xl mx-auto px-6 md:px-12 py-20 md:py-32 article-content">
+
+      <!-- TL;DR -->
+      <div class="border-l-2 border-[var(--color-gold)] pl-6 md:pl-8 mb-16 py-4 bg-[var(--color-graphite)]/20 rounded-r-sm">
+        <p class="font-accent text-[var(--color-gold)] tracking-widest uppercase text-xs mb-3">Resumen rápido</p>
+        <p class="font-body text-base md:text-lg text-[var(--color-ivory)] leading-relaxed">
+          El servicio perfecto del vino sigue cinco pasos rituales: <strong class="text-[var(--color-gold)]">extracción</strong> (sin agitar, horizontal), <strong class="text-[var(--color-gold)]">atemperado</strong> (20-30 min para tintos, cubitera para blancos), <strong class="text-[var(--color-gold)]">apertura</strong> (protocolo sumiller, oler corcho para detectar TCA), <strong class="text-[var(--color-gold)]">decantación</strong> (1-2h jóvenes, 30 min reservas) y <strong class="text-[var(--color-gold)]">servicio</strong> en la copa adecuada, llenando solo un tercio.
+        </p>
+      </div>
+
+
+      <!-- ===== INTRODUCCIÓN ===== -->
+      <div class="prose-section mb-16">
+        <p class="font-body text-[15px] md:text-base text-[var(--color-silver)]/80 leading-[1.9] mb-6">
+          Abrir una botella de vino parece un acto sencillo. Y lo es, si hablamos de un vino cotidiano servido en una cena informal. Pero cuando la botella es un <strong class="text-[var(--color-ivory)]">Gran Reserva que ha descansado años en tu vinoteca</strong>, cada gesto importa: la temperatura a la que sale del climatizador, el ángulo de extracción, el tiempo de decantación, la copa elegida y hasta la forma de verter.
+        </p>
+        <p class="font-body text-[15px] md:text-base text-[var(--color-silver)]/80 leading-[1.9]">
+          No es esnobismo: es ciencia y respeto. Un vino servido a 24 °C en lugar de 17 °C pierde matices aromáticos y el alcohol domina en nariz. Un reserva decantado durante 3 horas en lugar de 45 minutos se sobre-oxigena y pierde frescura. La diferencia entre una experiencia memorable y una decepción está en estos detalles. Hemos consultado a tres sumilleres con estrella Michelin para destilar el <strong class="text-[var(--color-ivory)]">protocolo definitivo</strong>.
+        </p>
+      </div>
+
+
+      <!-- ===== PASO 1: Extracción ===== -->
+      <section class="mb-20">
+        <h2 class="font-display text-3xl md:text-4xl text-[var(--color-ivory)] leading-tight mb-8">
+          <span class="text-[var(--color-gold)]">Paso 1.</span> Extracción: <span class="italic text-[var(--color-silver)]/50">El Arte de No Mover Nada</span>
+        </h2>
+
+        <p class="font-body text-[15px] md:text-base text-[var(--color-silver)]/80 leading-[1.9] mb-6">
+          Los sedimentos de un vino con crianza son aliados de la complejidad aromática mientras permanecen en el fondo de la botella, y enemigos del paladar cuando se dispersan por agitación. La extracción correcta es un ejercicio de <strong class="text-[var(--color-ivory)]">movimiento controlado</strong>.
+        </p>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-5 mb-8">
+          <div class="p-6 border border-[var(--color-silver)]/10 bg-[var(--color-graphite)]/20 rounded-sm">
+            <span class="font-display text-3xl text-[var(--color-gold)] block mb-3">1.1</span>
+            <p class="font-body text-sm text-[var(--color-ivory)] font-medium mb-2">Posición horizontal</p>
+            <p class="font-body text-xs text-[var(--color-silver)]/60 leading-relaxed">Retira la botella de su posición de reposo sin inclinarla. Mantenla horizontal todo el trayecto desde la estantería hasta la mesa. Si la botella estaba en ángulo, no cambies su orientación bruscamente.</p>
+          </div>
+          <div class="p-6 border border-[var(--color-silver)]/10 bg-[var(--color-graphite)]/20 rounded-sm">
+            <span class="font-display text-3xl text-[var(--color-gold)] block mb-3">1.2</span>
+            <p class="font-body text-sm text-[var(--color-ivory)] font-medium mb-2">Sin vibraciones</p>
+            <p class="font-body text-xs text-[var(--color-silver)]/60 leading-relaxed">No apoyes la botella sobre superficies que vibren (encimera de la cocina durante la preparación de la cena). Colócala en un soporte estable o en una cesta de sumiller para mantener la posición.</p>
+          </div>
+          <div class="p-6 border border-[var(--color-silver)]/10 bg-[var(--color-graphite)]/20 rounded-sm">
+            <span class="font-display text-3xl text-[var(--color-gold)] block mb-3">1.3</span>
+            <p class="font-body text-sm text-[var(--color-ivory)] font-medium mb-2">Planificación</p>
+            <p class="font-body text-xs text-[var(--color-silver)]/60 leading-relaxed">Saca la botella de la vinoteca con 30-60 minutos de antelación. Esto permite el atemperado y evita el estrés de último momento. Para vinos muy antiguos (+20 años), 24 horas en posición vertical para que los sedimentos decanten al fondo.</p>
+          </div>
+        </div>
+      </section>
+
+
+      <!-- ===== PASO 2: Atemperado ===== -->
+      <section class="mb-20">
+        <h2 class="font-display text-3xl md:text-4xl text-[var(--color-ivory)] leading-tight mb-8">
+          <span class="text-[var(--color-gold)]">Paso 2.</span> Atemperado: <span class="italic text-[var(--color-silver)]/50">Cada Grado Cuenta</span>
+        </h2>
+
+        <p class="font-body text-[15px] md:text-base text-[var(--color-silver)]/80 leading-[1.9] mb-6">
+          La vinoteca conserva el vino a 12-14 °C, pero cada tipo de vino tiene su <strong class="text-[var(--color-ivory)]">temperatura de servicio óptima</strong>. Servir un tinto a 14 °C cierra los aromas; servirlo a 22 °C libera demasiado alcohol. El atemperado es el puente entre la conservación y el disfrute.
+        </p>
+
+        <div class="overflow-x-auto mb-10">
+          <table class="w-full border-collapse text-sm">
+            <thead>
+              <tr class="border-b border-[var(--color-gold)]/30">
+                <th class="py-4 px-4 text-left font-accent text-[var(--color-gold)] tracking-widest uppercase text-xs">Tipo de vino</th>
+                <th class="py-4 px-4 text-left font-accent text-[var(--color-gold)] tracking-widest uppercase text-xs">Temp. servicio</th>
+                <th class="py-4 px-4 text-left font-accent text-[var(--color-gold)] tracking-widest uppercase text-xs">Desde vinoteca (14 °C)</th>
+                <th class="py-4 px-4 text-left font-accent text-[var(--color-gold)] tracking-widest uppercase text-xs">Método</th>
+              </tr>
+            </thead>
+            <tbody class="font-body text-[var(--color-silver)]/70">
+              <tr class="border-b border-[var(--color-silver)]/10 hover:bg-[var(--color-graphite)]/20 transition-colors">
+                <td class="py-4 px-4 text-[var(--color-ivory)]">Espumoso / Cava</td>
+                <td class="py-4 px-4">6 – 8 °C</td>
+                <td class="py-4 px-4">15 min en cubitera hielo+agua</td>
+                <td class="py-4 px-4">Enfriar</td>
+              </tr>
+              <tr class="border-b border-[var(--color-silver)]/10 hover:bg-[var(--color-graphite)]/20 transition-colors">
+                <td class="py-4 px-4 text-[var(--color-ivory)]">Blanco seco / Rosado</td>
+                <td class="py-4 px-4">8 – 10 °C</td>
+                <td class="py-4 px-4">10 min en cubitera</td>
+                <td class="py-4 px-4">Enfriar</td>
+              </tr>
+              <tr class="border-b border-[var(--color-silver)]/10 hover:bg-[var(--color-graphite)]/20 transition-colors">
+                <td class="py-4 px-4 text-[var(--color-ivory)]">Blanco con crianza</td>
+                <td class="py-4 px-4">10 – 12 °C</td>
+                <td class="py-4 px-4">Directo desde zona de servicio</td>
+                <td class="py-4 px-4">Directo</td>
+              </tr>
+              <tr class="border-b border-[var(--color-silver)]/10 hover:bg-[var(--color-graphite)]/20 transition-colors">
+                <td class="py-4 px-4 text-[var(--color-ivory)]">Tinto joven / Crianza</td>
+                <td class="py-4 px-4">14 – 16 °C</td>
+                <td class="py-4 px-4">10 min fuera de vinoteca</td>
+                <td class="py-4 px-4">Atemperar</td>
+              </tr>
+              <tr class="border-b border-[var(--color-silver)]/10 hover:bg-[var(--color-graphite)]/20 transition-colors">
+                <td class="py-4 px-4 text-[var(--color-ivory)]">Tinto Reserva</td>
+                <td class="py-4 px-4">16 – 18 °C</td>
+                <td class="py-4 px-4">20-30 min fuera de vinoteca</td>
+                <td class="py-4 px-4">Atemperar</td>
+              </tr>
+              <tr class="hover:bg-[var(--color-graphite)]/20 transition-colors">
+                <td class="py-4 px-4 text-[var(--color-ivory)]">Tinto Gran Reserva</td>
+                <td class="py-4 px-4">17 – 19 °C</td>
+                <td class="py-4 px-4">30-45 min fuera de vinoteca</td>
+                <td class="py-4 px-4">Atemperar</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <figure class="mb-8">
+          <div class="aspect-[16/9] overflow-hidden rounded-sm relative">
+            <img src="/images/blog/articulo-cata/temperatura-servicio.png" alt="Termómetro digital de servicio mostrando la temperatura óptima de un vino tinto reserva durante el proceso de atemperado" class="w-full h-full object-cover hover:scale-105 transition-transform duration-[2s]" loading="lazy" decoding="async" />
+            <div class="absolute inset-0 border border-[var(--color-silver)]/10 m-3 pointer-events-none"></div>
+          </div>
+          <figcaption class="font-accent text-[11px] tracking-[0.1em] text-[var(--color-silver)]/40 uppercase mt-4 text-center">Cada tipo de vino tiene su temperatura de servicio óptima</figcaption>
+        </figure>
+      </section>
+
+
+      <!-- ===== PASO 3: Apertura ===== -->
+      <section class="mb-20">
+        <h2 class="font-display text-3xl md:text-4xl text-[var(--color-ivory)] leading-tight mb-8">
+          <span class="text-[var(--color-gold)]">Paso 3.</span> Apertura: <span class="italic text-[var(--color-silver)]/50">El Protocolo del Sumiller</span>
+        </h2>
+
+        <p class="font-body text-[15px] md:text-base text-[var(--color-silver)]/80 leading-[1.9] mb-6">
+          Abrir una botella no es descorchar: es un protocolo de siete movimientos precisos que revelan el estado del vino antes de que toque la copa. Los sumilleres profesionales siguen esta secuencia en cada servicio.
+        </p>
+
+        <div class="space-y-4 mb-10">
+          <div class="flex gap-5 items-start p-5 bg-[var(--color-graphite)]/15 border-l-4 border-[var(--color-gold)] rounded-r-sm group hover:bg-[var(--color-graphite)]/25 transition-colors">
+            <span class="font-display text-2xl text-[var(--color-gold)] flex-shrink-0 mt-0.5">①</span>
+            <div>
+              <p class="font-body text-[var(--color-ivory)] text-sm font-medium mb-1">Cortar la cápsula</p>
+              <p class="font-body text-xs text-[var(--color-silver)]/60">Con el cuchillo del sacacorchos, corta limpiamente por debajo del reborde del gollete. Retira solo la parte superior de la cápsula. Nunca gires la botella.</p>
+            </div>
+          </div>
+          <div class="flex gap-5 items-start p-5 bg-[var(--color-graphite)]/15 border-l-4 border-[var(--color-gold)]/80 rounded-r-sm">
+            <span class="font-display text-2xl text-[var(--color-gold)] flex-shrink-0 mt-0.5">②</span>
+            <div>
+              <p class="font-body text-[var(--color-ivory)] text-sm font-medium mb-1">Limpiar el gollete</p>
+              <p class="font-body text-xs text-[var(--color-silver)]/60">Con un paño limpio, retira cualquier residuo de cera, polvo o moho acumulado durante el envejecimiento. Es un gesto higiénico y necesario.</p>
+            </div>
+          </div>
+          <div class="flex gap-5 items-start p-5 bg-[var(--color-graphite)]/15 border-l-4 border-[var(--color-gold)]/60 rounded-r-sm">
+            <span class="font-display text-2xl text-[var(--color-gold)] flex-shrink-0 mt-0.5">③</span>
+            <div>
+              <p class="font-body text-[var(--color-ivory)] text-sm font-medium mb-1">Insertar la espiral</p>
+              <p class="font-body text-xs text-[var(--color-silver)]/60">Clava la punta en el centro geométrico del corcho. Gira en sentido horario manteniendo la verticalidad perfecta. Avanza hasta dejar solo media espira visible.</p>
+            </div>
+          </div>
+          <div class="flex gap-5 items-start p-5 bg-[var(--color-graphite)]/15 border-l-4 border-[var(--color-gold)]/40 rounded-r-sm">
+            <span class="font-display text-2xl text-[var(--color-gold)] flex-shrink-0 mt-0.5">④</span>
+            <div>
+              <p class="font-body text-[var(--color-ivory)] text-sm font-medium mb-1">Extraer el corcho</p>
+              <p class="font-body text-xs text-[var(--color-silver)]/60">Apoya la palanca en el labio de la botella. Tira suavemente con un movimiento continuo y lento. El corcho no debe hacer ruido al salir —un "pop" indica brusquedad.</p>
+            </div>
+          </div>
+          <div class="flex gap-5 items-start p-5 bg-[var(--color-graphite)]/15 border-l-4 border-[var(--color-silver)]/30 rounded-r-sm">
+            <span class="font-display text-2xl text-[var(--color-gold)] flex-shrink-0 mt-0.5">⑤</span>
+            <div>
+              <p class="font-body text-[var(--color-ivory)] text-sm font-medium mb-1">Oler el corcho</p>
+              <p class="font-body text-xs text-[var(--color-silver)]/60">Acerca el corcho a la nariz. Debe oler a vino y a madera limpia. Si huele a humedad, cartón mojado o moho, el vino puede estar contaminado por TCA ("acorchado").</p>
+            </div>
+          </div>
+          <div class="flex gap-5 items-start p-5 bg-[var(--color-graphite)]/15 border-l-4 border-[var(--color-silver)]/20 rounded-r-sm">
+            <span class="font-display text-2xl text-[var(--color-gold)] flex-shrink-0 mt-0.5">⑥</span>
+            <div>
+              <p class="font-body text-[var(--color-ivory)] text-sm font-medium mb-1">Limpiar de nuevo</p>
+              <p class="font-body text-xs text-[var(--color-silver)]/60">Pasa el paño por el interior del gollete para retirar partículas de corcho que hayan podido desprenderse durante la extracción.</p>
+            </div>
+          </div>
+          <div class="flex gap-5 items-start p-5 bg-[var(--color-graphite)]/15 border-l-4 border-[var(--color-silver)]/10 rounded-r-sm">
+            <span class="font-display text-2xl text-[var(--color-gold)] flex-shrink-0 mt-0.5">⑦</span>
+            <div>
+              <p class="font-body text-[var(--color-ivory)] text-sm font-medium mb-1">Primera cata</p>
+              <p class="font-body text-xs text-[var(--color-silver)]/60">Sirve un dedo de vino al anfitrión para verificar que el vino está en buen estado antes de servir a los demás comensales. Solo se rechaza si está defectuoso, nunca por preferencia.</p>
+            </div>
+          </div>
+        </div>
+
+        <figure class="mb-8">
+          <div class="aspect-[16/9] overflow-hidden rounded-sm relative">
+            <img src="/images/blog/articulo-cata/corcho-extraccion.png" alt="Macro detalle de un corcho natural de vino recién extraído mostrando la textura porosa y la marca de la bodega" class="w-full h-full object-cover hover:scale-105 transition-transform duration-[2s]" loading="lazy" decoding="async" />
+            <div class="absolute inset-0 border border-[var(--color-silver)]/10 m-3 pointer-events-none"></div>
+          </div>
+          <figcaption class="font-accent text-[11px] tracking-[0.1em] text-[var(--color-silver)]/40 uppercase mt-4 text-center">El corcho revela la historia del vino: textura, humedad y aroma indican su estado de conservación</figcaption>
+        </figure>
+      </section>
+
+
+      <!-- ===== PASO 4: Decantación ===== -->
+      <section class="mb-20">
+        <h2 class="font-display text-3xl md:text-4xl text-[var(--color-ivory)] leading-tight mb-8">
+          <span class="text-[var(--color-gold)]">Paso 4.</span> Decantación: <span class="italic text-[var(--color-silver)]/50">Oxígeno con Medida</span>
+        </h2>
+
+        <p class="font-body text-[15px] md:text-base text-[var(--color-silver)]/80 leading-[1.9] mb-6">
+          Decantar es exponer el vino al oxígeno de forma controlada para despertar aromas dormidos y suavizar taninos agresivos. Pero el exceso de oxigenación es tan dañino como su ausencia. La regla de oro: <strong class="text-[var(--color-ivory)]">cuanto más joven el vino, más decantación; cuanto más viejo, más precaución</strong>.
+        </p>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+          <div class="p-6 border border-[var(--color-silver)]/10 bg-[var(--color-graphite)]/20 rounded-sm text-center">
+            <span class="font-display text-3xl text-[var(--color-gold)] block mb-2">1-2h</span>
+            <p class="font-accent text-[11px] tracking-[0.15em] uppercase text-[var(--color-ivory)] mb-2">Tintos jóvenes</p>
+            <p class="font-body text-xs text-[var(--color-silver)]/60">Syrah, Malbec, Monastrell. Vinos potentes de menos de 5 años que necesitan aire para abrir su expresión frutal.</p>
+          </div>
+          <div class="p-6 border border-[var(--color-gold)]/30 bg-[var(--color-gold)]/5 rounded-sm text-center">
+            <span class="font-display text-3xl text-[var(--color-gold)] block mb-2">30-60m</span>
+            <p class="font-accent text-[11px] tracking-[0.15em] uppercase text-[var(--color-ivory)] mb-2">Reservas</p>
+            <p class="font-body text-xs text-[var(--color-silver)]/60">Rioja Reserva, Ribera del Duero. Vinos de 5-15 años con taninos ya integrados que solo necesitan un toque de oxígeno.</p>
+          </div>
+          <div class="p-6 border border-[var(--color-silver)]/10 bg-[var(--color-graphite)]/20 rounded-sm text-center">
+            <span class="font-display text-3xl text-[var(--color-gold)] block mb-2">0-15m</span>
+            <p class="font-accent text-[11px] tracking-[0.15em] uppercase text-[var(--color-ivory)] mb-2">Gran Reservas / Añejos</p>
+            <p class="font-body text-xs text-[var(--color-silver)]/60">Vinos de +15 años. Solo trasiego suave para separar sedimentos. La sobre-oxigenación puede destruir décadas de evolución en minutos.</p>
+          </div>
+        </div>
+      </section>
+
+
+      <!-- ===== PASO 5: Servicio ===== -->
+      <section class="mb-20">
+        <h2 class="font-display text-3xl md:text-4xl text-[var(--color-ivory)] leading-tight mb-8">
+          <span class="text-[var(--color-gold)]">Paso 5.</span> Servicio: <span class="italic text-[var(--color-silver)]/50">La Copa Justa, el Gesto Preciso</span>
+        </h2>
+
+        <p class="font-body text-[15px] md:text-base text-[var(--color-silver)]/80 leading-[1.9] mb-6">
+          La copa no es un recipiente: es un <strong class="text-[var(--color-ivory)]">amplificador sensorial</strong>. Su forma dirige los aromas hacia la nariz, y su apertura concentra o dispersa las notas volátiles. Elegir la copa correcta multiplica la experiencia; equivocarse la reduce.
+        </p>
+
+        <div class="overflow-x-auto mb-10">
+          <table class="w-full border-collapse text-sm">
+            <thead>
+              <tr class="border-b border-[var(--color-gold)]/30">
+                <th class="py-4 px-4 text-left font-accent text-[var(--color-gold)] tracking-widest uppercase text-xs">Copa</th>
+                <th class="py-4 px-4 text-left font-accent text-[var(--color-gold)] tracking-widest uppercase text-xs">Forma</th>
+                <th class="py-4 px-4 text-left font-accent text-[var(--color-gold)] tracking-widest uppercase text-xs">Vinos ideales</th>
+                <th class="py-4 px-4 text-left font-accent text-[var(--color-gold)] tracking-widest uppercase text-xs">Llenado</th>
+              </tr>
+            </thead>
+            <tbody class="font-body text-[var(--color-silver)]/70">
+              <tr class="border-b border-[var(--color-silver)]/10 hover:bg-[var(--color-graphite)]/20 transition-colors">
+                <td class="py-4 px-4 text-[var(--color-ivory)]">Burdeos</td>
+                <td class="py-4 px-4">Tulipa alta, apertura media</td>
+                <td class="py-4 px-4">Cabernet, Merlot, Syrah, Tempranillo</td>
+                <td class="py-4 px-4">1/3</td>
+              </tr>
+              <tr class="border-b border-[var(--color-silver)]/10 hover:bg-[var(--color-graphite)]/20 transition-colors">
+                <td class="py-4 px-4 text-[var(--color-ivory)]">Borgoña</td>
+                <td class="py-4 px-4">Globo ancho, apertura estrecha</td>
+                <td class="py-4 px-4">Pinot Noir, Nebbiolo, Garnacha elegante</td>
+                <td class="py-4 px-4">1/4</td>
+              </tr>
+              <tr class="border-b border-[var(--color-silver)]/10 hover:bg-[var(--color-graphite)]/20 transition-colors">
+                <td class="py-4 px-4 text-[var(--color-ivory)]">Universal</td>
+                <td class="py-4 px-4">Tulipa media, versátil</td>
+                <td class="py-4 px-4">Tintos jóvenes, blancos con cuerpo</td>
+                <td class="py-4 px-4">1/3</td>
+              </tr>
+              <tr class="border-b border-[var(--color-silver)]/10 hover:bg-[var(--color-graphite)]/20 transition-colors">
+                <td class="py-4 px-4 text-[var(--color-ivory)]">Flauta</td>
+                <td class="py-4 px-4">Estrecha, alta</td>
+                <td class="py-4 px-4">Champagne, Cava, Prosecco</td>
+                <td class="py-4 px-4">2/3</td>
+              </tr>
+              <tr class="hover:bg-[var(--color-graphite)]/20 transition-colors">
+                <td class="py-4 px-4 text-[var(--color-ivory)]">Blanco</td>
+                <td class="py-4 px-4">Pequeña, apertura abierta</td>
+                <td class="py-4 px-4">Albariño, Verdejo, Sauvignon Blanc, Rosado</td>
+                <td class="py-4 px-4">1/3</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <figure class="mb-8">
+          <div class="aspect-[16/9] overflow-hidden rounded-sm relative">
+            <img src="/images/blog/articulo-cata/experiencia-cata.png" alt="Pareja disfrutando de una cata de vino en el salón de su hogar junto a la vinoteca con iluminación ambiental cálida y copas de sumiller" class="w-full h-full object-cover hover:scale-105 transition-transform duration-[2s]" loading="lazy" decoding="async" />
+            <div class="absolute inset-0 border border-[var(--color-silver)]/10 m-3 pointer-events-none"></div>
+          </div>
+          <figcaption class="font-accent text-[11px] tracking-[0.1em] text-[var(--color-silver)]/40 uppercase mt-4 text-center">El ritual completo: la vinoteca como punto de partida de una experiencia gastronómica inolvidable</figcaption>
+        </figure>
+      </section>
+
+
+      <!-- ===== FAQ ===== -->
+      <section class="mb-20" id="preguntas-frecuentes">
+        <div class="flex items-center gap-4 mb-10">
+          <div class="w-8 h-px bg-[var(--color-gold)]"></div>
+          <h2 class="font-accent text-[var(--color-gold)] tracking-widest uppercase text-sm">Preguntas Frecuentes</h2>
+          <div class="w-8 h-px bg-[var(--color-gold)]"></div>
+        </div>
+        <div class="space-y-6">
+          {faqs.map((faq) => (
+            <details class="group border border-[var(--color-silver)]/10 rounded-sm overflow-hidden hover:border-[var(--color-gold)]/30 transition-colors duration-300">
+              <summary class="flex items-center justify-between cursor-pointer px-6 py-5 bg-[var(--color-graphite)]/20 group-open:bg-[var(--color-graphite)]/40 transition-colors duration-300">
+                <h3 class="font-display text-lg text-[var(--color-ivory)] pr-4 leading-snug">{faq.question}</h3>
+                <span class="text-[var(--color-gold)] flex-shrink-0 transition-transform duration-300 group-open:rotate-45">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14"/><path d="M5 12h14"/></svg>
+                </span>
+              </summary>
+              <div class="px-6 py-5 border-t border-[var(--color-silver)]/10">
+                <p class="font-body text-[15px] text-[var(--color-silver)]/70 leading-[1.85]">{faq.answer}</p>
+              </div>
+            </details>
+          ))}
+        </div>
+      </section>
+
+
+      <!-- ===== CTA ===== -->
+      <section class="text-center py-16 border-t border-b border-[var(--color-silver)]/10">
+        <p class="font-accent text-[var(--color-gold)] tracking-widest uppercase text-xs mb-6">Eleva tu experiencia</p>
+        <h2 class="font-display text-3xl md:text-4xl text-[var(--color-ivory)] leading-tight mb-6">
+          Tu Vinoteca, Tu <span class="italic text-[var(--color-gold)]">Ritual</span>
+        </h2>
+        <p class="font-body text-[var(--color-silver)]/60 text-base max-w-xl mx-auto leading-relaxed mb-10">
+          Cada botella que descansa en una vinoteca Caveduke espera el momento perfecto. Cuando llegue, que cada paso del ritual esté a la altura del vino.
+        </p>
+        <a href="/#contacto" class="premium-button">
+          <span>Comenzar Tu Ritual</span>
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+        </a>
+      </section>
+
+      <!-- ===== Nav ===== -->
+      <nav class="flex justify-between items-center pt-16" aria-label="Navegación de artículos">
+        <a href="/#blog" class="flex items-center gap-2 text-[var(--color-silver)]/50 hover:text-[var(--color-gold)] transition-colors font-accent tracking-widest text-xs uppercase">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m12 19-7-7 7-7"/><path d="M19 12H5"/></svg>
+          <span>Volver al Blog</span>
+        </a>
+        <a href="/blog/tecnologia-silenciosa-ingenieria-caveduke" class="flex items-center gap-2 text-[var(--color-silver)]/50 hover:text-[var(--color-gold)] transition-colors font-accent tracking-widest text-xs uppercase">
+          <span>Artículo anterior</span>
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+        </a>
+      </nav>
+    </article>
+  </main>
+
+  <Footer />
+</BaseLayout>
+
+<style>
+  details summary::-webkit-details-marker { display: none; }
+  details summary { list-style: none; }
+  details[open] summary ~ div { animation: fadeIn 0.3s ease-out; }
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-8px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+</style>
+
+<script>
+  import { gsap } from 'gsap';
+  import { ScrollTrigger } from 'gsap/ScrollTrigger';
+  gsap.registerPlugin(ScrollTrigger);
+
+  gsap.fromTo('.hero-title', { y: 40, opacity: 0 }, { y: 0, opacity: 1, duration: 1.2, ease: 'power3.out', delay: 0.3 });
+
+  gsap.utils.toArray('.prose-section, section').forEach((section: any) => {
+    gsap.fromTo(section, { y: 40, opacity: 0 }, { y: 0, opacity: 1, duration: 1, ease: 'power3.out', scrollTrigger: { trigger: section, start: 'top 90%' } });
+  });
+
+  gsap.utils.toArray('figure').forEach((fig: any) => {
+    gsap.fromTo(fig, { clipPath: 'inset(100% 0 0 0)' }, { clipPath: 'inset(0% 0 0 0)', duration: 1.5, ease: 'power4.inOut', scrollTrigger: { trigger: fig, start: 'top 95%' } });
+  });
+</script>

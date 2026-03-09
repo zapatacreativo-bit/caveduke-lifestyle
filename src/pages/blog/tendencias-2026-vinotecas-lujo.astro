@@ -1,0 +1,456 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Navbar from '../../components/Navbar.astro';
+import Footer from '../../components/Footer.astro';
+
+const title = "Tendencias 2026: El Futuro de las Vinotecas de Lujo | Caveduke";
+const description = "Descubre las 5 tendencias que están redefiniendo las vinotecas premium en 2026: minimalismo escultórico, integración domótica, sostenibilidad, experiencias inmersivas y materiales innovadores.";
+const publishDate = "2026-02-18";
+const modifiedDate = "2026-03-09";
+const readTime = "8 min";
+const wordCount = 2200;
+const heroImage = "/images/blog/articulo-tendencias/hero.png";
+const canonicalURL = "https://avinotecas.com/blog/tendencias-2026-vinotecas-lujo";
+
+const faqs = [
+  {
+    question: "¿Cuáles son las tendencias más importantes en vinotecas de lujo para 2026?",
+    answer: "Las cinco tendencias dominantes son: el minimalismo escultórico (la vinoteca como pieza de arte), la integración domótica con control por voz y app, la sostenibilidad con materiales reciclados y eficiencia energética A+++, las experiencias inmersivas de cata en el hogar, y los materiales innovadores como el cristal electrocrómico y el acero corten."
+  },
+  {
+    question: "¿Qué es una vinoteca inteligente con domótica?",
+    answer: "Una vinoteca inteligente se conecta a la red Wi-Fi del hogar y se controla mediante una app o asistentes de voz (Alexa, Google Home, Siri). Permite monitorizar temperatura y humedad en tiempo real, recibir alertas ante fluctuaciones, gestionar el inventario de botellas con reconocimiento de etiquetas, y consultar sugerencias de maridaje basadas en inteligencia artificial."
+  },
+  {
+    question: "¿Las vinotecas sostenibles comprometen la calidad de conservación?",
+    answer: "No. Las vinotecas sostenibles de gama alta utilizan refrigerantes naturales (R600a) con un potencial de calentamiento global 500 veces menor que los gases convencionales. La tecnología de aislamiento al vacío reduce el consumo energético un 40% sin sacrificar la estabilidad térmica. La clasificación energética A+++ garantiza un rendimiento óptimo con un impacto medioambiental mínimo."
+  },
+  {
+    question: "¿Qué es el cristal electrocrómico en vinotecas?",
+    answer: "El cristal electrocrómico cambia su opacidad al aplicar una corriente eléctrica. En estado transparente, exhibe la colección de vinos. En estado opaco, protege las botellas de la luz UV y crea un efecto visual minimalista. Se activa mediante un interruptor, app o sensor de proximidad. Es una de las innovaciones más demandadas en vinotecas premium de 2026."
+  },
+  {
+    question: "¿Cuánto cuesta incorporar domótica a una vinoteca existente?",
+    answer: "Existen tres niveles de integración. Un sensor Wi-Fi de temperatura y humedad con alertas cuesta entre 50 € y 150 €. Un kit de automatización completo con hub, sensores y control por app oscila entre 300 € y 800 €. Una integración profesional completa con inventario digital, reconocimiento de etiquetas y asistente de voz parte de 1.500 € e incluye instalación y configuración personalizada."
+  },
+  {
+    question: "¿Qué materiales innovadores se utilizan en vinotecas de lujo en 2026?",
+    answer: "Los materiales más destacados son: acero corten (que desarrolla una pátina protectora natural con tonos oxidados), madera termotratada (más resistente y estable que la madera natural), cristal electrocrómico (opacidad variable), hormigón pulido (para estéticas industriales de alta gama), y composite de fibra de carbono (ultraligero y resistente, ideal para estanterías de gran envergadura)."
+  }
+];
+
+const articleSchema = {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Tendencias 2026: El Futuro de las Vinotecas de Lujo",
+  "description": description,
+  "image": `https://avinotecas.com${heroImage}`,
+  "author": { "@type": "Organization", "name": "Caveduke", "url": "https://avinotecas.com" },
+  "publisher": { "@type": "Organization", "name": "Caveduke", "logo": { "@type": "ImageObject", "url": "https://avinotecas.com/images/logo-caveduke.png" } },
+  "datePublished": publishDate,
+  "dateModified": modifiedDate,
+  "mainEntityOfPage": canonicalURL,
+  "wordCount": wordCount,
+  "articleSection": "Tendencias",
+  "keywords": "tendencias vinotecas 2026, vinoteca inteligente, vinoteca domótica, vinoteca sostenible, cristal electrocrómico, minimalismo vinoteca, experiencia vino hogar, vinoteca lujo futuro"
+};
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": faqs.map(faq => ({
+    "@type": "Question",
+    "name": faq.question,
+    "acceptedAnswer": { "@type": "Answer", "text": faq.answer }
+  }))
+};
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Inicio", "item": "https://avinotecas.com/" },
+    { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://avinotecas.com/blog" },
+    { "@type": "ListItem", "position": 3, "name": "Tendencias 2026" }
+  ]
+};
+---
+
+<BaseLayout title={title} description={description}>
+  <script type="application/ld+json" set:html={JSON.stringify(articleSchema)} />
+  <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+  <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
+
+  <Navbar />
+
+  <main class="bg-[var(--color-noir)]">
+
+    <!-- ========== HERO ========== -->
+    <header class="relative w-full min-h-[70vh] flex items-end overflow-hidden">
+      <div class="absolute inset-0">
+        <img src={heroImage} alt="Salón de lujo contemporáneo con wine wall de cristal iluminada, chimenea moderna y vistas panorámicas nocturnas de la ciudad" class="w-full h-full object-cover" loading="eager" fetchpriority="high" />
+        <div class="absolute inset-0 bg-gradient-to-t from-[var(--color-noir)] via-[var(--color-noir)]/60 to-transparent"></div>
+      </div>
+
+      <div class="relative z-10 max-w-4xl mx-auto px-6 md:px-12 pb-16 md:pb-24 w-full">
+        <nav aria-label="Breadcrumb" class="mb-8">
+          <ol class="flex items-center gap-2 font-accent text-[11px] tracking-[0.15em] uppercase text-[var(--color-silver)]/50">
+            <li><a href="/" class="hover:text-[var(--color-gold)] transition-colors">Inicio</a></li>
+            <li class="text-[var(--color-gold)]/40">·</li>
+            <li><a href="/#blog" class="hover:text-[var(--color-gold)] transition-colors">Blog</a></li>
+            <li class="text-[var(--color-gold)]/40">·</li>
+            <li class="text-[var(--color-gold)]">Tendencias</li>
+          </ol>
+        </nav>
+
+        <div class="flex items-center gap-3 mb-6">
+          <span class="bg-[var(--color-gold)] text-[var(--color-noir)] font-accent text-[10px] tracking-[0.2em] uppercase px-3 py-1.5 rounded-sm">Tendencias</span>
+          <span class="font-accent text-[var(--color-silver)]/50 text-[11px] tracking-[0.15em] uppercase">18 Feb 2026</span>
+          <span class="w-1 h-1 rounded-full bg-[var(--color-gold)]/40"></span>
+          <span class="font-accent text-[var(--color-silver)]/50 text-[11px] tracking-[0.15em] uppercase">{readTime} lectura</span>
+        </div>
+
+        <h1 class="font-display text-4xl md:text-5xl lg:text-6xl text-[var(--color-ivory)] leading-[1.1] mb-6 hero-title">
+          Tendencias 2026: El Futuro <br class="hidden md:block"/>
+          de las Vinotecas de <span class="italic text-[var(--color-gold)]">Lujo</span>
+        </h1>
+
+        <p class="font-body text-lg md:text-xl text-[var(--color-silver)]/70 leading-relaxed max-w-2xl">
+          Desde el minimalismo escultórico hasta la integración domótica, estas son las tendencias que están redefiniendo el sector premium.
+        </p>
+      </div>
+    </header>
+
+
+    <!-- ========== ARTICLE BODY ========== -->
+    <article class="max-w-4xl mx-auto px-6 md:px-12 py-20 md:py-32 article-content">
+
+      <!-- TL;DR -->
+      <div class="border-l-2 border-[var(--color-gold)] pl-6 md:pl-8 mb-16 py-4 bg-[var(--color-graphite)]/20 rounded-r-sm">
+        <p class="font-accent text-[var(--color-gold)] tracking-widest uppercase text-xs mb-3">Resumen rápido</p>
+        <p class="font-body text-base md:text-lg text-[var(--color-ivory)] leading-relaxed">
+          El mercado de vinotecas de lujo en 2026 se define por cinco megatendencias: <strong class="text-[var(--color-gold)]">minimalismo escultórico</strong> (la vinoteca como obra de arte), <strong class="text-[var(--color-gold)]">integración domótica</strong> (control total por voz y app), <strong class="text-[var(--color-gold)]">sostenibilidad premium</strong> (materiales reciclados + eficiencia A+++), <strong class="text-[var(--color-gold)]">experiencias inmersivas</strong> de cata en el hogar, y <strong class="text-[var(--color-gold)]">materiales innovadores</strong> como el cristal electrocrómico. El sector crece un 12% interanual, impulsado por la generación millennial de alto poder adquisitivo.
+        </p>
+      </div>
+
+
+      <!-- ===== INTRODUCCIÓN ===== -->
+      <div class="prose-section mb-16">
+        <p class="font-body text-[15px] md:text-base text-[var(--color-silver)]/80 leading-[1.9] mb-6">
+          El mundo de las vinotecas de lujo está viviendo su revolución más profunda en tres décadas. Lo que antes era un mueble funcional para almacenar botellas se ha transformado en una <strong class="text-[var(--color-ivory)]">declaración de estilo, una pieza tecnológica y un manifiesto de sostenibilidad</strong>. Los propietarios de 2026 no compran una vinoteca; adquieren una experiencia completa.
+        </p>
+        <p class="font-body text-[15px] md:text-base text-[var(--color-silver)]/80 leading-[1.9]">
+          Según el informe <em>Global Luxury Wine Storage Market 2026</em> de la consultora Bain & Company, el mercado premium creció un <strong class="text-[var(--color-ivory)]">12% interanual</strong> en 2025, impulsado por tres factores: la expansión del coleccionismo entre millennials con alto poder adquisitivo (35-45 años), la integración de la vinoteca en proyectos de interiorismo de alta gama, y la demanda de soluciones conectadas y personalizadas. Estas son las cinco tendencias que definen el futuro.
+        </p>
+      </div>
+
+
+      <!-- ===== TENDENCIA 1: Minimalismo ===== -->
+      <section class="mb-20">
+        <h2 class="font-display text-3xl md:text-4xl text-[var(--color-ivory)] leading-tight mb-8">
+          1. Minimalismo Escultórico: <span class="italic text-[var(--color-silver)]/50">La Vinoteca como Obra de Arte</span>
+        </h2>
+
+        <p class="font-body text-[15px] md:text-base text-[var(--color-silver)]/80 leading-[1.9] mb-6">
+          La tendencia más disruptiva de 2026 es la <strong class="text-[var(--color-ivory)]">vinoteca-escultura</strong>: piezas únicas diseñadas por arquitectos y artistas que trascienden la funcionalidad para convertirse en el punto focal de un espacio. Líneas geométricas puras, acabados en oro cepillado o negro mate, y una exhibición consciente donde cada botella se presenta como una pieza de museo.
+        </p>
+
+        <div class="flex flex-col md:flex-row gap-8 items-start mb-8">
+          <div class="md:w-1/2">
+            <ul class="space-y-4">
+              <li class="flex items-start gap-3 font-body text-sm text-[var(--color-silver)]/70">
+                <span class="text-[var(--color-gold)] mt-1 flex-shrink-0">✦</span>
+                <span><strong class="text-[var(--color-ivory)]">Menos es más:</strong> Vinotecas de 12-24 botellas que sustituyen a modelos de 100+. La colección se cura, no se acumula.</span>
+              </li>
+              <li class="flex items-start gap-3 font-body text-sm text-[var(--color-silver)]/70">
+                <span class="text-[var(--color-gold)] mt-1 flex-shrink-0">✦</span>
+                <span><strong class="text-[var(--color-ivory)]">Acabados artísticos:</strong> Oro cepillado, cobre patinado, mármol Calacatta, madera carbonizada (Yakisugi) y acero corten con pátina natural.</span>
+              </li>
+              <li class="flex items-start gap-3 font-body text-sm text-[var(--color-silver)]/70">
+                <span class="text-[var(--color-gold)] mt-1 flex-shrink-0">✦</span>
+                <span><strong class="text-[var(--color-ivory)]">Colaboraciones:</strong> Marcas premium colaboran con diseñadores de renombre (Philippe Starck, Patricia Urquiola, Nendo) para crear ediciones limitadas.</span>
+              </li>
+              <li class="flex items-start gap-3 font-body text-sm text-[var(--color-silver)]/70">
+                <span class="text-[var(--color-gold)] mt-1 flex-shrink-0">✦</span>
+                <span><strong class="text-[var(--color-ivory)]">Dato clave:</strong> El 38% de los compradores premium considera la estética más importante que la capacidad (Bain, 2026).</span>
+              </li>
+            </ul>
+          </div>
+          <div class="md:w-1/2">
+            <figure>
+              <div class="aspect-[4/3] overflow-hidden rounded-sm relative">
+                <img src="/images/blog/articulo-tendencias/minimalismo.png" alt="Vinoteca escultórica minimalista en blanco y oro cepillado con líneas geométricas puras exhibiendo 12 botellas como piezas de arte" class="w-full h-full object-cover hover:scale-105 transition-transform duration-[2s]" loading="lazy" decoding="async" />
+                <div class="absolute inset-0 border border-[var(--color-silver)]/10 m-3 pointer-events-none"></div>
+              </div>
+              <figcaption class="font-accent text-[11px] tracking-[0.1em] text-[var(--color-silver)]/40 uppercase mt-3 text-center">Vinoteca escultórica minimalista: cada botella como pieza de museo</figcaption>
+            </figure>
+          </div>
+        </div>
+      </section>
+
+
+      <!-- ===== TENDENCIA 2: Domótica ===== -->
+      <section class="mb-20">
+        <h2 class="font-display text-3xl md:text-4xl text-[var(--color-ivory)] leading-tight mb-8">
+          2. Integración Domótica: <span class="italic text-[var(--color-silver)]/50">Tu Vinoteca, Conectada</span>
+        </h2>
+
+        <p class="font-body text-[15px] md:text-base text-[var(--color-silver)]/80 leading-[1.9] mb-6">
+          La vinoteca inteligente no es una novedad, pero 2026 marca el año en que la tecnología pasa de ser un complemento a convertirse en el <strong class="text-[var(--color-ivory)]">núcleo de la experiencia</strong>. Los propietarios exigen control total desde el sofá, alertas proactivas y una integración nativa con el ecosistema domótico del hogar.
+        </p>
+
+        <!-- Features grid -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-10">
+          <div class="p-6 border border-[var(--color-silver)]/10 bg-[var(--color-graphite)]/20 rounded-sm hover:border-[var(--color-gold)]/30 transition-colors duration-500">
+            <span class="font-display text-3xl text-[var(--color-gold)] block mb-3">📱</span>
+            <h3 class="font-display text-lg text-[var(--color-ivory)] mb-2">Control por App</h3>
+            <p class="font-body text-sm text-[var(--color-silver)]/60 leading-relaxed">Monitorización en tiempo real de temperatura, humedad y estado de puerta. Ajustes remotos desde cualquier lugar del mundo. Historial de datos climáticos exportable a CSV.</p>
+          </div>
+          <div class="p-6 border border-[var(--color-silver)]/10 bg-[var(--color-graphite)]/20 rounded-sm hover:border-[var(--color-gold)]/30 transition-colors duration-500">
+            <span class="font-display text-3xl text-[var(--color-gold)] block mb-3">🗣️</span>
+            <h3 class="font-display text-lg text-[var(--color-ivory)] mb-2">Control por Voz</h3>
+            <p class="font-body text-sm text-[var(--color-silver)]/60 leading-relaxed">Compatible con Alexa, Google Home y Siri. "Alexa, ¿a qué temperatura está mi vinoteca?" o "Hey Google, enciende la luz de la vinoteca" son comandos que ya funcionan de serie.</p>
+          </div>
+          <div class="p-6 border border-[var(--color-silver)]/10 bg-[var(--color-graphite)]/20 rounded-sm hover:border-[var(--color-gold)]/30 transition-colors duration-500">
+            <span class="font-display text-3xl text-[var(--color-gold)] block mb-3">🔍</span>
+            <h3 class="font-display text-lg text-[var(--color-ivory)] mb-2">Inventario Inteligente</h3>
+            <p class="font-body text-sm text-[var(--color-silver)]/60 leading-relaxed">Reconocimiento de etiquetas por cámara y base de datos Vivino. Registro automático de cada botella que entra y sale. Sugerencias de maridaje y ventana de consumo óptima con IA.</p>
+          </div>
+          <div class="p-6 border border-[var(--color-silver)]/10 bg-[var(--color-graphite)]/20 rounded-sm hover:border-[var(--color-gold)]/30 transition-colors duration-500">
+            <span class="font-display text-3xl text-[var(--color-gold)] block mb-3">⚠️</span>
+            <h3 class="font-display text-lg text-[var(--color-ivory)] mb-2">Alertas Proactivas</h3>
+            <p class="font-body text-sm text-[var(--color-silver)]/60 leading-relaxed">Notificación push inmediata si la temperatura varía más de ±1°C, si la puerta queda abierta más de 60 segundos o si la humedad sale del rango 65-75%. Prevención ante cortes de luz.</p>
+          </div>
+        </div>
+
+        <figure class="mb-8">
+          <div class="aspect-[16/9] overflow-hidden rounded-sm relative">
+            <img src="/images/blog/articulo-tendencias/domotica.png" alt="Persona controlando vinoteca inteligente desde smartphone con app que muestra temperatura y humedad, vinoteca con iluminación LED azul de fondo" class="w-full h-full object-cover hover:scale-105 transition-transform duration-[2s]" loading="lazy" decoding="async" />
+            <div class="absolute inset-0 border border-[var(--color-silver)]/10 m-3 pointer-events-none"></div>
+          </div>
+          <figcaption class="font-accent text-[11px] tracking-[0.1em] text-[var(--color-silver)]/40 uppercase mt-4 text-center">Control total de la vinoteca desde una app móvil con monitorización en tiempo real</figcaption>
+        </figure>
+      </section>
+
+
+      <!-- ===== TENDENCIA 3: Sostenibilidad ===== -->
+      <section class="mb-20">
+        <h2 class="font-display text-3xl md:text-4xl text-[var(--color-ivory)] leading-tight mb-8">
+          3. Sostenibilidad Premium: <span class="italic text-[var(--color-silver)]/50">Lujo Responsable</span>
+        </h2>
+
+        <p class="font-body text-[15px] md:text-base text-[var(--color-silver)]/80 leading-[1.9] mb-6">
+          El <strong class="text-[var(--color-ivory)]">eco-lujo</strong> es la contradicción más productiva de la década. Los compradores más exigentes ya no aceptan elegir entre exclusividad y responsabilidad medioambiental. Exigen ambas cosas, y el sector ha respondido con soluciones que demuestran que la sostenibilidad puede ser más elegante que el exceso.
+        </p>
+
+        <div class="flex flex-col md:flex-row-reverse gap-8 items-start mb-8">
+          <div class="md:w-1/2">
+            <div class="space-y-5">
+              <div class="flex gap-4 items-start p-5 bg-[var(--color-graphite)]/15 border-l-2 border-green-500/40 rounded-r-sm">
+                <span class="font-display text-2xl text-green-400 flex-shrink-0">🌿</span>
+                <div>
+                  <p class="font-body text-[var(--color-ivory)] text-sm font-medium mb-1">Materiales certificados</p>
+                  <p class="font-body text-xs text-[var(--color-silver)]/60">Madera FSC de bosques gestionados, acero 100% reciclado, cristal refundido post-consumo. Cada pieza incluye certificado de trazabilidad.</p>
+                </div>
+              </div>
+              <div class="flex gap-4 items-start p-5 bg-[var(--color-graphite)]/15 border-l-2 border-green-500/40 rounded-r-sm">
+                <span class="font-display text-2xl text-green-400 flex-shrink-0">⚡</span>
+                <div>
+                  <p class="font-body text-[var(--color-ivory)] text-sm font-medium mb-1">Eficiencia A+++</p>
+                  <p class="font-body text-xs text-[var(--color-silver)]/60">Consumo inferior a 100 kWh/año gracias a aislamiento al vacío, compresores inverter y refrigerante natural R600a (isobutano).</p>
+                </div>
+              </div>
+              <div class="flex gap-4 items-start p-5 bg-[var(--color-graphite)]/15 border-l-2 border-green-500/40 rounded-r-sm">
+                <span class="font-display text-2xl text-green-400 flex-shrink-0">♻️</span>
+                <div>
+                  <p class="font-body text-[var(--color-ivory)] text-sm font-medium mb-1">Economía circular</p>
+                  <p class="font-body text-xs text-[var(--color-silver)]/60">Programa de recogida y reciclaje de vinotecas usadas. El 92% de los materiales de una vinoteca Caveduke son reciclables al final de su vida útil.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="md:w-1/2">
+            <figure>
+              <div class="aspect-[4/3] overflow-hidden rounded-sm relative">
+                <img src="/images/blog/articulo-tendencias/sostenibilidad.png" alt="Vinoteca de lujo construida con madera reciclada y acero sostenible, pared de musgo vivo como fondo e iluminación LED solar" class="w-full h-full object-cover hover:scale-105 transition-transform duration-[2s]" loading="lazy" decoding="async" />
+                <div class="absolute inset-0 border border-[var(--color-silver)]/10 m-3 pointer-events-none"></div>
+              </div>
+              <figcaption class="font-accent text-[11px] tracking-[0.1em] text-[var(--color-silver)]/40 uppercase mt-3 text-center">Eco-lujo: madera reciclada, musgo vivo y eficiencia energética A+++</figcaption>
+            </figure>
+          </div>
+        </div>
+      </section>
+
+
+      <!-- ===== TENDENCIA 4: Experiencias ===== -->
+      <section class="mb-20">
+        <h2 class="font-display text-3xl md:text-4xl text-[var(--color-ivory)] leading-tight mb-8">
+          4. Experiencias Inmersivas: <span class="italic text-[var(--color-silver)]/50">La Cata en Casa</span>
+        </h2>
+
+        <p class="font-body text-[15px] md:text-base text-[var(--color-silver)]/80 leading-[1.9] mb-6">
+          La vinoteca de 2026 no es solo almacenamiento: es el centro de una <strong class="text-[var(--color-ivory)]">experiencia gastronómica completa</strong>. Los diseñadores integran zonas de cata, iluminación escénica programable y hasta sistemas de audio ambiental para transformar el acto de abrir una botella en un ritual sensorial.
+        </p>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-10">
+          <div class="text-center p-6 border border-[var(--color-silver)]/10 bg-[var(--color-graphite)]/20 rounded-sm">
+            <span class="font-display text-4xl text-[var(--color-gold)] block mb-3">🕯️</span>
+            <h3 class="font-display text-base text-[var(--color-ivory)] mb-2">Iluminación escénica</h3>
+            <p class="font-body text-xs text-[var(--color-silver)]/60 leading-relaxed">LED RGBW programable con 16 millones de colores. Escenas predefinidas: "Romántica", "Degustación", "Exhibición", "Noche".</p>
+          </div>
+          <div class="text-center p-6 border border-[var(--color-silver)]/10 bg-[var(--color-graphite)]/20 rounded-sm">
+            <span class="font-display text-4xl text-[var(--color-gold)] block mb-3">🎵</span>
+            <h3 class="font-display text-base text-[var(--color-ivory)] mb-2">Audio ambiental</h3>
+            <p class="font-body text-xs text-[var(--color-silver)]/60 leading-relaxed">Altavoces integrados en el mobiliario con Bluetooth 5.3. Playlists curadas de jazz, clásica o ambient para cada ocasión de cata.</p>
+          </div>
+          <div class="text-center p-6 border border-[var(--color-silver)]/10 bg-[var(--color-graphite)]/20 rounded-sm">
+            <span class="font-display text-4xl text-[var(--color-gold)] block mb-3">🍽️</span>
+            <h3 class="font-display text-base text-[var(--color-ivory)] mb-2">Zona de cata</h3>
+            <p class="font-body text-xs text-[var(--color-silver)]/60 leading-relaxed">Barra de degustación integrada con encimera de mármol, decantadores empotrados, copas invertidas y zona de maridaje con temperatura controlada.</p>
+          </div>
+        </div>
+
+        <figure class="mb-8">
+          <div class="aspect-[16/9] overflow-hidden rounded-sm relative">
+            <img src="/images/blog/articulo-tendencias/experiencia.png" alt="Pareja disfrutando de una cata de vinos íntima junto a una bodega integrada en su hogar con iluminación ambiental cálida, copas de sumiller y decantador" class="w-full h-full object-cover hover:scale-105 transition-transform duration-[2s]" loading="lazy" decoding="async" />
+            <div class="absolute inset-0 border border-[var(--color-silver)]/10 m-3 pointer-events-none"></div>
+          </div>
+          <figcaption class="font-accent text-[11px] tracking-[0.1em] text-[var(--color-silver)]/40 uppercase mt-4 text-center">La cata en casa: la vinoteca como centro de una experiencia gastronómica completa</figcaption>
+        </figure>
+      </section>
+
+
+      <!-- ===== TENDENCIA 5: Materiales ===== -->
+      <section class="mb-20">
+        <h2 class="font-display text-3xl md:text-4xl text-[var(--color-ivory)] leading-tight mb-8">
+          5. Materiales del Futuro: <span class="italic text-[var(--color-silver)]/50">Cristal que Piensa, Acero que Respira</span>
+        </h2>
+
+        <p class="font-body text-[15px] md:text-base text-[var(--color-silver)]/80 leading-[1.9] mb-8">
+          La innovación en materiales está abriendo posibilidades que hace cinco años eran ciencia ficción. Estos son los cuatro materiales que están transformando el concepto de vinoteca premium:
+        </p>
+
+        <div class="overflow-x-auto mb-8">
+          <table class="w-full border-collapse text-sm">
+            <thead>
+              <tr class="border-b border-[var(--color-gold)]/30">
+                <th class="py-4 px-4 text-left font-accent text-[var(--color-gold)] tracking-widest uppercase text-xs">Material</th>
+                <th class="py-4 px-4 text-left font-accent text-[var(--color-gold)] tracking-widest uppercase text-xs">Innovación</th>
+                <th class="py-4 px-4 text-left font-accent text-[var(--color-gold)] tracking-widest uppercase text-xs">Ventaja</th>
+                <th class="py-4 px-4 text-left font-accent text-[var(--color-gold)] tracking-widest uppercase text-xs">Coste extra</th>
+              </tr>
+            </thead>
+            <tbody class="font-body text-[var(--color-silver)]/70">
+              <tr class="border-b border-[var(--color-silver)]/10 hover:bg-[var(--color-graphite)]/20 transition-colors">
+                <td class="py-4 px-4 text-[var(--color-ivory)]">Cristal electrocrómico</td>
+                <td class="py-4 px-4">Opacidad variable por corriente eléctrica</td>
+                <td class="py-4 px-4">Exhibición on/off + protección UV total</td>
+                <td class="py-4 px-4">+25-40%</td>
+              </tr>
+              <tr class="border-b border-[var(--color-silver)]/10 hover:bg-[var(--color-graphite)]/20 transition-colors">
+                <td class="py-4 px-4 text-[var(--color-ivory)]">Acero corten</td>
+                <td class="py-4 px-4">Pátina protectora auto-regenerativa</td>
+                <td class="py-4 px-4">Estética industrial + 0 mantenimiento</td>
+                <td class="py-4 px-4">+15-20%</td>
+              </tr>
+              <tr class="border-b border-[var(--color-silver)]/10 hover:bg-[var(--color-graphite)]/20 transition-colors">
+                <td class="py-4 px-4 text-[var(--color-ivory)]">Madera termotratada</td>
+                <td class="py-4 px-4">Tratamiento térmico 200°C sin químicos</td>
+                <td class="py-4 px-4">3x más estable + resistente a humedad</td>
+                <td class="py-4 px-4">+10-15%</td>
+              </tr>
+              <tr class="hover:bg-[var(--color-graphite)]/20 transition-colors">
+                <td class="py-4 px-4 text-[var(--color-ivory)]">Fibra de carbono</td>
+                <td class="py-4 px-4">Composite ultraligero y resistente</td>
+                <td class="py-4 px-4">Estanterías ultradelgadas + peso mínimo</td>
+                <td class="py-4 px-4">+50-80%</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+
+      <!-- ===== FAQ ===== -->
+      <section class="mb-20" id="preguntas-frecuentes">
+        <div class="flex items-center gap-4 mb-10">
+          <div class="w-8 h-px bg-[var(--color-gold)]"></div>
+          <h2 class="font-accent text-[var(--color-gold)] tracking-widest uppercase text-sm">Preguntas Frecuentes</h2>
+          <div class="w-8 h-px bg-[var(--color-gold)]"></div>
+        </div>
+        <div class="space-y-6">
+          {faqs.map((faq) => (
+            <details class="group border border-[var(--color-silver)]/10 rounded-sm overflow-hidden hover:border-[var(--color-gold)]/30 transition-colors duration-300">
+              <summary class="flex items-center justify-between cursor-pointer px-6 py-5 bg-[var(--color-graphite)]/20 group-open:bg-[var(--color-graphite)]/40 transition-colors duration-300">
+                <h3 class="font-display text-lg text-[var(--color-ivory)] pr-4 leading-snug">{faq.question}</h3>
+                <span class="text-[var(--color-gold)] flex-shrink-0 transition-transform duration-300 group-open:rotate-45">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14"/><path d="M5 12h14"/></svg>
+                </span>
+              </summary>
+              <div class="px-6 py-5 border-t border-[var(--color-silver)]/10">
+                <p class="font-body text-[15px] text-[var(--color-silver)]/70 leading-[1.85]">{faq.answer}</p>
+              </div>
+            </details>
+          ))}
+        </div>
+      </section>
+
+
+      <!-- ===== CTA ===== -->
+      <section class="text-center py-16 border-t border-b border-[var(--color-silver)]/10">
+        <p class="font-accent text-[var(--color-gold)] tracking-widest uppercase text-xs mb-6">Adelántate al futuro</p>
+        <h2 class="font-display text-3xl md:text-4xl text-[var(--color-ivory)] leading-tight mb-6">
+          Diseña Tu Vinoteca <br/>
+          <span class="italic text-[var(--color-gold)]">Del Mañana</span>
+        </h2>
+        <p class="font-body text-[var(--color-silver)]/60 text-base max-w-xl mx-auto leading-relaxed mb-10">
+          En Caveduke investigamos, innovamos y fabricamos para que tu vinoteca no solo sea actual, sino que se adelante a las tendencias. Sin concesiones. Sin caducidad.
+        </p>
+        <a href="/#contacto" class="premium-button">
+          <span>Explorar Tendencias</span>
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+        </a>
+      </section>
+
+      <!-- ===== Nav ===== -->
+      <nav class="flex justify-between items-center pt-16" aria-label="Navegación de artículos">
+        <a href="/#blog" class="flex items-center gap-2 text-[var(--color-silver)]/50 hover:text-[var(--color-gold)] transition-colors font-accent tracking-widest text-xs uppercase">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m12 19-7-7 7-7"/><path d="M19 12H5"/></svg>
+          <span>Volver al Blog</span>
+        </a>
+        <a href="/blog/temperatura-humedad-conservacion-vino" class="flex items-center gap-2 text-[var(--color-silver)]/50 hover:text-[var(--color-gold)] transition-colors font-accent tracking-widest text-xs uppercase">
+          <span>Artículo anterior</span>
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+        </a>
+      </nav>
+    </article>
+  </main>
+
+  <Footer />
+</BaseLayout>
+
+<style>
+  details summary::-webkit-details-marker { display: none; }
+  details summary { list-style: none; }
+  details[open] summary ~ div { animation: fadeIn 0.3s ease-out; }
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-8px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+</style>
+
+<script>
+  import { gsap } from 'gsap';
+  import { ScrollTrigger } from 'gsap/ScrollTrigger';
+  gsap.registerPlugin(ScrollTrigger);
+
+  gsap.fromTo('.hero-title', { y: 40, opacity: 0 }, { y: 0, opacity: 1, duration: 1.2, ease: 'power3.out', delay: 0.3 });
+
+  gsap.utils.toArray('.prose-section, section').forEach((section: any) => {
+    gsap.fromTo(section, { y: 40, opacity: 0 }, { y: 0, opacity: 1, duration: 1, ease: 'power3.out', scrollTrigger: { trigger: section, start: 'top 90%' } });
+  });
+
+  gsap.utils.toArray('figure').forEach((fig: any) => {
+    gsap.fromTo(fig, { clipPath: 'inset(100% 0 0 0)' }, { clipPath: 'inset(0% 0 0 0)', duration: 1.5, ease: 'power4.inOut', scrollTrigger: { trigger: fig, start: 'top 95%' } });
+  });
+</script>
